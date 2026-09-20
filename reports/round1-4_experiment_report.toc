@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {1}引言}{2}{section.1}%
+\contentsline {section}{\numberline {2}系统与方法}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}整体架构}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}数据来源与构成}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}训练配置}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}评估协议（「三件套」+ 真实项目）}{4}{subsection.2.4}%
+\contentsline {section}{\numberline {3}四轮训练历程}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}第一轮：双任务初次微调（建立基线）}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}第二轮：triage 增量续训（灾难性遗忘）}{4}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}第三轮：全量合并重训（能力恢复）}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}第四轮：负样本微调 + 真实项目验证（未达预期）}{5}{subsection.3.4}%
+\contentsline {section}{\numberline {4}结果汇总与横向对比}{6}{section.4}%
+\contentsline {section}{\numberline {5}根因分析}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}灾难性遗忘的反复出现}{7}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}合成负样本未带来泛化}{7}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}detect 层过报的根因未触及}{7}{subsection.5.3}%
+\contentsline {section}{\numberline {6}结论与展望}{7}{section.6}%
+\contentsline {subsection}{\numberline {6.1}结论}{7}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}下一步工作}{8}{subsection.6.2}%
+\contentsline {section}{\numberline {A}模型 ID 与关键文件索引}{8}{appendix.A}%

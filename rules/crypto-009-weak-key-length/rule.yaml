@@ -1,0 +1,20 @@
+rules:
+  - id: CRYPTO-009
+    severity: WARNING
+    message: "Weak key length or weak elliptic curve. Use RSA >= 2048 bits or a NIST P-256+ curve."
+    languages:
+      - python
+    patterns:
+      - pattern-either:
+          - pattern: RSA.generate(1024)
+          - pattern: RSA.generate(768)
+          - pattern: RSA.generate(512)
+          - pattern: ec.SECP192R1()
+          - pattern: ec.SECP160R1()
+          - pattern: ec.SECP112R1()
+          - pattern: ec.SECT163K1()
+          - pattern: ec.SECT163R2()
+    metadata:
+      cwe: "CWE-326"
+      severity: HIGH
+    fix: "Use RSA.generate(2048) or better; prefer P-256 / P-384 elliptic curves."

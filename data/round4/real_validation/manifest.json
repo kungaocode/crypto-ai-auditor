@@ -1,0 +1,51 @@
+{
+  "repos": {
+    "itsdangerous": {
+      "url": "https://github.com/pallets/itsdangerous",
+      "commit": "672971d66a2ef9f85151e53283113f33d642dabd",
+      "license": "BSD-3-Clause"
+    },
+    "passlib": {
+      "url": "https://github.com/deepin-community/python-passlib",
+      "commit": "f5f66f567b6bc90397800dae22c14a9423389d12",
+      "license": "BSD-3-Clause"
+    },
+    "pyjwt": {
+      "url": "https://github.com/jpadilla/pyjwt",
+      "commit": "30b7ca1afc9013ab9396c890ea98726a7a8311c7",
+      "license": "MIT"
+    },
+    "python-rsa": {
+      "url": "https://github.com/sybrenstuvel/python-rsa",
+      "commit": "42b0e14ffbeeb9d99d1037e6440a2cc61780e4ea",
+      "license": "Apache-2.0"
+    },
+    "pycryptodome": {
+      "url": "https://github.com/Legrandin/pycryptodome",
+      "commit": "a1e52c70302a51077e9d6a20a6abc6a04da1b5e6",
+      "license": "BSD-2-Clause"
+    }
+  },
+  "triage": {
+    "n": 35,
+    "all_verdict": "Reject",
+    "by_category": {
+      "hmac-legacy-digest": 1,
+      "legacy-format": 4,
+      "test-vector": 18,
+      "benchmark": 1,
+      "legacy-hash-scheme": 11
+    },
+    "by_rule": {
+      "CRYPTO-002": 5,
+      "CRYPTO-003": 16,
+      "CRYPTO-004": 1,
+      "CRYPTO-009": 6,
+      "CRYPTO-001": 7
+    }
+  },
+  "detect": {
+    "n": 7,
+    "all_vulnerable": false
+  }
+}

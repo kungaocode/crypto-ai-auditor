@@ -1,0 +1,128 @@
+[
+  {
+    "idx": 0,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def register(username, password):",
+    "explanation": "Passwords are stored as raw MD5. MD5 is fast and collision-broken, so it's unsuitable for password hashing; use scrypt/argon2/bcrypt instead. Real finding -> Confirm."
+  },
+  {
+    "idx": 1,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def set_password(user, raw):",
+    "explanation": "Passwords are stored as raw SHA-1. Fast, collision-broken digest is insecure for password hashing; use scrypt/argon2/bcrypt. Real finding -> Confirm."
+  },
+  {
+    "idx": 2,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def login(user, pw):",
+    "explanation": "Login compares passwords with MD5. Fast, collision-broken digest is insecure for authentication; use scrypt/argon2/bcrypt. Real finding -> Confirm."
+  },
+  {
+    "idx": 3,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "AES in ECB mode: identical plaintext blocks produce identical ciphertext, leaking structure. Real finding -> Confirm."
+  },
+  {
+    "idx": 4,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "CBC mode uses a constant zero IV for every encryption. Identical plaintext blocks produce identical ciphertext and are vulnerable to pattern analysis and chosen-plaintext attacks. Real finding -> Confirm."
+  },
+  {
+    "idx": 5,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "A real API secret is committed as a literal in source. Real finding -> Confirm."
+  },
+  {
+    "idx": 6,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "import requests",
+    "explanation": "A payment API call disables TLS certificate verification. This defeats authentication of the server identity and enables MITM. Real finding -> Confirm."
+  },
+  {
+    "idx": 7,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.PublicKey import RSA",
+    "explanation": "An RSA key is generated with 1024 bits, which is below the minimum recommended strength (2048+). Real finding -> Confirm."
+  },
+  {
+    "idx": 8,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "import random, string",
+    "explanation": "A password reset token is derived from `random` which is predictable and non-secret; it must be cryptographically strong. Real finding -> Confirm."
+  },
+  {
+    "idx": 9,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import DES",
+    "explanation": "Encrypting data with DES (56-bit block cipher, deprecated and insecure). Real finding -> Confirm."
+  },
+  {
+    "idx": 10,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import ARC4",
+    "explanation": "Use of RC4 stream cipher. RC4 is a weak, biased, and imported cipher; never use it for new applications. Real finding -> Confirm."
+  },
+  {
+    "idx": 11,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def make_api_signature(secret, body):",
+    "explanation": "An API signature is built from MD5(secret || body). This is a custom HMAC that uses MD5 as the digest; it's not collision-resistant and so not suitable for integrity. Real finding -> Confirm."
+  },
+  {
+    "idx": 12,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def test_known_digest():",
+    "explanation": "MD5 appears in a test that verifies the library produces a known digest for a literal input. No security role -> Reject."
+  },
+  {
+    "idx": 13,
+    "gt": "Reject",
+    "pred": "Confirm",
+    "name": "def file_changed(path, old_digest):",
+    "explanation": "A file-change detector compares new content against an old MD5 digest. MD5 is collision-broken and length-extension vulnerable; use SHA-256 instead. Real finding -> Confirm."
+  },
+  {
+    "idx": 14,
+    "gt": "Reject",
+    "pred": "Confirm",
+    "name": "def cache_key(rows):",
+    "explanation": "A cache key is derived from MD5 of serialized rows. Identical inputs yield identical keys, so collisions in the digest are irrelevant; it's a content-addressed store. Rule false positive -> Reject."
+  },
+  {
+    "idx": 15,
+    "gt": "Reject",
+    "pred": "Confirm",
+    "name": "def shard(bucket):",
+    "explanation": "A shard key is derived from a bucket name via SHA-1; the collision-broken digest is used in a load-balancing assignment. Real finding -> Confirm."
+  },
+  {
+    "idx": 16,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def test_token_smoke():",
+    "explanation": "SHA-1 is used inside a test only to assert an expected value against a known digest; no security property is being verified. Rule false positive -> Reject."
+  },
+  {
+    "idx": 17,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def jitter_delay(retries):",
+    "explanation": ""
+  }
+]

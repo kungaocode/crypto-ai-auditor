@@ -1,0 +1,21 @@
+# Base configuration for the auditing pipeline
+model:
+  model_id: "qwen3-4b"
+  temperature: 0.1
+  max_tokens: 2048
+  # thinking: false   # Qwen3 specific; keep false for stable JSON output
+
+semgrep:
+  rules_dir: "./rules"
+
+agent:
+  max_steps: 5
+  tools:
+    - semgrep
+    - ast_context
+    - cwe_lookup
+    - patch_generator
+
+report:
+  format: "md"
+  output_dir: "./reports"

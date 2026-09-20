@@ -1,0 +1,13 @@
+semgrep==1.78.0
+requests==2.32.3
+openai==1.43.0
+pyyaml==6.0.2
+tqdm==4.66.5
+pandas==2.2.2
+python-dotenv==1.0.1
+
+# GPU fallback (local QLoRA if cloud unavailable)
+# torch==2.4.0
+# transformers==4.44.0
+# peft==0.12.2
+# bitsandbytes==0.43.3

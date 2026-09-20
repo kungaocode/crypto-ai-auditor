@@ -1,0 +1,15 @@
+rules:
+  - id: CRYPTO-001
+    patterns:
+      - pattern-either:
+          - pattern: hashlib.md5(...)
+          - pattern: hashlib.new("MD5", ...)
+          - pattern: hashlib.new("md5", ...)
+    languages:
+      - python
+    message: "Use of MD5 which is not collision-resistant."
+    severity: WARNING
+    metadata:
+      cwe: "CWE-327"
+      severity: MEDIUM
+    fix: "Use hashlib.sha256() or a purpose-built password hashing library."

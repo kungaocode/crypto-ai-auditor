@@ -1,0 +1,128 @@
+[
+  {
+    "idx": 0,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def register(username, password):",
+    "explanation": "A password is stored in a non-cryptographic digest. Real finding -> Confirm."
+  },
+  {
+    "idx": 1,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def set_password(user, raw):",
+    "explanation": "A password is stored in SHA-1, which is not collision-resistant and thus insecure. Real finding -> Confirm."
+  },
+  {
+    "idx": 2,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def login(user, pw):",
+    "explanation": "A login function compares a user's password against an MD5 hash. MD5 is not collision-resistant and should never be used for passwords; real finding -> Confirm."
+  },
+  {
+    "idx": 3,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "ECB mode encrypts identical plaintext blocks to identical ciphertext blocks, leaking patterns. Real finding -> Confirm."
+  },
+  {
+    "idx": 4,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "CBC mode uses a fixed zero IV, which is predictable and leaks plaintext structure. Real finding -> Confirm."
+  },
+  {
+    "idx": 5,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "A real API secret is hardcoded in plaintext. Real finding -> Confirm."
+  },
+  {
+    "idx": 6,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "import requests",
+    "explanation": "A payment API call disables TLS certificate verification. Real finding -> Confirm."
+  },
+  {
+    "idx": 7,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.PublicKey import RSA",
+    "explanation": "A 1024-bit RSA key is weak and insecure. Real finding -> Confirm."
+  },
+  {
+    "idx": 8,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "import random, string",
+    "explanation": "A session reset token is derived from a non-cryptographic PRNG. Real finding -> Confirm."
+  },
+  {
+    "idx": 9,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import DES",
+    "explanation": "A legacy DES cipher is used in ECB mode to encrypt a secret key. Real finding -> Confirm."
+  },
+  {
+    "idx": 10,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import ARC4",
+    "explanation": "RC4 is a weak stream cipher that leaks secrets via bias in its keystream. Real finding -> Confirm."
+  },
+  {
+    "idx": 11,
+    "gt": "Confirm",
+    "pred": "Reject",
+    "name": "def make_api_signature(secret, body):",
+    "explanation": "The MD5 digest is a signature over the request body, not a secret key. It's used to authenticate an API call with a shared secret; HMAC-SHA256 would be better. Rule false positive -> Reject."
+  },
+  {
+    "idx": 12,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def test_known_digest():",
+    "explanation": "A test fixture that verifies a known digest against an expected value. Rule false positive -> Reject."
+  },
+  {
+    "idx": 13,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def file_changed(path, old_digest):",
+    "explanation": "MD5 is used to detect file changes, not for authentication or integrity of secrets. Real finding -> Reject."
+  },
+  {
+    "idx": 14,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def cache_key(rows):",
+    "explanation": "MD5 is used to generate a cache key from JSON data, not for authentication or integrity. The rule false positive -> Reject."
+  },
+  {
+    "idx": 15,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def shard(bucket):",
+    "explanation": "SHA-1 is used to generate a deterministic shard ID from a bucket name; no security property is required. Rule false positive -> Reject."
+  },
+  {
+    "idx": 16,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def test_token_smoke():",
+    "explanation": "SHA-1 is used in a test fixture to assert a known digest; no security-sensitive data is hashed. Rule false positive -> Reject."
+  },
+  {
+    "idx": 17,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def jitter_delay(retries):",
+    "explanation": "A jitter delay (to avoid predictable timing) uses a non-cryptographic random number to add microsecond-level noise. Real finding -> Reject."
+  }
+]

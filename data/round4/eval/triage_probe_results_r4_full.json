@@ -1,0 +1,128 @@
+[
+  {
+    "idx": 0,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def register(username, password):",
+    "explanation": "Passwords are stored in MD5. MD5 is not collision-resistant and fast; it must be avoided for password hashing. Real finding -> Confirm."
+  },
+  {
+    "idx": 1,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def set_password(user, raw):",
+    "explanation": "Passwords are stored in SHA-1. Password hashing requires a slow, salted KDF (scrypt/argon2/bcrypt), not fast collision-prone digest. Real finding -> Confirm."
+  },
+  {
+    "idx": 2,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def login(user, pw):",
+    "explanation": "Login compares a user password against an MD5 digest. MD5 is collision-broken and fast; passwords must use a slow memory-hard KDF (scrypt/argon2/bcrypt). Real finding -> Confirm."
+  },
+  {
+    "idx": 3,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "AES-ECB mode is not a randomness or integrity primitive. Identical plaintext blocks yield identical ciphertext, leaking structure and enabling pattern analysis. Real finding -> Confirm."
+  },
+  {
+    "idx": 4,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "CBC mode uses a constant zero IV for every encryption. An identical plaintext block maps to the same ciphertext, and an attacker can predict the IV to launch a chosen-prefix attack. Real finding -> Confirm."
+  },
+  {
+    "idx": 5,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "A real API key is hardcoded in source. Real finding -> Confirm."
+  },
+  {
+    "idx": 6,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "import requests",
+    "explanation": "A production HTTPS client disables TLS certificate verification. This defeats authentication of the peer and allows MITM. Real finding -> Confirm."
+  },
+  {
+    "idx": 7,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.PublicKey import RSA",
+    "explanation": "RSA-1024 is below the accepted minimum (2048+). Real finding -> Confirm."
+  },
+  {
+    "idx": 8,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "import random, string",
+    "explanation": "A password reset token is derived from `random` (predictable, non-cryptographic). Use secrets.token_urlsafe to generate a CSPRNG secret. Real finding -> Confirm."
+  },
+  {
+    "idx": 9,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import DES",
+    "explanation": "Encrypting data with DES (56-bit, deprecated cipher). Real finding -> Confirm."
+  },
+  {
+    "idx": 10,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import ARC4",
+    "explanation": "RC4 is a weak stream cipher with documented biases and predictable outputs. Use AES-GCM instead for authenticated encryption. Real finding -> Confirm."
+  },
+  {
+    "idx": 11,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def make_api_signature(secret, body):",
+    "explanation": "An API signature is built from the request body via MD5. The signature is a message digest, not a MAC; it leaks the secret in the digest and offers no authenticity guarantee. Real finding -> Confirm."
+  },
+  {
+    "idx": 12,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def test_known_digest():",
+    "explanation": "MD5 appears in a test that verifies the library produces a known digest for a known input. No security role -> Reject."
+  },
+  {
+    "idx": 13,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def file_changed(path, old_digest):",
+    "explanation": "MD5 detects whether a file changed since last read (change detection, not integrity). The digest is not a security control; collisions are irrelevant. Rule false positive -> Reject."
+  },
+  {
+    "idx": 14,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def cache_key(rows):",
+    "explanation": "MD5 generates a cache key from stable input. It is not a security control; collisions are irrelevant. Rule false positive -> Reject."
+  },
+  {
+    "idx": 15,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def shard(bucket):",
+    "explanation": "SHA-1 only maps a bucket name into one of 64 shards for load distribution. No security property is required; the digest is not a credential, key, or token. Rule false positive -> Reject."
+  },
+  {
+    "idx": 16,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def test_token_smoke():",
+    "explanation": "SHA-1 appears in a test that only verifies smoke/fixture data against an expected digest; no security role. Rule false positive -> Reject."
+  },
+  {
+    "idx": 17,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def jitter_delay(retries):",
+    "explanation": "The flagged `random` instance only spreads a retry delay by jitter to avoid predictable hammering. No cryptographic control depends on the output; it is not a nonce, token, key, or secret. Rule false positive -> Reject."
+  }
+]

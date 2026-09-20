@@ -1,0 +1,18 @@
+rules:
+  - id: CRYPTO-007
+    severity: WARNING
+    message: "Hard-coded cryptographic key found inline. Keys must be loaded from secrets management, env vars, or a KDF."
+    languages:
+      - python
+    patterns:
+      - pattern-either:
+          - pattern: AES.new($KEY, ...)
+          - pattern: Cipher(algorithms.AES($KEY), ...)
+          - pattern: Fernet($KEY)
+      - metavariable-regex:
+          metavariable: $KEY
+          regex: '^(?:b|u|r|rb)?["\x27][^"\x27]{6,}["\x27]$'
+    metadata:
+      cwe: "CWE-321"
+      severity: HIGH
+    fix: "Store keys in environment variables or a secrets manager; derive from passwords with a KDF such as scrypt/argon2."

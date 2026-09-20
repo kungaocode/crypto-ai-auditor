@@ -1,0 +1,2625 @@
+{
+  "config": "/tmp/benchmark.ft3.yaml",
+  "model_kind": "CloudBackend",
+  "detect": {
+    "llm": {
+      "metrics": {
+        "n": 569,
+        "tp": 302,
+        "fp": 260,
+        "fn": 3,
+        "tn": 4,
+        "recall": 0.9902,
+        "precision": 0.5374,
+        "f1": 0.6967,
+        "accuracy": 0.5378,
+        "cwe_acc": 0.9205
+      },
+      "preds": [
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "confidence": "HIGH",
+          "explanation": "Use of MD5 which is not collision-resistant."
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-502"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-502"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-295"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "confidence": "HIGH",
+          "explanation": "Use of MD5 which is not collision-resistant."
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "confidence": "HIGH",
+          "explanation": "Use of MD5 which is not collision-resistant."
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "confidence": "HIGH",
+          "explanation": "Use of MD5 which is not collision-resistant."
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-295"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "confidence": "HIGH",
+          "explanation": "Use of MD5 which is not collision-resistant."
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-295"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "confidence": "HIGH",
+          "explanation": "Use of MD5 which is not collision-resistant."
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-502"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-502"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-295"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "confidence": "HIGH",
+          "explanation": "Use of MD5 which is not collision-resistant."
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-502"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-295"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "confidence": "HIGH",
+          "explanation": "Use of MD5 which is not collision-resistant."
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-295"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        }
+      ]
+    }
+  },
+  "domain": {
+    "llm": {
+      "metrics": {
+        "n": 29,
+        "gt_confirm": 14,
+        "gt_reject": 15,
+        "confirm_recall": 0.9286,
+        "fpr": 0.0667,
+        "accuracy": 0.931
+      },
+      "preds": [
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in code is not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of MD5 which is not collision-resistant.",
+          "patch": "def render_tmpl(tmplsrc,\n                    from_str=False,\n                    to_str=False,\n                    context=None,\n                    tmplpath=None,\n                    **kws):\n\n        if context is None:\n            context = {}\n\n        # Alias cmd.run to cmd.shell to make python_shell=True the default for\n        # templated calls\n        if 'salt' in kws:\n            kws['salt'] = AliasedLoader(kws['salt'])\n\n        # We want explicit context to overwrite the **kws\n        kws.update(context)\n        context = kws\n        assert 'opts' in context\n        assert 'saltenv' in context\n\n        if 'sls' in context:\n            slspath = context['sls'].replace('.', '/')\n            if tmplpath is not None:\n                context['tplpath'] = tmplpath\n                if not tmplpath.lower().replace('\\', '/').endswith('/init.sls'):\n                    slspath = os.path.dirname(slspath)\n                template = tmplpath.replace('\\', '/')\n                i = template.rfind(slspath.replace('.', '/'))\n                if i != -1:\n                    template = template[i:]\n                tpldir = os.path.dirname(template).replace('\\', '/')\n                tpldata = {\n                    'tplfile': template,\n                    'tpldir': '.' if tpldir == '' else tpldir,\n                    'tpldot': tpldir.replace('/', '.'),\n                }\n                context.update(tpldata)\n            context['slsdotpath'] = slspath.replace('/', '.')\n            context['slscolonpath'] = slspath.replace('/', ':')\n            context['sls_path'] = slspath.replace('/', '_')\n            context['slspath'] = slspath\n\n        if isinstance(tmplsrc, six.string_types):\n            if from_str:\n                tmplstr = tmplsrc\n            else:\n                try:\n                    if tmplpath is not None:\n                        tmplsrc = os.path.join(tmplpath, tmplsrc)\n                    with codecs.open(tmplsrc, 'r', SLS_ENCODING) as _tmplsrc:\n                        tmplstr = _tmplsrc.read()\n                except (UnicodeDecodeError,\n                        ValueError,\n                        OSError,\n                        IOError) as exc:\n                    if salt.utils.files.is_binary(tmplsrc):\n                        # Template is a bin file, return the raw file\n                        return dict(result=True, data=tmplsrc)\n                    log.error(\n                        'Exception occurred while reading file %s: %s',\n                        tmplsrc, exc,\n                        exc_info_on_loglevel=logging.DEBUG\n                    )\n                    raise exc\n        else:  # assume tmplsrc is file-like.\n            tmplstr = tmplsrc.read()\n            tmplsrc.close()\n        try:\n            output = render_str(tmplstr, context, tmplpath)\n            if six.PY2:\n                output = output.encode(SLS_ENCODING)\n            if salt.utils.platform.is_windows():\n                newline = False\n                if output.endswith(('\n', os.linesep)):\n                    newline = True\n                # Write out with Windows newlines\n                output = os.linesep.join(output.splitlines())\n                if newline:\n                    output += os.linesep\n\n        except SaltRenderError as exc:\n            log.exception('Rendering exception occurred')\n            #return dict(result=False, data=six.text_type(exc))\n            raise\n        except Exception:\n            return dict(result=False, data=traceback.format_exc())\n        else:\n            if to_str:  # then render as string\n                return dict(result=True, data=output)\n            with tempfile.NamedTemporaryFile('wb', delete=False, prefix=salt.utils.files.TEMPFILE_PREFIX) as outf:\n                if six.PY3:\n                    output = output.encode(SLS_ENCODING)\n                outf.write(output)\n                # Note: If nothing is replaced or added by the rendering\n                #       function, then the contents of the output file will\n                #       be exactly the same as the input.\n            return dict(result=True, data=outf.name)"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of MD5 which is not collision-resistant.",
+          "patch": "def _execute_module(self, module_name=None, module_args=None, tmp=None, task_vars=None, persist_files=False, delete_remote_tmp=None, wrap_async=False,\n                        ignore_unknown_opts: bool = False):\n        '''\n        Transfer and run a module along with its arguments.\n        '''\n        if tmp is not None:\n            display.warning('_execute_module no longer honors the tmp parameter. Action plugins'\n                            ' should set self._connection._shell.tmpdir to share the tmpdir')\n        del tmp  # No longer used\n        if delete_remote_tmp is not None:\n            display.warning('_execute_module no longer honors the delete_remote_tmp parameter.'\n                            ' Action plugins should check self._connection._shell.tmpdir to'\n                            ' see if a tmpdir existed before they were called to determine'\n                            ' if they are responsible for removing it.')\n        del delete_remote_tmp  # No longer used\n\n        tmpdir = self._connection._shell.tmpdir\n\n        # We set the module_style to new here so the remote_tmp is created\n        # before the module args are built if remote_tmp is needed (async).\n        # If the module_style turns out to not be new and we didn't create the\n        # remote tmp here, it will still be created. This must be done before\n        # calling self._update_module_args() so the module wrapper has the\n        # correct remote_tmp value set\n        if not self._is_pipelining_enabled(\"new\", wrap_async) and tmpdir is None:\n            self._make_tmp_path()\n            tmpdir = self._connection._shell.tmpdir\n\n        if task_vars is None:\n            task_vars = dict()\n\n        # if a module name was not specified for this execution, use the action from the task\n        if module_name is None:\n            module_name = self._task.action\n        if module_args is None:\n            module_args = self._task.args\n\n        self._update_module_args(module_name, module_args, task_vars, ignore_unknown_opts=ignore_unknown_opts)\n\n        remove_async_dir = None\n        if wrap_async or self._task.async_val:\n            async_dir = self.get_shell_option('async_dir', default=\"~/.ansible_async\")\n            remove_async_dir = len(self._task.environment)\n            self._task.environment.append({\"ANSIBLE_ASYNC_DIR\": async_dir})\n\n        # FUTURE: refactor this along with module build process to better encapsulate \"smart wrapper\" functionality\n        (module_style, shebang, module_data, module_path) = self._configure_module(module_name=module_name, module_args=module_args, task_vars=task_vars)\n        display.vvv(\"Using module file %s\" % module_path)\n        if not shebang and module_style != 'binary':\n            raise AnsibleError(\"module (%s) is missing interpreter line\" % module_name)\n\n        self._used_interpreter = shebang\n        remote_module_path = None\n\n        if not self._is_pipelining_enabled(module_style, wrap_async):\n            # we might need remote tmp dir\n            if tmpdir is None:\n                self._make_tmp_path()\n                tmpdir = self._connection._shell.tmpdir\n\n            remote_module_filename = self._connection._shell.get_remote_filename(module_path)\n            remote_module_path = self._connection._shell.join_path(tmpdir, 'AnsiballZ_%s' % remote_module_filename)\n\n        args_file_path = None\n        if module_style in ('old', 'non_native_want_json', 'binary'):\n            # we'll also need a tmp file to hold our module arguments\n            args_file_path = self._connection._shell.join_path(tmpdir, 'args')\n\n        if remote_module_path or module_style != 'new':\n            display.debug(\"transferring module to remote %s\" % remote_module_path)\n            if module_style == 'binary':\n                self._transfer_file(module_path, remote_module_path)\n            else:\n                self._transfer_data(remote_module_path, module_data)\n            if module_style == 'old':\n                # we need to dump the module args to a k=v string in a file on\n                # the remote system, which can be read and parsed by the module\n                args_data = \"\"\n                for k, v in module_args.items():\n                    args_data += '%s=%s ' % (k, shlex.quote(text_type(v)))\n                self._transfer_data(args_file_path, args_data)\n            elif module_style in ('non_native_want_json', 'binary'):\n                self._transfer_data(args_file_path, json.dumps(module_args))\n            display.debug(\"done transferring module to remote\")\n\n        environment_string = self._compute_environment_string()\n\n        # remove the ANSIBLE_ASYNC_DIR env entry if we added a temporary one for\n        # the async_wrapper task.\n        if remove_async_dir is not None:\n            del self._task.environment[remove_async_dir]\n\n        remote_files = []\n        if tmpdir and remote_module_path:\n            remote_files = [tmpdir, remote_module_path]\n\n        if args_file_path:\n            remote_files.append(args_file_path)\n\n        sudoable = True\n        in_data = None\n        cmd = \"\"\n\n        if wrap_async and not self._connection.always_pipeline_modules:\n            # configure, upload, and chmod the async_wrapper module\n            (async_module_style, shebang, async_module_data, async_module_path) = self._configure_module(\n                module_name='ansible.legacy.async_wrapper', module_args=dict(), task_vars=task_vars)\n            async_module_remote_filename = self._connection._shell.get_remote_filename(async_module_path)\n            remote_async_module_path = self._connection._shell.join_path(tmpdir, async_module_remote_filename)\n            self._transfer_data(remote_async_module_path, async_module_data)\n            remote_files.append(remote_async_module_path)\n\n            async_limit = self._task.async_val\n            async_jid = f'j{random.randint(0, 999999999999)}'\n\n            # call the interpreter for async_wrapper directly\n            # this permits use of a script for an interpreter on non-Linux platforms\n            interpreter = shebang.replace('#!', '').strip()\n            async_cmd = [interpreter, remote_async_module_path, async_jid, async_limit, remote_module_path]\n\n            if environment_string:\n                async_cmd.insert(0, environment_string)\n\n            if args_file_path:\n                async_cmd.append(args_file_path)\n            else:\n                # maintain a fixed number of positional parameters for async_wrapper\n                async_cmd.append('_')\n            \n            if not self._should_remove_tmp_path(tmpdir):\n                async_cmd.append(\"-preserve_tmp\")\n\n            cmd = \" \" .join(to_text(x) for x in async_cmd)\n\n        else:\n\n            if self._is_pipelining_enabled(module_style):\n                in_data = module_data\n                display.vvv(\"Pipelining is enabled.\")\n            else:\n                cmd = remote_module_path\n\n            cmd = self._connection._shell.build_module_command(environment_string, shebang, cmd, arg_path=args_file_path).strip()\n\n        # Fix permissions of the tmpdir path and tmpdir files. This should be called after all\n        # files have been transferred.\n        if remote_files:\n            # remove none/empty\n            remote_files = [x for x in remote_files if x]\n            self._fixup_perms2(remote_files, self._get_remote_user())\n\n        # actually execute\n        res = self._low_level_execute_command(cmd, sudoable=sudoable, in_data=in_data)\n\n        # parse the main result\n        data = self._parse_returned_data(res)\n\n        # NOTE: INTERNAL KEYS ONLY ACCESSIBLE HERE\n        # get internal info before cleaning\n        if data.pop(\"_ansible_suppress_tmpdir_delete\", False):\n            self._cleanup_remote_tmp = False\n\n        # NOTE: yum returns results .. but that made it 'compatible' with squashing, so we allow mappings, for now\n        if 'results' in data and (not isinstance(data['results'], Sequence) or isinstance(data['results'], string_types)):\n            data['ansible_module_results'] = data['results']\n            del data['results']\n            display.warning(\"Found internal 'results' key in module return, renamed to 'ansible_module_results'.\")\n\n        # remove internal keys\n        remove_internal_keys(data)\n\n        if wrap_async:\n            # async_wrapper will clean up its tmpdir on its own so we want the controller side to\n            # forget about it now\n            self._connection._shell.tmpdir = None\n\n            # FIXME: for backwards compat, figure out if still makes sense\n            data['changed'] = True\n\n        # pre-split stdout/stderr into lines if needed\n        if 'stdout' in data and 'stdout_lines' not in data:\n            # if the value is 'False', a default won't catch it.\n            txt = data.get('stdout', None) or u''\n            data['stdout_lines'] = txt.splitlines()\n        if 'stderr' in data and 'stderr_lines' not in data:\n            # if the value is 'False', a default won't catch it.\n            txt = data.get('stderr', None) or u''\n            data['stderr_lines'] = txt.splitlines()\n\n        # propagate interpreter discovery results back to the controller\n        if self._discovered_interpreter_key:\n            if data.get('ansible_facts') is None:\n                data['ansible_facts'] = {}\n\n            data['ansible_facts'][self._discovered_interpreter_key] = self._discovered_interpreter\n\n        if self._discovery_warnings:\n            if data.get('warnings') is None:\n                data['warnings'] = []\n            data['warnings'].extend(self._discovery_warnings)\n\n        if self._discovery_deprecation_warnings:\n            if data.get('deprecations') is None:\n                data['deprecations'] = []\n            data['deprecations'].extend(self._discovery_deprecation_warnings)\n\n        # mark the entire module results untrusted as a template right here, since the current action could\n        # possibly template one of these values.\n        data = wrap_var(data)\n\n        display.debug(\"done with _execute_module (%s, %s)\")\n        return data"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of MD5 which is not collision-resistant.",
+          "patch": "def upgrade():\n    \"\"\"\n    Apply Change ``TaskInstance`` and ``TaskReschedule`` tables from execution_date to run_id.\n    \"\"\"\n    conn = op.get_bind()\n    dialect_name = conn.dialect.name\n\n    dt_type = TIMESTAMP\n    string_id_col_type = StringID()\n\n    if dialect_name == \"sqlite\":\n        naming_convention = {\n            \"uq\": \"%(table_name)s_%(column_0_N_name)s_key\",\n        }\n        # The naming_convention force the previously un-named UNIQUE constraints to have the right name\n        with op.batch_alter_table(\n            \"dag_run\", naming_convention=naming_convention, recreate=\"always\"\n        ) as batch_op:\n            batch_op.alter_column(\"dag_id\", existing_type=string_id_col_type, nullable=False)\n            batch_op.alter_column(\"run_id\", existing_type=string_id_col_type, nullable=False)\n            batch_op.alter_column(\"execution_date\", existing_type=dt_type, nullable=False)\n    elif dialect_name == \"mysql\":\n        with op.batch_alter_table(\"dag_run\") as batch_op:\n            batch_op.alter_column(\n                \"dag_id\", existing_type=sa.String(length=ID_LEN), type_=string_id_col_type, nullable=False\n            )\n            batch_op.alter_column(\n                \"run_id\", existing_type=sa.String(length=ID_LEN), type_=string_id_col_type, nullable=False\n            )\n            batch_op.alter_column(\"execution_date\", existing_type=dt_type, nullable=False)\n            inspector = sa.inspect(conn.engine)\n            unique_keys = inspector.get_unique_constraints(\"dag_run\")\n            for unique_key in unique_keys:\n                batch_op.drop_constraint(unique_key[\"name\"], type_=\"unique\")\n            batch_op.create_unique_constraint(\n                \"dag_run_dag_id_execution_date_key\", [\"dag_id\", \"execution_date\"]\n            )\n            batch_op.create_unique_constraint(\"dag_run_dag_id_run_id_key\", [\"dag_id\", \"run_id\"])\n    elif dialect_name == \"mssql\":\n\n        with op.batch_alter_table(\"dag_run\") as batch_op:\n            batch_op.drop_index(\"idx_not_null_dag_id_execution_date\")\n            batch_op.drop_index(\"idx_not_null_dag_id_run_id\")\n\n            batch_op.drop_index(\"dag_id_state\")\n            batch_op.drop_index(\"idx_dag_run_dag_id\")\n            batch_op.drop_index(\"idx_dag_run_running_dags\")\n            batch_op.drop_index(\"idx_dag_run_queued_dags\")\n\n            batch_op.alter_column(\"dag_id\", existing_type=string_id_col_type, nullable=False)\n            batch_op.alter_column(\"execution_date\", existing_type=dt_type, nullable=False)\n            batch_op.alter_column(\"run_id\", existing_type=string_id_col_type, nullable=False)\n\n            # _Somehow_ mssql was missing these constraints entirely\n            batch_op.create_unique_constraint(\n                \"dag_run_dag_id_execution_date_key\", [\"dag_id\", \"execution_date\"]\n            )\n            batch_op.create_unique_constraint(\"dag_run_dag_id_run_id_key\", [\"dag_id\", \"run_id\"])\n\n            batch_op.create_index(\"dag_id_state\", [\"dag_id\", \"state\"], unique=False)\n            batch_op.create_index(\"idx_dag_run_dag_id\", [\"dag_id\"])\n            batch_op.create_index(\n                \"idx_dag_run_running_dags\",\n                [\"state\", \"dag_id\"],\n                mssql_where=sa.text(\"state='running'\"),\n            )\n            batch_op.create_index(\n                \"idx_dag_run_queued_dags\",\n                [\"state\", \"dag_id\"],\n                mssql_where=sa.text(\"state='queued'\"),\n            )\n    else:\n        # Make sure DagRun PK columns are non-nullable\n        with op.batch_alter_table(\"dag_run\", schema=None) as batch_op:\n            batch_op.alter_column(\"dag_id\", existing_type=string_id_col_type, nullable=False)\n            batch_op.alter_column(\"execution_date\", existing_type=dt_type, nullable=False)\n            batch_op.alter_column(\"run_id\", existing_type=string_id_col_type, nullable=False)\n\n    # First create column nullable\n    op.add_column(\"task_instance\", sa.Column(\"run_id\", type_=string_id_col_type, nullable=True))\n    op.add_column(\"task_reschedule\", sa.Column(\"run_id\", type_=string_id_col_type, nullable=True))\n\n    #\n    # TaskReschedule has a FK to TaskInstance, so we have to update that before\n    # we can drop the TI.execution_date column\n\n    update_query = _multi_table_update(dialect_name, task_reschedule, task_reschedule.c.run_id)\n    op.execute(update_query)\n\n    with op.batch_alter_table(\"task_reschedule\", schema=None) as batch_op:\n        batch_op.alter_column(\n            \"run_id\", existing_type=string_id_col_type, existing_nullable=True, nullable=False\n        )\n\n        batch_op.drop_constraint(\"task_reschedule_dag_task_date_fkey\", \"foreignkey\")\n        if dialect_name == \"mysql\":\n            # Mysql creates an index and a constraint -- we have to drop both\n            batch_op.drop_index(\"task_reschedule_dag_task_date_fkey\")\n            batch_op.alter_column(\n                \"dag_id\", existing_type=sa.String(length=ID_LEN), type_=string_id_col_type, nullable=False\n            )\n        batch_op.drop_index(\"idx_task_reschedule_dag_task_date\")\n\n    # Then update the new column by selecting the right value from DagRun\n    # But first we will drop and recreate indexes to make it faster\n    if dialect_name == \"postgresql\":\n        # Recreate task_instance, without execution_date and with dagrun.run_id\n        op.execute(\n            \"\"\"\n            CREATE TABLE new_task_instance AS SELECT\n                ti.task_id,\n                ti.dag_id,\n                dag_run.run_id,\n                ti.start_date,\n                ti.end_date,\n                ti.duration,\n                ti.state,\n                ti.try_number,\n                ti.hostname,\n                ti.unixname,\n                ti.job_id,\n                ti.pool,\n                ti.queue,\n                ti.priority_weight,\n                ti.operator,\n                ti.queued_dttm,\n                ti.pid,\n                ti.max_tries,\n                ti.executor_config,\n                ti.pool_slots,\n                ti.queued_by_job_id,\n                ti.external_executor_id,\n                ti.trigger_id,\n                ti.trigger_timeout,\n                ti.next_method,\n                ti.next_kwargs\n            FROM task_instance ti\n            INNER JOIN dag_run ON dag_run.dag_id = ti.dag_id AND dag_run.execution_date = ti.execution_date;\n        \"\"\"\n        )\n        op.drop_table(\"task_instance\")\n        op.rename_table(\"new_task_instance\", \"task_instance\")\n\n        # Fix up columns after the 'create table as select'\n        with op.batch_alter_table(\"task_instance\", schema=None) as batch_op:\n            batch_op.alter_column(\n                \"pool\", existing_type=string_id_col_type, existing_nullable=True, nullable=False\n            )\n            batch_op.alter_column(\"max_tries\", existing_type=sa.Integer(), server_default=\"-'1'\")\n            batch_op.alter_column(\n                \"pool_slots\", existing_type=sa.Integer(), existing_nullable=True, nullable=False\n            )\n    else:\n        update_query = _multi_table_update(dialect_name, task_instance, task_instance.c.run_id)\n        op.execute(update_query)\n\n    with op.batch_alter_table(\"task_instance\", schema=None) as batch_op:\n        if dialect_name != \"postgresql\":\n            # TODO: Is this right for non-postgres?\n            if dialect_name == \"mssql\":\n                constraints = get_mssql_table_constraints(conn, \"task_instance\")\n                pk, _ = constraints[\"PRIMARY KEY\"].popitem()\n                batch_op.drop_constraint(pk, type_=\"primary\")\n            elif dialect_name not in (\"sqlite\"):\n                batch_op.drop_constraint(\"task_instance_pkey\", type_=\"primary\")\n            batch_op.drop_index(\"ti_dag_date\")\n            batch_op.drop_index(\"ti_state_lkp\")\n            batch_op.drop_column(\"execution_date\")\n\n        # Then make it non-nullable\n        batch_op.alter_column(\n            \"run_id\", existing_type=string_id_col_type, existing_nullable=True, nullable=False\n        )\n        batch_op.alter_column(\n            \"dag_id\", existing_type=string_id_col_type, existing_nullable=True, nullable=False\n        )\n\n        batch_op.create_primary_key(\"task_instance_pkey\", [\"dag_id\", \"task_id\", \"run_id\"])\n        batch_op.create_foreign_key(\n            \"task_instance_dag_run_fkey\",\n            \"dag_run\",\n            [\"dag_id\", \"run_id\"],\n            [\"dag_id\", \"run_id\"],\n            ondelete=\"CASCADE\",\n        )\n\n        batch_op.create_index(\"ti_dag_run\", [\"dag_id\", \"run_id\"])\n        batch_op.create_index(\"ti_state_lkp\", [\"dag_id\", \"task_id\", \"run_id\", \"state\"])\n        if dialect_name == \"postgresql\":\n            batch_op.create_index(\"ti_dag_state\", [\"dag_id\", \"state\"])\n            batch_op.create_index(\"ti_job_id\", [\"job_id\"])\n            batch_op.create_index(\"ti_pool\", [\"pool\", \"state\", \"priority_weight\"])\n            batch_op.create_index(\"ti_state\", [\"state\"])\n            batch_op.create_foreign_key(\n                \"task_instance_trigger_id_fkey\", \"trigger\", [\"trigger_id\"], [\"id\"], ondelete=\"CASCADE\"\n            )\n            batch_op.create_index(\"ti_trigger_id\", [\"trigger_id\"])\n\n    with op.batch_alter_table(\"task_reschedule\", schema=None) as batch_op:\n        batch_op.drop_column(\"execution_date\")\n        batch_op.create_index(\n            \"idx_task_reschedule_dag_task_run\",\n            [\"dag_id\", \"task_id\", \"run_id\"],\n            unique=False,\n        )\n        # _Now_ there is a unique constraint on the columns in TI we can re-create the FK from TaskReschedule\n        batch_op.create_foreign_key(\n            \"task_reschedule_ti_fkey\",\n            \"task_instance\",\n            [\"dag_id\", \"task_id\", \"run_id\"],\n            [\"dag_id\", \"task_id\", \"run_id\"],\n            ondelete=\"CASCADE\",\n        )\n\n        # https://docs.microsoft.com/en-us/sql/relational-databases/errors-events/mssqlserver-1785-database-engine-error?view=sql-server-ver15\n        ondelete = \"CASCADE\" if dialect_name != \"mssql\" else \"NO ACTION\"\n        batch_op.create_foreign_key(\n            \"task_reschedule_dr_fkey\",\n            \"dag_run\",\n            [\"dag_id\", \"run_id\"],\n            [\"dag_id\", \"run_id\"],\n            ondelete=ondelete,\n        )"
+        },
+        {
+          "verdict": "Confirm",
+          "cwe": "CWE-327",
+          "severity": "WARNING"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "verdict": "Confirm",
+          "cwe": "CWE-327",
+          "severity": "WARNING"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of MD5 which is not collision-resistant.",
+          "patch": "def get_geometry_type(self, table_name, geo_col):\n        cursor = self.connection.cursor()\n        try:\n            # Querying USER_SDO_GEOM_METADATA to get the SRID and dimension information.\n            try:\n                cursor.execute(\n                    'SELECT \"DIMINFO\", \"SRID\" FROM \"USER_SDO_GEOM_METADATA\" '\n                    'WHERE \"TABLE_NAME\"=%s AND \"COLUMN_NAME\"=%s',\n                    (table_name.upper(), geo_col.upper())\n                )\n                row = cursor.fetchone()\n            except Exception as msg:\n                new_msg = (\n                    'Could not find entry in USER_SDO_GEOM_METADATA '\n                    'corresponding to \"%s\".\"%s\"\n                    \"Error message: %s.\"') % (table_name, geo_col, msg)\n                six.reraise(Exception, Exception(new_msg), sys.exc_info()[2])\n\n            # TODO: Research way to find a more specific geometry field type for\n            # the column's contents.\n            field_type = 'GeometryField'\n\n            # Getting the field parameters.\n            field_params = {}\n            dim, srid = row\n            if srid != 4326:\n                field_params['srid'] = srid\n            # Length of object array ( SDO_DIM_ARRAY ) is number of dimensions.\n            dim = len(dim)\n            if dim != 2:\n                field_params['dim'] = dim\n        finally:\n            cursor.close()\n\n        return field_type, field_params"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of MD5 which is not collision-resistant.",
+          "patch": "def run(self, tmp=None, task_vars=None):\n        ''' handler for package operations '''\n        if task_vars is None:\n            task_vars = dict()\n\n        result = super(ActionModule, self).run(tmp, task_vars)\n\n        module = self._task.args.get('use', 'auto').lower()\n\n        if module == 'auto':\n            try:\n                module = self._templar.template('{{ansible_service_mgr}}')\n            except:\n                pass # could not get it from template!\n\n        if module == 'auto':\n            facts = self._execute_module(module_name='setup', module_args=dict(gather_subset='!all', filter='ansible_service_mgr'), task_vars=task_vars)\n            self._display.debug(\"Facts %s\" % facts)\n            if 'ansible_facts' in facts and  'ansible_service_mgr' in facts['ansible_facts']:\n                module = facts['ansible_facts']['ansible_service_mgr']\n\n        if not module or module == 'auto' or module not in self._shared_loader_obj.module_loader:\n            module = 'service'\n\n        if module != 'auto':\n            # run the 'service' module\n            new_module_args = self._task.args.copy()\n            if 'use' in new_module_args:\n                del new_module_args['use']\n\n            # for backwards compatibility\n            if 'state' in new_module_args and new_module_args['state'] == 'running':\n                new_module_args['state'] = 'started'\n\n            if module in self.UNUSED_PARAMS:\n                for unused in self.UNUSED_PARAMS[module]:\n                    if unused in new_module_args:\n                        del new_module_args[unused]\n                        self._display.warning('Ignoring \"%s\" as it is not used in \"%s\"' % (unused, module))\n\n            self._display.vvvv(\"Running %s\" % module)\n            result.update(self._execute_module(module_name=module, module_args=new_module_args, task_vars=task_vars))\n        else:\n            result['failed'] = True\n            result['msg'] = 'Could not detect which service manager to use. Try gathering facts or setting the \"use\" option.'\n\n        return result"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of SHA-1 which is not collision-resistant.",
+          "patch": "def get_table_description(self, cursor, table_name):\n        \"\"\"\n        Return a description of the table with the DB-API cursor.description\n        interface.\n        \"\"\"\n        cursor.execute(\n            \"PRAGMA table_xinfo(%s)\" % self.connection.ops.quote_name(table_name)\n        )\n        table_info = cursor.fetchall()\n        if not table_info:\n            raise DatabaseError(f\"Table {table_name} does not exist (empty pragma).\")\n        collations = self._get_column_collations(cursor, table_name)\n        json_columns = set()\n        if self.connection.features.can_introspect_json_field:\n            for line in table_info:\n                column = line[1]\n                json_constraint_sql = '%%json_valid(\"%s\")%%' % column\n                has_json_constraint = cursor.execute(\n                    \"\"\"\n                    SELECT sql\n                    FROM sqlite_master\n                    WHERE\n                        type = 'table' AND\n                        name = %s AND\n                        sql LIKE %s\n                \"\"\",\n                    [table_name, json_constraint_sql],\n                ).fetchone()\n                if has_json_constraint:\n                    json_columns.add(column)\n        return [\n            FieldInfo(\n                name,\n                data_type,\n                get_field_size(data_type),\n                None,\n                None,\n                None,\n                not notnull,\n                default,\n                collations.get(name),\n                pk == 1,\n                name in json_columns,\n            )\n            for cid, name, data_type, notnull, default, pk, hidden in table_info\n            if hidden\n            in [\n                0,  # Normal column.\n                2,  # Virtual generated column.\n                3,  # Stored generated column.\n            ]\n        ]"
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of MD5 which is not collision-resistant.",
+          "patch": "def parse(self):\n        ''' create an options parser for bin/ansible '''\n\n        self.parser = CLI.base_parser(\n            usage='%prog -U <repository> [options]',\n            connect_opts=True,\n            vault_opts=True,\n            runtask_opts=True,\n            subset_opts=True,\n            inventory_opts=True,\n            module_opts=True,\n        )\n\n        # options unique to pull\n        self.parser.add_option('--purge', default=False, action='store_true', help='purge checkout after playbook run')\n        self.parser.add_option('-o', '--only-if-changed', dest='ifchanged', default=False, action='store_true',\n            help='only run the playbook if the repository has been updated')\n        self.parser.add_option('-s', '--sleep', dest='sleep', default=None,\n            help='sleep for random interval (between 0 and n number of seconds) before starting. This is a useful way to disperse git requests')\n        self.parser.add_option('-f', '--force', dest='force', default=False, action='store_true',\n            help='run the playbook even if the repository could not be updated')\n        self.parser.add_option('-d', '--directory', dest='dest', default='~/.ansible/pull',\n            help='directory to checkout repository to')\n        self.parser.add_option('-U', '--url', dest='url', default=None,\n            help='URL of the playbook repository')\n        self.parser.add_option('-C', '--checkout', dest='checkout',\n            help='branch/tag/commit to checkout.  ' 'Defaults to behavior of repository module.')\n        self.parser.add_option('--accept-host-key', default=False, dest='accept_host_key', action='store_true',\n            help='adds the hostkey for the repo url if not already added')\n        self.parser.add_option('-m', '--module-name', dest='module_name', default=self.DEFAULT_REPO_TYPE,\n            help='Repository module name, which ansible will use to check out the repo. Default is %s.' % self.DEFAULT_REPO_TYPE)\n        self.parser.add_option('--verify-commit', dest='verify', default=False, action='store_true',\n            help='verify GPG signature of checked out commit, if it fails abort running the playbook.'\n                 ' This needs the corresponding VCS module to support such an operation')\n\n        self.options, self.args = self.parser.parse_args()\n\n        if self.options.sleep:\n            try:\n                secs = random.randint(0,int(self.options.sleep))\n                self.options.sleep = secs\n            except ValueError:\n                raise AnsibleOptionsError(\"%s is not a number.\" % self.options.sleep)\n\n        if not self.options.url:\n            raise AnsibleOptionsError(\"URL for repository not specified, use -h for help\")\n\n        if self.options.module_name not in self.SUPPORTED_REPO_MODULES:\n            raise AnsibleOptionsError(\"Unsuported repo module %s, choices are %s\" % (self.options.module_name, ','.join(self.SUPPORTED_REPO_MODULES)))\n\n        display.verbosity = self.options.verbosity\n        self.validate_conflicts(vault_opts=True)\n        self.validate_conflicts(inventory_opts=True)"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Insecure TLS configuration: weak protocol version, disabled certificate validation, or unverified context.",
+          "patch": "def _poll_with_exponential_delay(\n    request, execute_num_retries, max_n, is_done_func, is_error_func\n) -> Response:\n    \"\"\"\n    Execute request with exponential delay.\n\n    This method is intended to handle and retry in case of api-specific errors,\n    such as 429 \"Too Many Requests\", unlike the `request.execute` which handles\n    lower level errors like `ConnectionError`/`socket.timeout`/`ssl.SSLError`.\n\n    :param request: request to be executed.\n    :param execute_num_retries: num_retries for `request.execute` method.\n    :param max_n: number of times to retry request in this method.\n    :param is_done_func: callable to determine if operation is done.\n    :param is_error_func: callable to determine if operation is failed.\n    :return: response\n    \"\"\"\n    for i in range(0, max_n):\n        try:\n            response = request.execute(num_retries=execute_num_retries)\n            if is_error_func(response):\n                raise ValueError(f\"The response contained an error: {response}\")\n            if is_done_func(response):\n                log.info(\"Operation is done: %s\", response)\n                return response\n\n            time.sleep((2**i) + random.random())\n        except HttpError as e:\n            if e.resp.status != 429:\n                log.info(\"Something went wrong. Not retrying: %s\", format(e))\n                raise\n            else:\n                time.sleep((2**i) + random.random())\n\n    raise ValueError(f\"Connection could not be established after {max_n} retries.\")"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of SHA-1 which is not collision-resistant.",
+          "patch": "def get_ogr_db_string():\n    \"\"\"\n    Construct the DB string that GDAL will use to inspect the database.\n    GDAL will create its own connection to the database, so we re-use the\n    connection settings from the Django test.\n    \"\"\"\n    db = connections.databases['default']\n\n    # Map from the django backend into the OGR driver name and database identifier\n    # http://www.gdal.org/ogr/ogr_formats.html\n    #\n    # TODO: Support Oracle (OCI).\n    drivers = {\n        'django.contrib.gis.db.backends.postgis': ('PostgreSQL', \"PG:dbname='%(db_name)s'\"),\n        'django.contrib.gis.db.backends.mysql': ('MySQL', 'MYSQL:\"%(db_name)s\"'),\n        'django.contrib.gis.db.backends.spatialite': ('SQLite', '%(db_name)s'),\n    }\n\n    drv_name, db_str, param_sep = drivers[db['ENGINE']]\n\n    # Ensure that GDAL library has driver support for the database.\n    try:\n        Driver(drv_name)\n    except:\n        return None\n\n    # SQLite/Spatialite in-memory databases\n    if db['NAME'] == \":memory:\":\n        return None\n\n    # Build the params of the OGR database connection string\n    params = [db_str % {'db_name': db['NAME']}]\n    def add(key, template):\n        value = db.get(key, None)\n        # Don't add the parameter if it is not in django's settings\n        if value:\n            params.append(template % value)\n    add('HOST', \"host='%s'\")\n    add('PORT', \"port='%s'\")\n    add('USER', \"user='%s'\")\n    add('PASSWORD', \"password='%s'\")\n\n    return param_sep.join(params)"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of SHA-1 which is not collision-resistant.",
+          "patch": "def get_records(self, hql, parameters=None):\n        \"\"\"\n        Get a set of records from Presto\n        \"\"\"\n        try:\n            return super(PrestoHook, self).get_records(\n                self._strip_sql(hql), parameters)\n        except DatabaseError as e:\n            obj = json.loads(str(e))\n            raise PrestoException(obj['message'])"
+        },
+        {
+          "verdict": "Confirm",
+          "cwe": "CWE-326",
+          "severity": "WARNING"
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of MD5 which is not collision-resistant.",
+          "patch": "def parse(self):\n        ''' create an options parser for bin/ansible '''\n\n        self.parser = CLI.base_parser(\n            usage='%prog -U <repository> [options] [<playbook.yml>]',\n            connect_opts=True,\n            vault_opts=True,\n            runtask_opts=True,\n            subset_opts=True,\n            inventory_opts=True,\n            module_opts=True,\n            runas_prompt_opts=True,\n            desc=\"pulls playbooks from a VCS repo and executes them for the local host\",\n        )\n\n        # options unique to pull\n        self.parser.add_option('--purge', default=False, action='store_true', help='purge checkout after playbook run')\n        self.parser.add_option('-o', '--only-if-changed', dest='ifchanged', default=False, action='store_true',\n                               help='only run the playbook if the repository has been updated')\n        self.parser.add_option('-s', '--sleep', dest='sleep', default=None,\n                               help='sleep for random interval (between 0 and n number of seconds) before starting. '\n                                    'This is a useful way to disperse git requests')\n        self.parser.add_option('-f', '--force', dest='force', default=False, action='store_true',\n                               help='run the playbook even if the repository could not be updated')\n        self.parser.add_option('-d', '--directory', dest='dest', default=None, help='directory to checkout repository to')\n        self.parser.add_option('-U', '--url', dest='url', default=None, help='URL of the playbook repository')\n        self.parser.add_option('--full', dest='fullclone', action='store_true', help='Do a full clone, instead of a shallow one.')\n        self.parser.add_option('-C', '--checkout', dest='checkout',\n                               help='branch/tag/commit to checkout. Defaults to behavior of repository module.')\n        self.parser.add_option('--accept-host-key', default=False, dest='accept_host_key', action='store_true',\n                               help='adds the hostkey for the repo url if not already added')\n        self.parser.add_option('-m', '--module-name', dest='module_name', default=self.DEFAULT_REPO_TYPE,\n                               help='Repository module name, which ansible will use to check out the repo. Default is %s.' % self.DEFAULT_REPO_TYPE)\n        self.parser.add_option('--verify-commit', dest='verify', default=False, action='store_true',\n                               help='verify GPG signature of checked out commit, if it fails abort running the playbook. '\n                                    'This needs the corresponding VCS module to support such an operation')\n        self.parser.add_option('--clean', dest='clean', default=False, action='store_true',\n                               help='modified files in the working repository will be discarded')\n        self.parser.add_option('--track-subs', dest='tracksubs', default=False, action='store_true',\n                               help='submodules will track the latest changes. This is equivalent to specifying the --remote flag to git submodule update')\n        self.parser.add_option(\"--check\", default=False, dest='check', action='store_true',\n                               help=\"don't make any changes; instead, try to predict some of the changes that may occur\")\n\n        # for pull we don't want a default\n        self.parser.set_defaults(inventory=None)\n\n        super(PullCLI, self).parse()\n\n        if not self.options.dest:\n            hostname = socket.getfqdn()\n            # use a hostname dependent directory, in case of $HOME on nfs\n            self.options.dest = os.path.join('~/.ansible/pull', hostname)\n        self.options.dest = os.path.expandvars(os.path.expanduser(self.options.dest))\n\n        if self.options.sleep:\n            try:\n                secs = random.randint(0, int(self.options.sleep))\n                self.options.sleep = secs\n            except ValueError:\n                raise AnsibleOptionsError(\"%s is not a number.\" % self.options.sleep)\n\n        if not self.options.url:\n            raise AnsibleOptionsError(\"URL for repository not specified, use -h for help\")\n\n        if self.options.module_name not in self.SUPPORTED_REPO_MODULES:\n            raise AnsibleOptionsError(\"Unsupported repo module %s, choices are %s\" % (self.options.module_name, ','.join(self.SUPPORTED_REPO_MODULES)))\n\n        display.verbosity = self.options.verbosity\n        self.validate_conflicts(vault_opts=True)"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        }
+      ]
+    },
+    "agent": {
+      "metrics": {
+        "n": 29,
+        "gt_confirm": 14,
+        "gt_reject": 15,
+        "confirm_recall": 0.8571,
+        "fpr": 0.0667,
+        "accuracy": 0.8966
+      },
+      "preds": [
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        }
+      ]
+    }
+  }
+}

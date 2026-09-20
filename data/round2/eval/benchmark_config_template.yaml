@@ -1,0 +1,14 @@
+model:
+  kind: cloud
+  model_id: qwen3-4b-instruct-2507-510facca98f1
+
+static:
+  rules: rules/
+
+splits:
+  detect: data/splits/detect_test.jsonl
+  domain: data/splits/domain_eval.jsonl
+
+systems:
+  - llm
+  - agent

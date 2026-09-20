@@ -1,0 +1,928 @@
+AI-Assisted Cryptographic Code Security Auditor
+AI辅助密码代码安全审计系统——详细项目计划书
+
+一、项目基本信息
+项目名称：
+AI-Assisted Cryptographic Code Security Auditor
+
+中文名称：
+AI辅助密码代码安全审计系统
+
+项目定位：
+构建一个结合静态程序分析、密码安全规则、大语言模型（LLM）和Agent机制的密码代码安全审计系统，用于识别常见密码误用、分析漏洞上下文、进行CWE分类、风险评估并生成修复建议。
+
+项目目标：
+1. 建立密码误用（Cryptographic Misuse）数据集。
+2. 建立可扩展的密码安全静态分析规则库。
+3. 实现“代码 → 静态分析 → LLM → 安全报告”的完整Pipeline。
+4. 将Qwen3-4B作为基础模型，先进行Zero/Few-shot Baseline。
+5. 使用QLoRA进行密码安全领域适配，比较微调前后的效果。
+6. 引入Agent机制，实现静态分析结果的上下文理解、二次验证和误报过滤。
+7. 通过系统实验比较不同架构的检测能力。
+8. 最终形成GitHub项目、技术报告、Demo和可写入CV/PS的AI项目经历。
+
+二、项目背景与个人技术路线
+
+项目依托的已有背景：
+- 网络空间安全本科
+- 密码学基础
+- AES / SM3 / SM4等密码算法学习与实现
+- 差分密码分析
+- 漏洞挖掘与安全审计
+- Python / C++开发
+- XGBoost机器学习项目
+- Computer Vision / 游戏AI项目
+- Qwen3-4B QLoRA微调
+- LLM安全评估
+
+项目希望形成的技术路线：
+密码学
+→ 网络安全
+→ 密码代码审计
+→ 机器学习
+→ LLM
+→ LLM Fine-tuning
+→ AI Agent
+→ AI Security Application
+
+项目的核心研究问题：
+Can domain-adapted LLMs and tool-augmented agents improve the analysis and triage of cryptographic implementation risks?
+
+三、总体系统架构
+
+用户提交Python/C/C++等密码相关代码
+        ↓
+语言识别
+        ↓
+AST / Code Parser
+        ↓
+Cryptographic Static Analysis
+        ↓
+Semgrep + Custom Rules
+        ↓
+Candidate Findings
+        ↓
+LLM Security Agent
+        ↓
+上下文分析
+CWE分类
+风险评估
+误报判断
+修复建议
+        ↓
+结构化Security Report
+
+最终系统输出：
+- 文件位置
+- 行号
+- Finding
+- CWE
+- Severity
+- Confidence
+- Root Cause
+- Security Impact
+- Recommendation
+- Suggested Patch
+- Verification Result
+
+四、数据获取总体方案
+
+数据采用四层结构：
+
+第一层：标准安全知识
+第二层：静态分析规则
+第三层：自己构造的漏洞/安全代码
+第四层：真实开源项目代码
+
+最终：
+CWE知识库
++
+Semgrep规则
++
+Synthetic Code
++
+Real-world Code
+↓
+数据清洗
+↓
+人工验证
+↓
+统一格式
+↓
+Train / Validation / Test
+
+五、第一类数据：CWE标准数据
+
+主要来源：
+MITRE Common Weakness Enumeration（CWE）。
+
+重点关注：
+CWE-321  Hard-coded Cryptographic Key
+CWE-327  Broken or Risky Cryptographic Algorithm
+CWE-328  Reversible One-Way Hash
+CWE-329  Predictable IV with CBC Mode
+CWE-330  Insufficiently Random Values
+CWE-338  Weak PRNG
+CWE-326  Inadequate Encryption Strength
+CWE-759  One-Way Hash without a Salt
+CWE-916  Insufficient Computational Effort
+
+获取字段：
+- CWE ID
+- Name
+- Description
+- Common Consequences
+- Potential Mitigations
+- Detection Methods
+- References
+- Related weaknesses
+
+保存为：
+data/raw/cwe/
+cwe_database.json
+
+数据用途：
+1. 建立漏洞标签体系。
+2. 为规则设计提供标准。
+3. 为LLM Prompt/RAG提供知识。
+4. 为最终CWE分类评估提供Ground Truth。
+
+注意：
+CWE数据主要作为标准知识和标签来源，不应简单复制网页全文作为训练数据。
+
+六、第二类数据：Semgrep规则
+
+主要来源：
+- Semgrep Community Rules
+- 其他公开安全规则仓库
+- 自己设计和实现的规则
+
+处理方式：
+Existing Rules
+→ 理解规则逻辑
+→ 筛选密码相关规则
+→ 根据项目需要重新实现/定制
+→ 建立自己的crypto_rules目录
+
+目录：
+rules/
+├── weak_algorithm.yaml
+├── weak_mode.yaml
+├── hardcoded_key.yaml
+├── weak_random.yaml
+├── predictable_iv.yaml
+└── tls_misconfiguration.yaml
+
+第一版建议实现10类规则：
+
+CRYPTO-001  MD5
+CRYPTO-002  SHA-1
+CRYPTO-003  DES / 3DES
+CRYPTO-004  RC4
+CRYPTO-005  AES-ECB
+CRYPTO-006  Predictable IV
+CRYPTO-007  Hard-coded Key
+CRYPTO-008  Weak Randomness
+CRYPTO-009  Weak Key Length
+CRYPTO-010  Insecure TLS Configuration
+
+每条规则建议包含：
+- rule_id
+- name
+- cwe
+- severity
+- languages
+- patterns
+- description
+- recommendation
+- references
+
+示例：
+
+id: CRYPTO-005
+name: AES ECB Mode
+cwe: CWE-327
+severity: HIGH
+language: Python
+pattern: AES.MODE_ECB
+description:
+  Detect use of AES in ECB mode.
+recommendation:
+  Use an appropriate authenticated encryption mode such as AES-GCM.
+
+七、第三类数据：Synthetic Vulnerable/Secure Code
+
+这是项目自己的核心数据。
+
+为每种密码误用构造：
+- Vulnerable Code
+- Secure/Improved Code
+- CWE
+- Severity
+- Explanation
+- Recommendation
+
+示例：
+
+Vulnerable:
+cipher = AES.new(key, AES.MODE_ECB)
+
+标签：
+CWE-327
+Severity: HIGH
+Finding: AES-ECB mode
+
+Secure/Improved：
+cipher = AES.new(key, AES.MODE_GCM)
+
+注意：
+不能简单认为“替换成另一个算法”就是安全修复。
+例如密码存储中不能机械地把MD5替换为SHA-256，而应考虑Argon2id、scrypt、bcrypt等专用密码哈希/KDF方案。
+
+第一阶段目标：
+10类漏洞 × 50~100个样本
+≈ 500~1000个Synthetic samples。
+
+数据生成方式：
+1. 手工编写典型样例。
+2. 对代码模板进行参数化变换。
+3. 改变变量名。
+4. 改变代码结构。
+5. 加入不同上下文。
+6. 生成同一漏洞的多种实现形式。
+7. 使用LLM辅助生成候选代码。
+8. 最终人工审核。
+
+LLM生成的数据不能直接视为Ground Truth，必须人工或规则验证。
+
+八、第四类数据：真实开源代码
+
+目标：
+使用真实开源项目检验系统，而不是只测试人工构造代码。
+
+候选项目：
+- Python cryptography projects
+- C/C++ cryptographic projects
+- TLS implementations
+- Authentication systems
+- Open-source security projects
+- Encryption libraries
+
+获取流程：
+GitHub Repository
+→ 下载/Clone
+→ 固定commit/version
+→ 提取.py/.c/.cpp等文件
+→ Semgrep扫描
+→ 筛选密码相关Finding
+→ 人工确认
+→ 保存代码上下文和标签
+
+第一阶段：
+10~20个开源项目即可。
+
+每条真实样本记录：
+- repository
+- commit
+- license
+- file path
+- language
+- code snippet
+- line number
+- finding
+- CWE
+- severity
+- verification status
+
+注意：
+必须保留数据来源和许可证信息。
+不要使用来源不明的数据集。
+不要直接复制第三方数据并声称为自己构建。
+
+九、数据集统一格式
+
+推荐使用JSONL。
+
+示例：
+
+{
+  "id": "crypto_0001",
+  "language": "python",
+  "code": "cipher = AES.new(key, AES.MODE_ECB)",
+  "finding": "AES ECB mode",
+  "cwe": "CWE-327",
+  "severity": "HIGH",
+  "root_cause": "ECB mode does not provide semantic security.",
+  "impact": "Identical plaintext blocks can produce identical ciphertext blocks.",
+  "recommendation": "Use an appropriate authenticated encryption mode such as AES-GCM.",
+  "source": "synthetic"
+}
+
+真实数据增加：
+- repository
+- commit
+- license
+- file
+- line
+
+建议建立：
+data/
+├── raw/
+│   ├── cwe/
+│   ├── semgrep/
+│   └── github/
+├── processed/
+│   ├── vulnerable.jsonl
+│   └── secure.jsonl
+└── dataset/
+    ├── train.jsonl
+    ├── validation.jsonl
+    └── test.jsonl
+
+十、数据清洗与验证
+
+Pipeline：
+
+Raw Data
+→ 去重
+→ 代码规范化
+→ 删除无关代码
+→ 标签统一
+→ CWE映射
+→ Severity统一
+→ 人工验证
+→ 数据分割
+
+检查项目：
+1. CWE是否正确。
+2. Finding是否真实存在。
+3. Vulnerable/Secure标签是否正确。
+4. 修复建议是否合理。
+5. 是否存在重复样本。
+6. Train/Test是否存在代码泄漏。
+7. 同一仓库的高度相似代码不要随机拆到Train和Test中。
+
+这一点非常重要：
+如果同一个项目的相似代码同时出现在训练集和测试集，会造成数据泄漏，使模型表现虚高。
+
+十一、推荐数据规模
+
+第一阶段：
+Synthetic：500~1000
+Real-world：200~500
+Manually verified：300+
+
+最终目标：
+约1000~2000个高质量标注样本。
+
+不追求巨大数据量。
+优先保证：
+- 标签准确
+- 来源清晰
+- 类别均衡
+- 测试集独立
+- 人工验证
+
+十二、模型训练策略
+
+不建议一开始就训练。
+
+分三个阶段。
+
+Stage 1：Base LLM Baseline
+
+模型：
+Qwen3-4B
+
+输入：
+代码 + Static Analysis Finding
+
+输出：
+Security Analysis
+
+Pipeline：
+Code
+→ Semgrep
+→ Finding
+→ Qwen3-4B
+→ Security Report
+
+记录Baseline：
+- CWE Classification
+- Severity Classification
+- Explanation
+- Recommendation
+- False Positive Triage
+
+Stage 2：QLoRA Fine-tuning
+
+使用项目已有的Qwen3-4B QLoRA训练经验。
+
+训练格式：
+
+Input:
+Language: Python
+Static Finding: AES-ECB detected
+Code:
+cipher = AES.new(key, AES.MODE_ECB)
+
+Output:
+CWE: CWE-327
+Severity: HIGH
+Root Cause: ...
+Security Impact: ...
+Recommendation: ...
+
+训练流程：
+Dataset
+→ Tokenization
+→ QLoRA
+→ Qwen3-4B
+→ Validation
+→ Checkpoint
+→ Test
+
+目标不是把模型训练成“密码专家”，而是研究：
+Domain-specific fine-tuning是否能够提高LLM对密码误用的分析能力。
+
+Stage 3：Agent
+
+加入工具调用和二次验证。
+
+Agent流程：
+Code
+→ Static Analysis
+→ Candidate Finding
+→ Agent Observation
+→ Context Analysis
+→ Tool Action
+→ CWE Check
+→ Risk Check
+→ False Positive Check
+→ Final Report
+
+Agent可以调用：
+- Semgrep
+- AST parser
+- Crypto rule database
+- CWE knowledge base
+
+十三、Agent设计
+
+Agent采用Observation-Action思想。
+
+Observation：
+- Source code
+- AST
+- Static analysis result
+- Relevant code context
+
+Reasoning：
+- 判断是否真的使用了密码功能
+- 分析数据流/上下文
+- 判断Finding是否成立
+- 判断CWE
+- 判断风险
+
+Action：
+- 调用Semgrep
+- 查询规则
+- 查询CWE
+- 请求代码上下文
+- 生成修复建议
+
+最终：
+Verification:
+CONFIRMED / REJECTED / UNCERTAIN
+
+十四、False Positive过滤
+
+这是系统的重要功能。
+
+示例：
+
+Semgrep：
+AES-ECB detected
+
+Agent：
+→ 检查代码上下文
+→ 判断ECB实际用途
+→ 判断是否为测试代码
+→ 判断是否处理敏感数据
+→ 检查是否存在额外安全机制
+→ 输出：
+Confirmed / False Positive / Needs Review
+
+因此项目不只是：
+LLM解释漏洞
+
+而是：
+LLM-assisted security finding triage。
+
+十五、结构化输出
+
+最终建议使用JSON：
+
+{
+  "file": "crypto.py",
+  "line": 15,
+  "finding": "AES-ECB mode",
+  "cwe": "CWE-327",
+  "severity": "HIGH",
+  "confidence": 0.94,
+  "root_cause": "...",
+  "security_impact": "...",
+  "recommendation": "...",
+  "suggested_patch": "...",
+  "verification": "confirmed"
+}
+
+然后：
+JSON
+→ Markdown
+→ Human-readable Security Report
+
+十六、完整实验设计
+
+至少比较以下系统：
+
+Baseline 1：
+Static Analysis only
+
+Baseline 2：
+Qwen3-4B only
+
+Baseline 3：
+Static Analysis + Base Qwen3-4B
+
+Baseline 4：
+Static Analysis + Fine-tuned Qwen3-4B
+
+Baseline 5：
+Static Analysis + Fine-tuned Qwen3-4B + Agent
+
+实验表：
+
+System | Detection | CWE | Severity | False Positive | Explanation
+Static only | | | | |
+Base LLM | | | | |
+Static + LLM | | | | |
+Fine-tuned LLM | | | | |
+Full Agent | | | | |
+
+十七、Evaluation指标
+
+1. Detection Accuracy
+是否发现问题。
+
+2. CWE Classification Accuracy
+是否正确分类。
+
+3. Severity Accuracy
+风险等级是否合理。
+
+4. False Positive Rate
+误报率。
+
+5. Explanation Quality
+人工评价：
+Correct / Partially Correct / Incorrect
+
+6. Recommendation Correctness
+修复建议是否正确、安全。
+
+7. Patch Validity（可选）
+如果生成Patch：
+- 是否能运行
+- 是否真正消除问题
+- 是否引入新问题
+
+十八、项目目录
+
+crypto-ai-auditor/
+│
+├── README.md
+│
+├── data/
+│   ├── raw/
+│   │   ├── cwe/
+│   │   ├── semgrep/
+│   │   └── github/
+│   ├── processed/
+│   └── dataset/
+│       ├── train.jsonl
+│       ├── validation.jsonl
+│       └── test.jsonl
+│
+├── rules/
+│   ├── weak_algorithm.yaml
+│   ├── weak_mode.yaml
+│   ├── hardcoded_key.yaml
+│   ├── weak_random.yaml
+│   └── predictable_iv.yaml
+│
+├── analyzer/
+│   ├── semgrep_runner.py
+│   ├── parser.py
+│   └── extractor.py
+│
+├── agent/
+│   ├── agent.py
+│   ├── prompts.py
+│   └── verifier.py
+│
+├── model/
+│   ├── inference.py
+│   └── finetune.py
+│
+├── evaluation/
+│   ├── benchmark.py
+│   ├── metrics.py
+│   └── results.py
+│
+├── reports/
+│
+└── docs/
+    ├── architecture.md
+    ├── dataset.md
+    └── experiment.md
+
+十九、7天MVP计划
+
+Day 1：
+- 创建GitHub仓库
+- 建立目录结构
+- 整理10类CWE
+- 建立cwe_database.json
+
+Day 2：
+- 安装Semgrep
+- 实现5条密码安全规则
+- 建立基础测试样本
+
+Day 3：
+- 完成10条规则
+- 构造100~200个Synthetic samples
+- 建立统一JSONL格式
+
+Day 4：
+- 实现Code → Semgrep → JSON Finding
+- 接入Qwen3-4B
+
+Day 5：
+- 完成Finding → Qwen → Security Report
+- 建立Base LLM baseline
+
+Day 6：
+- 加入Agent
+- 增加Context Analysis
+- 增加False Positive Verification
+
+Day 7：
+- 建立100个以上测试样本
+- 跑初步Benchmark
+- 保存结果
+- 完成README和Demo
+
+二十、第二阶段：QLoRA实验
+
+在MVP完成之后：
+
+1. 扩展Dataset到1000~2000条。
+2. 清理和人工验证。
+3. 划分Train/Validation/Test。
+4. 对Qwen3-4B进行QLoRA。
+5. 保存多个checkpoint。
+6. 比较Base与Fine-tuned模型。
+7. 分析Loss和测试性能。
+8. 选择最佳checkpoint。
+9. 接入Agent。
+10. 完成最终Benchmark。
+
+二十一、第三阶段：真实项目验证
+
+选择10~20个开源项目。
+
+对每个项目：
+1. 运行静态分析。
+2. 获取Candidate Findings。
+3. LLM Agent进行二次分析。
+4. 人工验证。
+5. 统计：
+   - TP
+   - FP
+   - FN
+   - CWE Accuracy
+   - Severity Accuracy
+
+最终证明：
+系统不仅能够处理Synthetic Code，也能处理真实工程代码。
+
+二十二、项目安全边界
+
+本项目定位为防御性安全研究。
+
+主要目标：
+- Cryptographic misuse detection
+- Secure coding analysis
+- Vulnerability triage
+- Security recommendation
+
+不以：
+- 自动攻击真实系统
+- 自动生成恶意利用代码
+- 自动攻击第三方服务
+作为项目目标。
+
+真实代码测试应优先使用：
+- 本地代码
+- 自己编写的测试程序
+- 明确允许分析的开源项目
+
+二十三、最终成果
+
+最低成果：
+1. GitHub Repository
+2. 完整MVP
+3. 10类密码安全规则
+4. 500+数据样本
+5. Qwen3-4B baseline
+6. 自动安全报告
+7. Benchmark
+
+理想成果：
+1. 1000~2000高质量数据
+2. QLoRA Fine-tuned Qwen3-4B
+3. Agent
+4. False Positive Triage
+5. Real-world evaluation
+6. Demo视频
+7. 技术报告
+8. GitHub README
+9. Architecture Diagram
+
+二十四、与现有Qwen项目的结合
+
+现有项目：
+Qwen3-4B QLoRA + LLM Safety Evaluation
+
+本项目：
+AI-Assisted Cryptographic Code Security Auditor
+
+两者结合：
+
+LLM Fine-tuning
+↓
+Domain Adaptation
+↓
+Cybersecurity Domain
+↓
+Cryptographic Security
+↓
+AI Security Auditor
+
+最终形成研究方向：
+
+How does domain-specific fine-tuning affect the capability of an open-source LLM to analyze cryptographic security issues?
+
+这会使两个项目形成连续的技术路线，而不是两个孤立项目。
+
+二十五、CV项目描述目标
+
+项目完成后可使用类似表述：
+
+AI-Assisted Cryptographic Code Security Auditor
+- Developed an LLM-assisted cryptographic code auditing system integrating Semgrep-based static analysis, CWE knowledge, and a QLoRA-adapted Qwen3-4B model to detect and triage cryptographic misuse.
+- Evaluated base and fine-tuned LLMs across cryptographic misuse detection, CWE classification, severity assessment, and false-positive triage.
+
+只有在实验真正完成并获得结果后，再加入具体性能数字。
+
+二十六、PS中的叙事价值
+
+项目可用于形成以下申请故事：
+
+过去：
+I studied cybersecurity and cryptographic algorithms.
+
+问题意识：
+Traditional security auditing often relies heavily on manual expert analysis.
+
+AI转向：
+I became interested in whether LLMs could assist security professionals in analyzing increasingly complex software systems.
+
+实践：
+I explored LLM fine-tuning and developed an AI-assisted cryptographic code security auditor.
+
+进一步：
+The project showed me that the value of AI is not simply generating code or predictions, but integrating intelligent models with domain-specific tools and real-world workflows.
+
+AIE连接：
+This experience strengthened my interest in developing practical AI systems and eventually transforming technical ideas into deployable applications.
+
+二十七、数据来源记录规范
+
+建立：
+data/dataset_metadata.csv
+
+字段：
+sample_id
+source_type
+source_url
+repository
+commit
+license
+cwe
+language
+vulnerability_type
+generated_or_real
+verification_status
+split
+
+对于Synthetic：
+source_type = synthetic
+generator = manual / LLM-assisted
+verified = yes/no
+
+对于GitHub：
+repository
+commit
+license
+file path
+
+对于CWE：
+CWE ID
+official reference
+
+核心原则：
+任何训练/测试样本都必须能够追溯来源。
+
+二十八、最终Pipeline总览
+
+数据层：
+
+CWE
++
+Semgrep Rules
++
+Synthetic Code
++
+Real-world Code
+↓
+Data Collection
+↓
+Cleaning
+↓
+Labeling
+↓
+Human Verification
+↓
+Train / Val / Test
+
+模型层：
+
+Qwen3-4B Base
+↓
+Baseline
+↓
+QLoRA
+↓
+Fine-tuned Qwen3-4B
+
+系统层：
+
+Source Code
+↓
+Parser
+↓
+Static Analysis
+↓
+Candidate Findings
+↓
+LLM Agent
+↓
+Context Analysis
+↓
+CWE / Severity
+↓
+False Positive Verification
+↓
+Recommendation
+↓
+Security Report
+
+评估层：
+
+Static Only
+vs
+Base LLM
+vs
+Static + Base LLM
+vs
+Static + Fine-tuned LLM
+vs
+Static + Fine-tuned LLM + Agent
+
+最终目标：
+构建一个能够体现
+“Cybersecurity + Cryptography + LLM + Fine-tuning + Agent + AI Application”
+的完整AI安全项目。

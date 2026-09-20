@@ -1,0 +1,19 @@
+rules:
+  - id: CRYPTO-004
+    patterns:
+      - pattern-either:
+          - pattern: |
+              from Crypto.Cipher import ARC4
+              ...
+              ARC4.new(...)
+          - pattern: |
+              import Crypto.Cipher.ARC4
+              ...
+    languages:
+      - python
+    message: "Use of RC4 which has multiple statistical biases and is deprecated."
+    severity: WARNING
+    metadata:
+      cwe: "CWE-327"
+      severity: HIGH
+    fix: "Use AES-256-GCM or ChaCha20-Poly1305."

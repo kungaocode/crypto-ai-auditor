@@ -1,0 +1,128 @@
+[
+  {
+    "idx": 0,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def register(username, password):",
+    "explanation": "A password is stored as raw MD5. Passwords must use a slow, salted KDF (scrypt/argon2/bcrypt). MD5 is fast and collision-broken -> Confirm."
+  },
+  {
+    "idx": 1,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def set_password(user, raw):",
+    "explanation": "SHA-1 hashes a user password for storage. Passwords are real secrets -> Confirm."
+  },
+  {
+    "idx": 2,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def login(user, pw):",
+    "explanation": "MD5 hashes a password to authenticate the user. Passwords are real secrets -> Confirm."
+  },
+  {
+    "idx": 3,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "An AES-ECB encrypted record is a real secret -> Confirm."
+  },
+  {
+    "idx": 4,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "CBC mode encrypts a user password. A fixed IV leaks pattern -> Confirm."
+  },
+  {
+    "idx": 5,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "The API_SECRET is a real cryptographic key protecting data in transit. Real secret -> Confirm."
+  },
+  {
+    "idx": 6,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "import requests",
+    "explanation": "The `verify=False` disables TLS certificate validation. This protects a real secret (card token) in transit -> Confirm."
+  },
+  {
+    "idx": 7,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.PublicKey import RSA",
+    "explanation": "RSA-1024 is a weak key length. The key protects an authenticated channel -> Confirm."
+  },
+  {
+    "idx": 8,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "import random, string",
+    "explanation": "A password reset token is derived from weak randomness. Real secret -> Confirm."
+  },
+  {
+    "idx": 9,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import DES",
+    "explanation": "DES protects a password vault key. 56-bit DES is insecure -> Confirm."
+  },
+  {
+    "idx": 10,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import ARC4",
+    "explanation": "RC4 is a weak stream cipher. The flagged call encrypts a real secret (a credential) with it -> Confirm."
+  },
+  {
+    "idx": 11,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def make_api_signature(secret, body):",
+    "explanation": "The MD5 digest of the secret + body becomes an API signature to authenticate a request. The secret is hashed and concatenated with data -> real security purpose."
+  },
+  {
+    "idx": 12,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def test_known_digest():",
+    "explanation": "MD5 appears only in a test that verifies the library produces a known digest. No security property -> Reject."
+  },
+  {
+    "idx": 13,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def file_changed(path, old_digest):",
+    "explanation": "MD5 detects if a file changed -> non-security purpose."
+  },
+  {
+    "idx": 14,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def cache_key(rows):",
+    "explanation": "MD5 fingerprints the rows for cache keying -> non-security purpose."
+  },
+  {
+    "idx": 15,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def shard(bucket):",
+    "explanation": "SHA-1 maps a bucket name to one of 64 shards for load distribution. No secret -> Reject."
+  },
+  {
+    "idx": 16,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def test_token_smoke():",
+    "explanation": "SHA-1 appears in a unit test that only verifies the digest of a demo string against an expected value. It is not protecting any real secret -> Reject."
+  },
+  {
+    "idx": 17,
+    "gt": "Reject",
+    "pred": "?",
+    "name": "def jitter_delay(retries):",
+    "explanation": ""
+  }
+]

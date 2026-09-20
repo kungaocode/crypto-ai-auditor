@@ -1,0 +1,20 @@
+# Benchmark config (roadmap §7 dual-slice). Point model.kind at your deployed
+# fine-tuned model when ready; 'mock' gives a deterministic CI/self-test run.
+
+model:
+  kind: mock          # mock | cloud
+  model_id: qwen3-4b  # used when kind=cloud (env: LLM_MODEL_ID)
+  # api_key:          # optional override (env: LLM_API_KEY)
+  # base_url:         # optional override (env: LLM_BASE_URL)
+
+static:
+  rules: rules/
+
+splits:
+  detect: data/splits/detect_test.jsonl
+  domain: data/splits/domain_eval.jsonl
+
+systems:
+  - static
+  - llm
+  - agent

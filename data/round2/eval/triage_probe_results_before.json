@@ -1,0 +1,128 @@
+[
+  {
+    "gt": "Confirm",
+    "verdict": "Confirm",
+    "explanation": "Use of MD5 which is not collision-resistant.",
+    "idx": 0,
+    "name": "def register(username, password):"
+  },
+  {
+    "gt": "Confirm",
+    "verdict": "Confirm",
+    "explanation": "Use of SHA-1 which is not collision-resistant.",
+    "idx": 1,
+    "name": "def set_password(user, raw):"
+  },
+  {
+    "gt": "Confirm",
+    "verdict": "Confirm",
+    "explanation": "Use of MD5 which is not collision-resistant.",
+    "idx": 2,
+    "name": "def login(user, pw):"
+  },
+  {
+    "gt": "Confirm",
+    "verdict": "Confirm",
+    "explanation": "AES-ECB mode is vulnerable to pattern leakage in ciphertext.",
+    "idx": 3,
+    "name": "from Crypto.Cipher import AES"
+  },
+  {
+    "gt": "Confirm",
+    "verdict": "Confirm",
+    "explanation": "Predictable IV used in CBC mode.",
+    "idx": 4,
+    "name": "from Crypto.Cipher import AES"
+  },
+  {
+    "gt": "Confirm",
+    "verdict": "Confirm",
+    "explanation": "Hard-coded cryptographic key in source.",
+    "idx": 5,
+    "name": "from Crypto.Cipher import AES"
+  },
+  {
+    "gt": "Confirm",
+    "verdict": "Confirm",
+    "explanation": "Insecure TLS: certificate validation disabled.",
+    "idx": 6,
+    "name": "import requests"
+  },
+  {
+    "gt": "Confirm",
+    "verdict": "Confirm",
+    "explanation": "Weak key length: 1024-bit RSA keys are considered insecure and should be replaced with at least 2048-bit keys.",
+    "idx": 7,
+    "name": "from Crypto.PublicKey import RSA"
+  },
+  {
+    "gt": "Confirm",
+    "verdict": "Confirm",
+    "explanation": "Non-cryptographic random used to derive a secret token.",
+    "idx": 8,
+    "name": "import random, string"
+  },
+  {
+    "gt": "Confirm",
+    "verdict": "Confirm",
+    "explanation": "Use of DES (56-bit, deprecated cipher).",
+    "idx": 9,
+    "name": "from Crypto.Cipher import DES"
+  },
+  {
+    "gt": "Confirm",
+    "verdict": "Reject",
+    "explanation": "Hash or signature used in place of MAC; rule too noisy.",
+    "idx": 10,
+    "name": "from Crypto.Cipher import ARC4"
+  },
+  {
+    "gt": "Confirm",
+    "verdict": "Confirm",
+    "explanation": "Use of MD5 which is not collision-resistant.",
+    "idx": 11,
+    "name": "def make_api_signature(secret, body):"
+  },
+  {
+    "gt": "Reject",
+    "verdict": "Reject",
+    "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+    "idx": 12,
+    "name": "def test_known_digest():"
+  },
+  {
+    "gt": "Reject",
+    "verdict": "Confirm",
+    "explanation": "Use of MD5 which is not collision-resistant.",
+    "idx": 13,
+    "name": "def file_changed(path, old_digest):"
+  },
+  {
+    "gt": "Reject",
+    "verdict": "Confirm",
+    "explanation": "Use of MD5 which is not collision-resistant.",
+    "idx": 14,
+    "name": "def cache_key(rows):"
+  },
+  {
+    "gt": "Reject",
+    "verdict": "Confirm",
+    "explanation": "Use of SHA-1 which is not collision-resistant.",
+    "idx": 15,
+    "name": "def shard(bucket):"
+  },
+  {
+    "gt": "Reject",
+    "verdict": "Reject",
+    "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+    "idx": 16,
+    "name": "def test_token_smoke():"
+  },
+  {
+    "gt": "Reject",
+    "verdict": "Confirm",
+    "explanation": "Non-cryptographic random used where a nonce/IV-like name is involved.",
+    "idx": 17,
+    "name": "def jitter_delay(retries):"
+  }
+]

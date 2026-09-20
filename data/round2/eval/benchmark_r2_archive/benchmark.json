@@ -1,0 +1,2618 @@
+{
+  "config": "/tmp/benchmark.ft2.yaml",
+  "model_kind": "CloudBackend",
+  "detect": {
+    "llm": {
+      "metrics": {
+        "n": 569,
+        "tp": 238,
+        "fp": 199,
+        "fn": 67,
+        "tn": 65,
+        "recall": 0.7803,
+        "precision": 0.5446,
+        "f1": 0.6415,
+        "accuracy": 0.5325,
+        "cwe_acc": 0.4328
+      },
+      "preds": [
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-359"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "explanation": "A search parameter (tag_name_pattern) is used to filter a database query without escaping or sanitizing. An attacker can inject SQL that bypasses filtering and retrieves all tags -> real finding -> Confirm."
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-295"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "VULNERABLE"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-225"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-225"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Real finding: a session is used to update state in the database without transaction isolation. A running task instance can be killed by another process that runs clear_task_instances() concurrently. Real -> Confirm"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-284"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-362"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-502"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "cwe": "CWE-327",
+          "vulnerable": true
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real -> Confirm"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Real finding: a file path is used as a secret key in a module name. Real -> Confirm"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-369"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-209"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "explanation": "A search filter on a tag name is passed directly to SQL without escaping or sanitization. An attacker can inject arbitrary SQL via the pattern -> `tag_name_pattern` -> `LIKE '%; DROP TABLE dag_tags; --%'`. Real finding -> Confirm."
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-369"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real -> Confirm"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "VULNERABLE"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-502"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-399"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Real finding: a session is used to update state in the database without transaction control. A real race condition -> Confirm."
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-502"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Real finding: a session is used to update the state of running tasks and DAG runs. A session is not a transactional unit; it's a database connection that can be reused across multiple operations. This leads to race conditions where two threads could clear a task instance and then set its state to RESTARTING, which would cause a race condition in the job scheduler. Rule: `session` is used to modify state without a transaction or lock -> Real finding."
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Real finding: a socket is bound to an unauthenticated public IP/port. Real -> Confirm."
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real -> Confirm"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-209"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-502"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-338"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-229"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-321"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "real"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        }
+      ]
+    }
+  },
+  "domain": {
+    "llm": {
+      "metrics": {
+        "n": 29,
+        "gt_confirm": 14,
+        "gt_reject": 15,
+        "confirm_recall": 0.0,
+        "fpr": 0.0,
+        "accuracy": 0.5172
+      },
+      "preds": [
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "SHA-1 is used in a test fixture to mock a file cache path, not for cryptographic signing or integrity. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "MD5 is used in a test fixture to verify a file's content digest, not for cryptographic security. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "MD5 is used in a test fixture to verify file paths, not for integrity or authentication. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "The finding is a false positive. The rule matches an admin search filter that uses `int()` to check age, which runs over HTTP/HTTPS in a web UI. No TLS configuration is present; the rule misapplies to a non-TLS security control -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "MD5 is used to detect file changes in a salt-minion configuration system, not for authentication or integrity of secrets. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "The MD5 is used in a test fixture to mock a salt return value, not for cryptographic integrity. Real finding -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "MD5 is used to generate a unique ID for an async job (j987654321) and not for integrity or authentication. It's a non-security use case -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "The MD5 finding is a false positive: the code uses MD5 to generate a deterministic database schema migration ID, not for authentication or integrity. Rule rule -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "SHA-1 is used to hash a database query result (a string of SQL output) for caching, not as a cryptographic primitive. The finding is false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "MD5 is used in a test to assert that a duplicate connection returns 409. No real security control -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "SHA-1 is used to generate a URL query string for sorting. It's not a cryptographic hash; it's just a unique identifier. Real finding -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "MD5 is used to hash a database schema name and column name into a lookup key. The result is not secret, so it's not a cryptographic primitive; rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "MD5 is used to hash a service manager name (e.g. 'systemd') from facts, not for authentication or integrity. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "SHA-1 is used to compute a digest of a database schema description for internal consistency checks, not security. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "A test fixture serializes a DAG object to JSON for assertion; no real TLS/HTTPS traffic. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "MD5 is used to compute a random sleep interval (0..N seconds) to avoid rate-limiting. It's not a cryptographic key or integrity check; just a timing heuristic. Real finding -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "MD5 is used in a test fixture to skip execution on specific OS versions; no security-sensitive data is hashed. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "The TLS context is not used here; the finding comes from a test that mocks `requests` and uses an insecure mock session. Real code uses real HTTPS with certificate validation -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "MD5 is used in a test fixture to generate a deterministic response for an assertion; no security control. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "SHA-1 is used in a test fixture to patch environment variables, not for cryptographic signing or authentication. Real finding -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "MD5 is used in a test fixture to generate a mock password hash, not for authentication or integrity. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "The MD5 is used in a test fixture to verify input schema enforcement, not for cryptographic integrity. Real finding -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "SHA-1 is used to hash a database connection string for GDAL's internal use in a test environment. The output is not secret, and the collision-resistance property is irrelevant; real finding -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "SHA-1 is used in a test to verify an HMAC signature, not for integrity of data or authentication. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "The finding is a false positive. The code uses Salt's internal network discovery to collect Docker container IPs and ports for a local minion; it does not establish any TLS connection to an external service, so the rule misapplies. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "A test suite that verifies a package manager's cache and repository state. TLS is used internally to fetch test data from a local file system; no real network connection or certificate validation occurs. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "MD5 is used to compute a checksum of a git commit, not for authentication or integrity of secrets. It's a non-security use case -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "MD5 is used in a test fixture to mock a string I/O object, not for cryptographic integrity. Real finding -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "SHA-1 is used in a test fixture to assert database state, not for cryptographic integrity. Rule false positive -> Reject.",
+          "patch": ""
+        }
+      ]
+    },
+    "agent": {
+      "metrics": {
+        "n": 29,
+        "gt_confirm": 14,
+        "gt_reject": 15,
+        "confirm_recall": 0.0,
+        "fpr": 0.0,
+        "accuracy": 0.5172
+      },
+      "preds": [
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,2515 @@
+{
+  "config": "/home/kun/.claude/jobs/dbfded6b/tmp/benchmark.ft.yaml",
+  "model_kind": "CloudBackend",
+  "detect": {
+    "llm": {
+      "metrics": {
+        "n": 569,
+        "tp": 255,
+        "fp": 217,
+        "fn": 50,
+        "tn": 47,
+        "recall": 0.8361,
+        "precision": 0.5403,
+        "f1": 0.6564,
+        "accuracy": 0.5308,
+        "cwe_acc": 0.7961
+      },
+      "preds": [
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-295"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-502"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-295"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-326"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-295"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-295"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-295"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-502"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-295"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-502"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-295"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-605"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-79"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-330"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-89"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-94"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-22"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-20"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-259"
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-78"
+        }
+      ]
+    }
+  },
+  "domain": {
+    "llm": {
+      "metrics": {
+        "n": 29,
+        "gt_confirm": 14,
+        "gt_reject": 15,
+        "confirm_recall": 0.3571,
+        "fpr": 0.0,
+        "accuracy": 0.6897
+      },
+      "preds": [
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of MD5 which is not collision-resistant.",
+          "patch": "def render_tmpl(tmplsrc,\n                    from_str=False,\n                    to_str=False,\n                    context=None,\n                    tmplpath=None,\n                    **kws):\n\n        if context is None:\n            context = {}\n\n        # Alias cmd.run to cmd.shell to make python_shell=True the default for\n        # templated calls\n        if 'salt' in kws:\n            kws['salt'] = AliasedLoader(kws['salt'])\n\n        # We want explicit context to overwrite the **kws\n        kws.update(context)\n        context = kws\n        assert 'opts' in context\n        assert 'saltenv' in context\n\n        if 'sls' in context:\n            slspath = context['sls'].replace('.', '/')\n            if tmplpath is not None:\n                context['tplpath'] = tmplpath\n                if not tmplpath.lower().replace('\\', '/').endswith('/init.sls'):\n                    slspath = os.path.dirname(slspath)\n                template = tmplpath.replace('\\', '/')\n                i = template.rfind(slspath.replace('.', '/'))\n                if i != -1:\n                    template = template[i:]\n                tpldir = os.path.dirname(template).replace('\\', '/')\n                tpldata = {\n                    'tplfile': template,\n                    'tpldir': '.' if tpldir == '' else tpldir,\n                    'tpldot': tpldir.replace('/', '.'),\n                }\n                context.update(tpldata)\n            context['slsdotpath'] = slspath.replace('/', '.')\n            context['slscolonpath'] = slspath.replace('/', ':')\n            context['sls_path'] = slspath.replace('/', '_')\n            context['slspath'] = slspath\n\n        if isinstance(tmplsrc, six.string_types):\n            if from_str:\n                tmplstr = tmplsrc\n            else:\n                try:\n                    if tmplpath is not None:\n                        tmplsrc = os.path.join(tmplpath, tmplsrc)\n                    with codecs.open(tmplsrc, 'r', SLS_ENCODING) as _tmplsrc:\n                        tmplstr = _tmplsrc.read()\n                except (UnicodeDecodeError,\n                        ValueError,\n                        OSError,\n                        IOError) as exc:\n                    if salt.utils.files.is_binary(tmplsrc):\n                        # Template is a bin file, return the raw file\n                        return dict(result=True, data=tmplsrc)\n                    log.error(\n                        'Exception occurred while reading file %s: %s',\n                        tmplsrc, exc,\n                        exc_info_on_loglevel=logging.DEBUG\n                    )\n                    raise exc\n        else:  # assume tmplsrc is file-like.\n            tmplstr = tmplsrc.read()\n            tmplsrc.close()\n        try:\n            output = render_str(tmplstr, context, tmplpath)\n            if six.PY2:\n                output = output.encode(SLS_ENCODING)\n            if salt.utils.platform.is_windows():\n                newline = False\n                if output.endswith(('\n', os.linesep)):\n                    newline = True\n                # Write out with Windows newlines\n                output = os.linesep.join(output.splitlines())\n                if newline:\n                    output += os.linesep\n\n        except SaltRenderError as exc:\n            log.exception('Rendering exception occurred')\n            #return dict(result=False, data=six.text_type(exc))\n            raise\n        except Exception:\n            return dict(result=False, data=traceback.format_exc())\n        else:\n            if to_str:  # then render as string\n                return dict(result=True, data=output)\n            with tempfile.NamedTemporaryFile('wb', delete=False, prefix=salt.utils.files.TEMPFILE_PREFIX) as outf:\n                if six.PY3:\n                    output = output.encode(SLS_ENCODING)\n                outf.write(output)\n                # Note: If nothing is replaced or added by the rendering\n                #       function, then the contents of the output file will\n                #       be exactly the same as the input.\n            return dict(result=True, data=outf.name)"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in hash table, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "verdict": "Confirm",
+          "cwe": "CWE-327",
+          "severity": "WARNING"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of SHA-1 which is not collision-resistant.",
+          "patch": "def result_headers(cl):\n    \"\"\"\n    Generates the list column headers.\n    \"\"\"\n    ordering_field_columns = cl.get_ordering_field_columns()\n    for i, field_name in enumerate(cl.list_display):\n        text, attr = label_for_field(\n            field_name, cl.model,\n            model_admin=cl.model_admin,\n            return_attr=True\n        )\n        if attr:\n            # Potentially not sortable\n            \n            # if the field is the action checkbox: no sorting and special class\n            if field_name == 'action_checkbox':\n                yield {\n                    \"text\": text,\n                    \"class_attrib\": mark_safe(' class=\"action-checkbox-column\"'),\n                    \"sortable\": False,\n                }\n                continue\n            \n            admin_order_field = getattr(attr, \"admin_order_field\", None)\n            if not admin_order_field:\n                # Not sortable\n                yield {\n                    \"text\": text,\n                    \"class_attrib\": format_html(' class=\"column-{}\"', field_name),\n                    \"sortable\": False,\n                }\n                continue\n        # OK, it is sortable if we got this far\n        th_classes = ['sortable', 'column-{}'.format(field_name)]\n        order_type = ''\n        new_order_type = 'asc'\n        sort_priority = 0\n        sorted = False\n        # Is it currently being sorted on?\n        if i in ordering_field_columns:\n            sorted = True\n            order_type = ordering_field_columns.get(i).lower()\n            sort_priority = list(ordering_field_columns).index(i) + 1\n            th_classes.append('sorted %sending' % order_type)\n            new_order_type = {'asc': 'desc', 'desc': 'asc'}[order_type]\n\n        # build new ordering param\n        o_list_primary = []  # URL for making this field the primary sort\n        o_list_remove = []  # URL for removing this field from sort\n        o_list_toggle = []  # URL for toggling order type for this field\n        make_qs_param = lambda t, n: ('-' if t == 'desc' else '') + str(n)\n\n        for j, ot in ordering_field_columns.items():\n            if j == i:  # Same column\n                param = make_qs_param(new_order_type, j)\n                # We want clicking on this header to bring the ordering to the\n                # front\n                o_list_primary.insert(0, param)\n                o_list_toggle.append(param)\n                # o_list_remove - omit\n            else:\n                param = make_qs_param(ot, j)\n                o_list_primary.append(param)\n                o_list_toggle.append(param)\n                o_list_remove.append(param)\n\n        if i not in ordering_field_columns:\n            o_list_primary.insert(0, make_qs_param(new_order_type, i))\n\n        yield {\n            \"text\": text,\n            \"sortable\": True,\n            \"sorted\": sorted,\n            \"ascending\": order_type == \"asc\",\n            \"sort_priority\": sort_priority,\n            \"url_primary\": cl.get_query_string({ORDER_VAR: '.'.join(o_list_primary)}),\n            \"url_remove\": cl.get_query_string({ORDER_VAR: '.'.join(o_list_remove)}),\n            \"url_toggle\": cl.get_query_string({ORDER_VAR: '.'.join(o_list_toggle)}),\n            \"class_attrib\": format_html(' class=\"{}\"', ' '.join(th_classes)) if th_classes else '',\n        }"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/development code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/development code or logging; not a security vulnerability.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of SHA-1 which is not collision-resistant.",
+          "patch": "def get_table_description(self, cursor, table_name):\n        \"\"\"\n        Return a description of the table with the DB-API cursor.description\n        interface.\n        \"\"\"\n        cursor.execute(\n            \"PRAGMA table_xinfo(%s)\" % self.connection.ops.quote_name(table_name)\n        )\n        table_info = cursor.fetchall()\n        if not table_info:\n            raise DatabaseError(f\"Table {table_name} does not exist (empty pragma).\")\n        collations = self._get_column_collations(cursor, table_name)\n        json_columns = set()\n        if self.connection.features.can_introspect_json_field:\n            for line in table_info:\n                column = line[1]\n                json_constraint_sql = '%%json_valid(\"%s\")%%' % column\n                has_json_constraint = cursor.execute(\n                    \"\"\"\n                    SELECT sql\n                    FROM sqlite_master\n                    WHERE\n                        type = 'table' AND\n                        name = %s AND\n                        sql LIKE %s\n                \"\"\",\n                    [table_name, json_constraint_sql],\n                ).fetchone()\n                if has_json_constraint:\n                    json_columns.add(column)\n        return [\n            FieldInfo(\n                name,\n                data_type,\n                get_field_size(data_type),\n                None,\n                None,\n                None,\n                not notnull,\n                default,\n                collations.get(name),\n                pk == 1,\n                name in json_columns,\n            )\n            for cid, name, data_type, notnull, default, pk, hidden in table_info\n            if hidden\n            in [\n                0,  # Normal column.\n                2,  # Virtual generated column.\n                3,  # Stored generated column.\n            ]\n        ]"
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Insecure TLS configuration: weak protocol version, disabled certificate validation, or unverified context.",
+          "patch": "def _poll_with_exponential_delay(\n    request, execute_num_retries, max_n, is_done_func, is_error_func\n) -> Response:\n    \"\"\"\n    Execute request with exponential delay.\n\n    This method is intended to handle and retry in case of api-specific errors,\n    such as 429 \"Too Many Requests\", unlike the `request.execute` which handles\n    lower level errors like `ConnectionError`/`socket.timeout`/`ssl.SSLError`.\n\n    :param request: request to be executed.\n    :param execute_num_retries: num_retries for `request.execute` method.\n    :param max_n: number of times to retry request in this method.\n    :param is_done_func: callable to determine if operation is done.\n    :param is_error_func: callable to determine if operation is failed.\n    :return: response\n    \"\"\"\n    for i in range(0, max_n):\n        try:\n            response = request.execute(num_retries=execute_num_retries)\n            if is_error_func(response):\n                raise ValueError(f\"The response contained an error: {response}\")\n            if is_done_func(response):\n                log.info(\"Operation is done: %s\", response)\n                return response\n\n            time.sleep((2**i) + random.random())\n        except HttpError as e:\n            if e.resp.status != 429:\n                log.info(\"Something went wrong. Not retrying: %s\", format(e))\n                raise\n            else:\n                time.sleep((2**i) + random.random())\n\n    raise ValueError(f\"Connection could not be established after {max_n} retries.\")"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/development code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in configuration, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        }
+      ]
+    },
+    "agent": {
+      "metrics": {
+        "n": 29,
+        "gt_confirm": 14,
+        "gt_reject": 15,
+        "confirm_recall": 0.3571,
+        "fpr": 0.0667,
+        "accuracy": 0.6552
+      },
+      "preds": [
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Confirm"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        },
+        {
+          "verdict": "Reject"
+        }
+      ]
+    }
+  }
+}

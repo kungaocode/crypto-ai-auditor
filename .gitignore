@@ -1,0 +1,25 @@
+# Data / artifacts
+data/raw/**/*.py
+data/processed/*.jsonl
+data/splits/*.jsonl
+reports/*.json
+reports/*.md
+__pycache__/
+*.pyc
+.env
+
+# Model weights / checkpoints (local fallback)
+checkpoints/
+*.bin
+*.safetensors
+
+# IDE
+.vscode/
+.idea/
+
+# secrets
+api.txt
+
+# large/redistributable data (record source, do not commit)
+data/raw/
+data/round4/real_projects/

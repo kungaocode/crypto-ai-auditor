@@ -1,0 +1,23 @@
+rules:
+  - id: CRYPTO-010
+    severity: WARNING
+    message: "Insecure TLS configuration: weak protocol version, disabled certificate validation, or unverified context."
+    languages:
+      - python
+    patterns:
+      - pattern-either:
+          - pattern: ssl.SSLContext(ssl.PROTOCOL_SSLv3)
+          - pattern: ssl.SSLContext(ssl.PROTOCOL_SSLv2)
+          - pattern: ssl.SSLContext(ssl.PROTOCOL_TLSv1)
+          - pattern: ssl.SSLContext(ssl.PROTOCOL_TLSv1_1)
+          - pattern: ssl.PROTOCOL_SSLv3
+          - pattern: ssl.PROTOCOL_SSLv2
+          - pattern: ssl.PROTOCOL_TLSv1
+          - pattern: ssl.PROTOCOL_TLSv1_1
+          - pattern: ssl._create_unverified_context()
+          - pattern: ssl.CERT_NONE
+          - pattern: requests.$M(..., verify=False, ...)
+    metadata:
+      cwe: "CWE-326"
+      severity: HIGH
+    fix: "Use ssl.create_default_context() with TLS 1.2+ and certificate verification enabled."

@@ -1,0 +1,18 @@
+rules:
+  - id: CRYPTO-008
+    severity: WARNING
+    message: "random module used for a security-sensitive value. random.* is not cryptographically secure; use secrets or os.urandom."
+    languages:
+      - python
+    patterns:
+      - pattern: $VAR = random.$FUNC(...)
+      - metavariable-regex:
+          metavariable: $VAR
+          regex: '(?i).*(key|iv|token|salt|nonce|secret|password)'
+      - metavariable-regex:
+          metavariable: $FUNC
+          regex: '(random|randint|randrange|choice|sample|uniform|gauss|triangular|getrandbits|shuffle)'
+    metadata:
+      cwe: "CWE-338"
+      severity: HIGH
+    fix: "Use secrets.token_bytes / os.urandom for keys, IVs, tokens and salts."

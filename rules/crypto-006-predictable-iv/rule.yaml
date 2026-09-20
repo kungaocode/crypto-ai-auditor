@@ -1,0 +1,20 @@
+rules:
+  - id: CRYPTO-006
+    severity: WARNING
+    message: "Predictable or hardcoded IV used in a block cipher mode. Use a fresh random IV per encryption."
+    languages:
+      - python
+    patterns:
+      - pattern-either:
+          - pattern: AES.new($KEY, AES.MODE_CBC, IV=b"")
+          - pattern: AES.new($KEY, AES.MODE_CBC, iv=b"")
+          - pattern: AES.new($KEY, AES.MODE_CFB, IV=b"")
+          - pattern: AES.new($KEY, AES.MODE_OFB, IV=b"")
+          - pattern: modes.CBC(b"")
+          - pattern: modes.CFB(b"")
+          - pattern: modes.OFB(b"")
+          - pattern: modes.CBC(bytes(16))
+    metadata:
+      cwe: "CWE-329"
+      severity: HIGH
+    fix: "Generate a fresh random IV with os.urandom(16) or secrets.token_bytes(16) for every encryption."

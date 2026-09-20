@@ -1,0 +1,92 @@
+[
+ [
+  "Confirm",
+  "[CRYPTO-001] Use of MD5 which is not collision-resistant.",
+  "def register(username, password):\n    import hashlib\n    digest = hashlib.md5(password.encode(\"utf-8\")).hexdigest()\n    cur.execute(\"INSERT INTO users (name, pw_hash) VALUES (?, ?)\", (username, digest))\n    conn.commit()"
+ ],
+ [
+  "Confirm",
+  "[CRYPTO-002] Use of SHA-1 which is not collision-resistant.",
+  "def set_password(user, raw):\n    import hashlib\n    stored = hashlib.sha1(raw.encode(\"utf-8\")).hexdigest()\n    return db.update_user_password(user, stored)"
+ ],
+ [
+  "Confirm",
+  "[CRYPTO-001] Use of MD5 which is not collision-resistant.",
+  "def login(user, pw):\n    import hashlib\n    return hashlib.md5(pw.encode(\"utf-8\")).hexdigest() == lookup(user)['pw_hash']"
+ ],
+ [
+  "Confirm",
+  "[CRYPTO-005] AES-ECB leaks patterns in ciphertext (unsafe for data).",
+  "from Crypto.Cipher import AES\nfrom Crypto.Util.Padding import pad\ndef encrypt_record(key, plaintext):\n    cipher = AES.new(key, AES.MODE_ECB)\n    return cipher.encrypt(pad(plaintext, AES.block_size))"
+ ],
+ [
+  "Confirm",
+  "[CRYPTO-006] Predictable IV used in CBC mode.",
+  "from Crypto.Cipher import AES\nfrom Crypto.Util.Padding import pad\ndef enc(key, data):\n    iv = b\"\\x00\" * AES.block_size\n    return AES.new(key, AES.MODE_CBC, iv).encrypt(pad(data, AES.block_size))"
+ ],
+ [
+  "Confirm",
+  "[CRYPTO-007] Hard-coded cryptographic key in source.",
+  "from Crypto.Cipher import AES\nAPI_SECRET = \"0123456789abcdef0123456789abcdef\"\ndef seal(payload):\n    return AES.new(API_SECRET.encode(), AES.MODE_GCM).encrypt(payload)"
+ ],
+ [
+  "Confirm",
+  "[CRYPTO-010] Insecure TLS: certificate validation disabled.",
+  "import requests\ndef post_payment(card_token):\n    return requests.post(\"https://api.bank.example.com/v2/charge\",\n                         json={\"card\": card_token}, verify=False)"
+ ],
+ [
+  "Confirm",
+  "[CRYPTO-009] Weak cryptographic key length.",
+  "from Crypto.PublicKey import RSA\ndef issue_key():\n    return RSA.generate(1024)"
+ ],
+ [
+  "Confirm",
+  "[CRYPTO-008] Non-cryptographic random used to derive a secret token.",
+  "import random, string\ndef reset_token(user):\n    alphabet = string.ascii_letters + string.digits\n    return \"\".join(random.choice(alphabet) for _ in range(24))"
+ ],
+ [
+  "Confirm",
+  "[CRYPTO-003] Use of DES (56-bit, deprecated cipher).",
+  "from Crypto.Cipher import DES\nfrom Crypto.Util.Padding import pad\ndef legacy_encrypt(key8, data):\n    return DES.new(key8, DES.MODE_ECB).encrypt(pad(data, 8))"
+ ],
+ [
+  "Confirm",
+  "[CRYPTO-004] Use of RC4 stream cipher.",
+  "from Crypto.Cipher import ARC4\ndef stream(key):\n    return ARC4.new(key).encrypt(b\"some payload\")"
+ ],
+ [
+  "Confirm",
+  "[CRYPTO-001] Use of MD5 which is not collision-resistant.",
+  "def make_api_signature(secret, body):\n    import hashlib, hmac\n    return hashlib.md5(secret.encode() + body).hexdigest()"
+ ],
+ [
+  "Reject",
+  "[CRYPTO-001] Use of MD5 which is not collision-resistant.",
+  "def test_known_digest():\n    import hashlib\n    assert hashlib.md5(b\"hello world\").hexdigest() == \"5eb63bbbe01eeed093cb22bb8f5acdc3\"\n    assert hashlib.md5(b\"foo\").hexdigest() == \"acbd18db4cc2f85cedef654fccc4a4d8\""
+ ],
+ [
+  "Reject",
+  "[CRYPTO-001] Use of MD5 which is not collision-resistant.",
+  "def file_changed(path, old_digest):\n    import hashlib\n    with open(path, \"rb\") as fh:\n        return hashlib.md5(fh.read()).hexdigest() != old_digest"
+ ],
+ [
+  "Reject",
+  "[CRYPTO-001] Use of MD5 which is not collision-resistant.",
+  "def cache_key(rows):\n    import hashlib, json\n    return hashlib.md5(json.dumps(rows, sort_keys=True).encode()).hexdigest()"
+ ],
+ [
+  "Reject",
+  "[CRYPTO-002] Use of SHA-1 which is not collision-resistant.",
+  "def shard(bucket):\n    import hashlib\n    return int(hashlib.sha1(bucket.encode()).hexdigest(), 16) % 64"
+ ],
+ [
+  "Reject",
+  "[CRYPTO-002] Use of SHA-1 which is not collision-resistant.",
+  "def test_token_smoke():\n    import hashlib\n    assert hashlib.sha1(b\"demo\").hexdigest() == \"9f8b87b7b1d3c1b5e5f0b3f0f0e0d0e0f0a0b0c0\""
+ ],
+ [
+  "Reject",
+  "[CRYPTO-008] Non-cryptographic random used where a nonce/IV-like name is involved.",
+  "def jitter_delay(retries):\n    import random\n    return 0.5 + random.uniform(0, 0.25) * min(retries, 6)"
+ ]
+]

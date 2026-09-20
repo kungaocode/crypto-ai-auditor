@@ -1,0 +1,314 @@
+{
+  "config": "/tmp/benchmark_r4_real.yaml",
+  "model_kind": "CloudBackend",
+  "detect": {
+    "llm": {
+      "metrics": {
+        "n": 7,
+        "tp": 0,
+        "fp": 3,
+        "fn": 0,
+        "tn": 4,
+        "recall": 0.0,
+        "precision": 0.0,
+        "f1": 0.0,
+        "accuracy": 0.5714,
+        "cwe_acc": null
+      },
+      "preds": [
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "confidence": "HIGH",
+          "explanation": "Use of MD5 which is not collision-resistant."
+        },
+        {
+          "vulnerable": false
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "confidence": "HIGH",
+          "explanation": "Use of MD5 which is not collision-resistant."
+        },
+        {
+          "vulnerable": true,
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "confidence": "HIGH",
+          "explanation": "Use of MD5 which is not collision-resistant."
+        }
+      ]
+    }
+  },
+  "domain": {
+    "llm": {
+      "metrics": {
+        "n": 35,
+        "gt_confirm": 0,
+        "gt_reject": 35,
+        "confirm_recall": 0.0,
+        "fpr": 0.5714,
+        "accuracy": 0.4286
+      },
+      "preds": [
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of SHA-1 which is not collision-resistant.",
+          "patch": "def _lazy_sha1(string: bytes = b\"\") -> t.Any:\n    \"\"\"\n    Don't access ``hashlib.sha1`` until runtime. FIPS builds may not include\n    SHA-1, in which case the import and use as a default would fail before the\n    developer can configure something else.\n    \"\"\"\n    return hashlib.sha1(string)"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of DES or 3DES which have small block sizes and are considered weak.",
+          "patch": "from Crypto.Cipher import AES\ndef encode(data, marker, passphrase=None, randfunc=None):\n    \"\"\"\n    Encode a piece of binary data into PEM format.\n\n    Args:\n      data (byte string):\n        The piece of binary data to encode.\n      marker (string):\n        A marker identifying the type of data being encoded.\n      passphrase (string):\n        An optional passphrase used for encryption. If not given,\n        the data is stored unencrypted.\n    \"\"\"\n    if passphrase is None:\n        return marker + \"==\" + base64.b64encode(data).decode('ascii')\n\n    # Use PBKDF1 with MD5 to derive a key from the passphrase.\n    salt = get_random_bytes(8)\n    key = PBKDF1(passphrase, salt, 24, count=1000000, md5=True)\n\n    cipher = AES.new(key, AES.MODE_GCM)\n    ct, tag = cipher.encrypt_and_digest(pad(data, AES.block_size))\n\n    return marker + \"==\" + base64.b64encode(salt + tag + ct).decode('ascii')"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of DES or 3DES which have small block sizes and are considered weak.",
+          "patch": "    def decrypt(data, passphrase):\n        \"\"\"\n        Decrypt a piece of data using a passphrase and *PBES1*.\n\n        The algorithm to use is automatically detected.\n\n        :Parameters:\n          data : byte string\n            The piece of data to decrypt.\n          passphrase : byte string\n            The passphrase to use for decrypting the data.\n        :Returns:\n          The decrypted data, as a binary string.\n        \"\"\"\n\n        enc_private_key_info = DerSequence().decode(data)\n        encrypted_algorithm = DerSequence().decode(enc_private_key_info[0])\n        encrypted_data = DerOctetString().decode(enc_private_key_info[1]).payload\n\n        pbe_oid = DerObjectId().decode(encrypted_algorithm[0]).value\n        cipher_params = {}\n        if pbe_oid == _OID_PBE_WITH_MD5_AND_DES_CBC:\n            # PBE_MD5_DES_CBC\n            from Crypto.Hash import MD5\n            from Crypto.Cipher import DES\n            hashmod = MD5\n            module = DES\n        elif pbe_oid == _OID_PBE_WITH_MD5_AND_RC2_CBC:\n            # PBE_MD5_RC2_CBC\n            from Crypto.Hash import MD5\n            from Crypto.Cipher import ARC2\n            hashmod = MD5\n            module = ARC2\n            cipher_params['effective_keylen'] = 64\n        elif pbe_oid == _OID_PBE_WITH_SHA1_AND_DES_CBC:\n            # PBE_SHA1_DES_CBC\n            from Crypto.Hash import SHA1\n            from Crypto.Cipher import DES\n            hashmod = SHA1\n            module = DES\n        elif pbe_oid == _OID_PBE_WITH_SHA1_AND_RC2_CBC:\n            # PBE_SHA1_RC2_CBC\n            from Crypto.Hash import SHA1\n            from Crypto.Cipher import ARC2\n            hashmod = SHA1\n            module = ARC2\n            cipher_params['effective_keylen'] = 64\n        else:\n            raise PbesError(\"Unknown OID for PBES1\")\n\n        pbe_params = DerSequence().decode(encrypted_algorithm[1], nr_elements=2)\n        salt = DerOctetString().decode(pbe_params[0]).payload\n        iterations = pbe_params[1]\n\n        key_iv = PBKDF1(passphrase, salt, 16, iterations, hashmod)\n        key, iv = key_iv[:8], key_iv[8:]  # DES -> 56-bit key\n\n        cipher = module.new(key, module.MODE_CBC, iv, **cipher_params)\n        pt = cipher.decrypt(encrypted_data)\n        return unpad(pt, cipher.block_size)"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of DES or 3DES which have small block sizes and are considered weak.",
+          "patch": "    def encrypt(data, passphrase, protection, prot_params=None, randfunc=None):\n        \"\"\"\n        Encrypt a piece of data using a passphrase and *PBES2*.\n\n        :Parameters:\n          data : byte string\n            The piece of data to encrypt.\n          passphrase : byte string\n            The passphrase to use for encrypting the data.\n          protection : string\n            The identifier of the encryption algorithm to use.\n            The default value is '``PBKDF2WithHMAC-SHA1AndAES-EDE3-CBC``'.\n          prot_params : dictionary\n            Parameters of the protection algorithm.\n\n            +------------------+-----------------------------------------------+\n            | Key              | Description                                   |\n            +==================+===============================================+\n            | iteration_count  | The KDF algorithm is repeated several times to|\n            |                  | slow down brute force attacks on passwords    |\n            |                  | (called *N* or CPU/memory cost in scrypt).    |\n            |                  |                                               |\n            |                  | The default value for PBKDF2 is 1 000.        |\n            |                  | The default value for scrypt is 16 384.       |\n            +------------------+-----------------------------------------------+\n            | salt_size        | Salt is used to thwart dictionary and rainbow |\n            |                  | attacks on passwords. The default value is 8  |\n            |                  | bytes.                                        |\n            +------------------+-----------------------------------------------+\n            | block_size       | *(scrypt only)* Memory-cost (r). The default  |\n            |                  | value is 8.                                   |\n            +------------------+-----------------------------------------------+\n            | parallelization  | *(scrypt only)* CPU-cost (p). The default     |\n            |                  | value is 1.                                   |\n            +------------------+-----------------------------------------------+\n\n          randfunc : callable\n            Random number generation function; it should accept\n            a single integer N and return a string of random data,\n            N bytes long. If not specified, a new RNG will be\n            instantiated from ``Crypto.Random``.\n\n        :Returns:\n          The encrypted data, as a binary string.\n        \"\"\"\n\n        if prot_params is None:\n            prot_params = {}\n\n        if randfunc is None:\n            randfunc = Random.new().read\n\n        pattern = re.compile(r'^(PBKDF2WithHMAC-([0-9A-Z-]+)|scrypt)And([0-9A-Z-]+)$')\n        res = pattern.match(protection)\n        if res is None:\n            raise ValueError(\"Unknown protection %s\" % protection)\n\n        if protection.startswith(\"PBKDF\"):\n            pbkdf = \"pbkdf2\"\n            pbkdf2_hmac_algo = res.group(2)\n            enc_algo = res.group(3)\n        else:\n            pbkdf = \"scrypt\"\n            enc_algo = res.group(3)\n\n        aead = False\n        if enc_algo == 'AES128-CBC':\n            key_size = 16\n            module = AES\n            cipher_mode = AES.MODE_CBC\n            enc_oid = _OID_AES128_CBC\n            enc_param = {'iv': randfunc(16)}\n        elif enc_algo == 'AES192-CBC':\n            key_size = 24\n            module = AES\n            cipher_mode = AES.MODE_CBC\n            enc_oid = _OID_AES192_CBC\n            enc_param = {'iv': randfunc(16)}\n        elif enc_algo == 'AES256-CBC':\n            key_size = 32\n            module = AES\n            cipher_mode = AES.MODE_CBC\n            enc_oid = _OID_AES256_CBC\n            enc_param = {'iv': randfunc(16)}\n        elif enc_algo == 'AES128-GCM':\n            key_size = 16\n            module = AES\n            cipher_mode = AES.MODE_GCM\n            enc_oid = _OID_AES128_GCM\n            enc_param = {'nonce': randfunc(12)}\n            aead = True\n        elif enc_algo == 'AES192-GCM':\n            key_size = 24\n            module = AES\n            cipher_mode = AES.MODE_GCM\n            enc_oid = _OID_AES192_GCM\n            enc_param = {'nonce': randfunc(12)}\n            aead = True\n        elif enc_algo == 'AES256-GCM':\n            key_size = 32\n            module = AES\n            cipher_mode = AES.MODE_GCM\n            enc_oid = _OID_AES256_GCM\n            enc_param = {'nonce': randfunc(12)}\n            aead = True\n        elif enc_algo == 'DES-EDE3-CBC':\n            key_size = 24\n            module = DES3\n            cipher_mode = DES3.MODE_CBC\n            enc_oid = _OID_DES_EDE3_CBC\n            enc_param = {'iv': randfunc(8)}\n        else:\n            raise ValueError(\"Unknown encryption mode '%s'\" % enc_algo)\n\n        iv_nonce = list(enc_param.values())[0]\n        salt = randfunc(prot_params.get(\"salt_size\", 8))\n\n        # Derive key from password\n        if pbkdf == 'pbkdf2':\n\n            count = prot_params.get(\"iteration_count\", 1000)\n            digestmod = Hash.new(pbkdf2_hmac_algo)\n\n            key = PBKDF2(passphrase,\n                         salt,\n                         key_size,\n                         count,\n                         hmac_hash_module=digestmod)\n\n            pbkdf2_params = DerSequence([\n                                DerOctetString(salt),\n                                DerInteger(count)\n                            ])\n\n            if pbkdf2_hmac_algo != 'SHA1':\n                try:\n                    hmac_oid = Hash.HMAC.new(b'', digestmod=digestmod).oid\n                except KeyError:\n                    raise ValueError(\"No OID for HMAC hash algorithm\")\n                pbkdf2_params.append(DerSequence([DerObjectId(hmac_oid)]))\n\n            kdf_info = DerSequence([\n                    DerObjectId(_OID_PBKDF2),   # PBKDF2\n                    pbkdf2_params\n            ])\n\n        elif pbkdf == 'scrypt':\n\n            count = prot_params.get(\"iteration_count\", 16384)\n            scrypt_r = prot_params.get('block_size', 8)\n            scrypt_p = prot_params.get('parallelization', 1)\n            key = scrypt(passphrase, salt, key_size,\n                         count, scrypt_r, scrypt_p)\n            kdf_info = DerSequence([\n                    DerObjectId(_OID_SCRYPT),  # scrypt\n                    DerSequence([\n                        DerOctetString(salt),\n                        DerInteger(count),\n                        DerInteger(scrypt_r),\n                        DerInteger(scrypt_p)\n                    ])\n            ])\n\n        else:\n            raise ValueError(\"Unknown KDF \" + res.group(1))\n\n        # Create cipher and use it\n        cipher = module.new(key, cipher_mode, **enc_param)\n        if aead:\n            ct, tag = cipher.encrypt_and_digest(data)\n            encrypted_data = ct + tag\n        else:\n            encrypted_data = cipher.encrypt(pad(data, cipher.block_size))\n        enc_info = DerSequence([\n                DerObjectId(enc_oid),\n                DerOctetString(iv_nonce)\n        ])\n\n        # Result\n        enc_private_key_info = DerSequence([\n            # encryptionAlgorithm\n            DerSequence([\n                DerObjectId(_OID_PBES2),\n                DerSequence([\n                    kdf_info,\n                    enc_info\n                ]),\n            ]),\n            DerOctetString(encrypted_data)\n        ])\n        return enc_private_key_info.encode()"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of DES or 3DES which have small block sizes and are considered weak.",
+          "patch": "    def decrypt(data, passphrase):\n        \"\"\"\n        Decrypt a piece of data using a passphrase and *PBES2*.\n\n        The algorithm to use is automatically detected.\n\n        :Parameters:\n          data : byte string\n            The piece of data to decrypt.\n          passphrase : byte string\n            The passphrase to use for decrypting the data.\n        :Returns:\n          The decrypted data, as a binary string.\n        \"\"\"\n\n        enc_private_key_info = DerSequence().decode(data, nr_elements=2)\n        enc_algo = DerSequence().decode(enc_private_key_info[0])\n        encrypted_data = DerOctetString().decode(enc_private_key_info[1]).payload\n\n        pbe_oid = DerObjectId().decode(enc_algo[0]).value\n        if pbe_oid != _OID_PBES2:\n            raise PbesError(\"Not a PBES2 object\")\n\n        pbes2_params = DerSequence().decode(enc_algo[1], nr_elements=2)\n\n        # Key Derivation Function selection\n        kdf_info = DerSequence().decode(pbes2_params[0], nr_elements=2)\n        kdf_oid = DerObjectId().decode(kdf_info[0]).value\n\n        kdf_key_length = None\n\n        # We only support PBKDF2 or scrypt\n        if kdf_oid == _OID_PBKDF2:\n\n            pbkdf2_params = DerSequence().decode(kdf_info[1], nr_elements=(2, 3, 4))\n            salt = DerOctetString().decode(pbkdf2_params[0]).payload\n            iteration_count = pbkdf2_params[1]\n\n            left = len(pbkdf2_params) - 2\n            idx = 2\n\n            if left > 0:\n                try:\n                    # Check if it's an INTEGER\n                    kdf_key_length = pbkdf2_params[idx] - 0\n                    left -= 1\n                    idx += 1\n                except TypeError:\n                    # keyLength is not present\n                    pass\n\n            # Default is HMAC-SHA1\n            pbkdf2_prf_oid = _OID_HMAC_SHA1\n            if left > 0:\n                pbkdf2_prf_algo_id = DerSequence().decode(pbkdf2_params[idx])\n                pbkdf2_prf_oid = DerObjectId().decode(pbkdf2_prf_algo_id[0]).value\n\n        elif kdf_oid == _OID_SCRYPT:\n\n            scrypt_params = DerSequence().decode(kdf_info[1], nr_elements=(4, 5))\n            salt = DerOctetString().decode(scrypt_params[0]).payload\n            iteration_count, scrypt_r, scrypt_p = [scrypt_params[x]\n                                                   for x in (1, 2, 3)]\n            if len(scrypt_params) > 4:\n                kdf_key_length = scrypt_params[4]\n            else:\n                kdf_key_length = None\n        else:\n            raise PbesError(\"Unsupported PBES2 KDF\")\n\n        # Cipher selection\n        enc_info = DerSequence().decode(pbes2_params[1])\n        enc_oid = DerObjectId().decode(enc_info[0]).value\n\n        aead = False\n        if enc_oid == _OID_DES_EDE3_CBC:\n            # DES_EDE3_CBC\n            from Crypto.Cipher import DES3\n            module = DES3\n            cipher_mode = DES3.MODE_CBC\n            key_size = 24\n            cipher_param = 'iv'\n        elif enc_oid == _OID_AES128_CBC:\n            module = AES\n            cipher_mode = AES.MODE_CBC\n            key_size = 16\n            cipher_param = 'iv'\n        elif enc_oid == _OID_AES192_CBC:\n            module = AES\n            cipher_mode = AES.MODE_CBC\n            key_size = 24\n            cipher_param = 'iv'\n        elif enc_oid == _OID_AES256_CBC:\n            module = AES\n            cipher_mode = AES.MODE_CBC\n            key_size = 32\n            cipher_param = 'iv'\n        elif enc_oid == _OID_AES128_GCM:\n            module = AES\n            cipher_mode = AES.MODE_GCM\n            key_size = 16\n            cipher_param = 'nonce'\n            aead = True\n        elif enc_oid == _OID_AES192_GCM:\n            module = AES\n            cipher_mode = AES.MODE_GCM\n            key_size = 24\n            cipher_param = 'nonce'\n            aead = True\n        elif enc_oid == _OID_AES256_GCM:\n            module = AES\n            cipher_mode = AES.MODE_GCM\n            key_size = 32\n            cipher_param = 'nonce'\n            aead = True\n        else:\n            raise PbesError(\"Unsupported PBES2 cipher \" + enc_algo)\n\n        if kdf_key_length and kdf_key_length != key_size:\n            raise PbesError(\"Mismatch between PBES2 KDF parameters\"\n                            \" and selected cipher\")\n\n        iv_nonce = DerOctetString().decode(enc_info[1]).payload\n\n        # Create cipher\n        if kdf_oid == _OID_PBKDF2:\n\n            try:\n                hmac_hash_module_oid = Hash.HMAC._hmac2hash_oid[pbkdf2_prf_oid]\n            except KeyError:\n                raise PbesError(\"Unsupported HMAC %s\" % pbkdf2_prf_oid)\n            hmac_hash_module = Hash.new(hmac_hash_module_oid)\n\n            key = PBKDF2(passphrase, salt, key_size, iteration_count,\n                         hmac_hash_module=hmac_hash_module)\n        else:\n            key = scrypt(passphrase, salt, key_size, iteration_count,\n                         scrypt_r, scrypt_p)\n        cipher = module.new(key, cipher_mode, **{cipher_param:iv_nonce})\n\n        # Decrypt data\n        if len(encrypted_data) < cipher.block_size:\n            raise ValueError(\"Too little data to decrypt\")\n\n        if aead:\n            tag_len = cipher.block_size\n            pt = cipher.decrypt_and_verify(encrypted_data[:-tag_len],\n                                           encrypted_data[-tag_len:])\n        else:\n            pt_padded = cipher.decrypt(encrypted_data)\n            pt = unpad(pt_padded, cipher.block_size)\n\n        return pt"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "The flagged DES/3DES instance appears only in a self-test harness fabricating throwaway test keys from a SHAKE128 digest. No real data is encrypted; the key material serves only to instantiate a cipher for controlled test vectors. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "The flagged DES/3DES import appears only in a self-test harness loading legacy test vectors for compatibility checking. No real data is encrypted; the cipher is dead code with zero security purpose -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "The flagged DES3 import appears only in a self-test/fixture module generating throwaway test keys; it protects no real data. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "The flagged DES3 import appears only in a self-test/fixture file loading known-vectors for unit testing. No real data is encrypted; the key comes from a test vector, not a secret. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "The flagged DES/3DES instance appears in a self-test harness that only consumes throwaway test vectors. No real data is encrypted; the finding is a false positive from a test fixture -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of DES or 3DES which have small block sizes and are considered weak.",
+          "patch": "from Crypto.Hash import CMAC, SHAKE128\nclass TestCMAC(unittest.TestCase):\n    def setUp(self):\n        self.key = unhexlify(\"000102030405060708090a0b0c0d0e0f\")\n\n    def test_cmac_aes_128(self):\n        h = CMAC.new(self.key)\n        self.assertEqual(h.hexdigest(), \"33232323232323232323232323232323\")\n\n    def test_cmac_aes_256(self):\n        h = CMAC.new(self.key, AES.block_size * 2)\n        self.assertEqual(h.hexdigest(), \"33232323232323232323232323232323\")\n\n    def test_cmac_sha3_256(self):\n        h = CMAC.new(self.key, SHAKE128.block_size * 2)\n        self.assertEqual(h.hexdigest(), \"33232323232323232323232323232323\")"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "Hash used in test/fixture code, not security-sensitive; rule false positive.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of DES or 3DES which have small block sizes and are considered weak.",
+          "patch": "from Crypto.Cipher import AES\ndef aes_cbc_encrypt(plaintext, key):\n    cipher = AES.new(key, AES.MODE_CBC)\n    ct_bytes = cipher.encrypt(plaintext)\n    return cipher.nonce + ct_bytes\n\ndef aes_cbc_decrypt(ct_bytes, key):\n    iv = ct_bytes[:16]\n    cipher = AES.new(key, AES.MODE_CBC, iv)\n    pt = cipher.decrypt(ct_bytes[16:])\n    return pt"
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "RSA-1024 is generated only to falsify a PKCS#1 v1.5 verifier fixture in a unit test; the key dies with the test and never touches real data. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "RSA-1024 is generated only to test the signing API fixture; no real data depends on it. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "RSA-1024 is below the accepted minimum; use RSA-2048+. Real finding -> Confirm.",
+          "patch": "def runTest(self):\n\n        key = RSA.generate(2048)\n        signer = pkcs1_15.new(key)\n        hash_names = (\"MD2\", \"MD4\", \"MD5\", \"RIPEMD160\", \"SHA1\",\n                      \"SHA224\", \"SHA256\", \"SHA384\", \"SHA512\",\n                      \"SHA3_224\", \"SHA3_256\", \"SHA3_384\", \"SHA3_512\")\n\n        for name in hash_names:\n            hashed = load_hash_by_name(name).new(b\"Test\")\n            signer.sign(hashed)\n\n        from Crypto.Hash import BLAKE2b, BLAKE2s\n        for digest_bytes in (20, 32, 48, 64):\n            hashed_b = BLAKE2b.new(digest_bytes=digest_bytes, data=b\"Test\")\n            signer.sign(hashed_b)\n        for digest_bytes in (16, 20, 28, 32):\n            hashed_s = BLAKE2s.new(digest_bytes=digest_bytes, data=b\"Test\")\n            signer.sign(hashed_s)"
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "RSA-1024 is generated only to falsify a public-key verifier fixture in a unit test. No real signature/verification role; the key dies with the test. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "RSA-1024 appears only in a unit test fabricating a fake key to exercise signing machinery. No real data is signed; the key dies with the test. Rule false positive -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-326",
+          "severity": "WARNING",
+          "verdict": "Reject",
+          "explanation": "RSA-1024 is used only inside a unit test to fabricate a fake key for signing/verifying throwaway test data. No real security role -> Reject.",
+          "patch": ""
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of DES or 3DES which have small block sizes and are considered weak.",
+          "patch": "import time\nimport os\nimport sys\n\ndef get_random_bytes(n):\n    \"\"\"\n    Return a fresh random bytes object.\n    \"\"\"\n    return os.urandom(n)\n\nclass AESCipher:\n    def __init__(self, key):\n        self.key = key\n        self.cipher = AES.new(key, AES.MODE_GCM)\n\n    def encrypt(self, plaintext):\n        nonce = self.cipher.nonce\n        ciphertext, tag = self.cipher.encrypt_and_digest(plaintext)\n        return nonce + tag + ciphertext\n\n    def decrypt(self, ciphertext):\n        nonce = ciphertext[:16]\n        tag = ciphertext[16:32]\n        ct = ciphertext[32:]\n        try:\n            decrypted = self.cipher.decrypt(ct)\n            if self.cipher.verify(tag):\n                return decrypted\n            else:\n                raise ValueError(\"Invalid tag\")\n        except ValueError as e:\n            raise ValueError(\"Bad decryption\") from e"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of MD5 which is not collision-resistant.",
+          "patch": "    def _calc_checksum(self, secret):\n        \"\"\"\n        This function implements the \"encrypted\" hash format used by Cisco\n        PIX & ASA. It's behavior has been confirmed for ASA 9.6,\n        but is presumed correct for PIX & other ASA releases,\n        as it fits with known test vectors, and existing literature.\n\n        While nearly the same, the PIX & ASA hashes have slight differences,\n        so this function performs differently based on the _is_asa class flag.\n        Noteable changes from PIX to ASA include password size limit\n        increased from 16 -> 32, and other internal changes.\n        \"\"\"\n        # select PIX vs or ASA mode\n        asa = self._is_asa\n\n        #\n        # encode secret\n        #\n        # per ASA 8.4 documentation,\n        # http://www.cisco.com/c/en/us/td/docs/security/asa/asa84/configuration/guide/asa_84_cli_config/ref_cli.html,\n        # it supposedly uses UTF-8 -- though some double-encoding issues have\n        # been observed when trying to actually *set* a non-ascii password\n        # via ASDM, and access via SSH seems to strip 8-bit chars.\n        #\n        if isinstance(secret, unicode):\n            secret = secret.encode(\"utf-8\")\n\n        #\n        # check if password too large\n        #\n        # Per ASA 9.6 changes listed in\n        # http://www.cisco.com/c/en/us/td/docs/security/asa/roadmap/asa_new_features.html,\n        # prior releases had a maximum limit of 32 characters.\n        # Testing with an ASA 9.6 system bears this out --\n        # setting 32-char password for a user account,\n        # and logins will fail if any chars are appended.\n        # (ASA 9.6 added new PBKDF2-based hash algorithm,\n        #  which supports larger passwords).\n        #\n        # Per PIX documentation\n        # http://www.cisco.com/en/US/docs/security/pix/pix50/configuration/guide/commands.html,\n        # it would not allow passwords > 16 chars.\n        #\n        # Thus, we unconditionally throw a password size error here,\n        # as nothing valid can come from a larger password.\n        # NOTE: assuming PIX has same behavior, but at 16 char limit.\n        #\n        spoil_digest = None\n        if len(secret) > self.truncate_size:\n            if self.use_defaults:\n                # called from hash()\n                msg = \"Password too long (%s allows at most %d bytes)\" % \\\n                      (self.name, self.truncate_size)\n                raise uh.exc.PasswordSizeError(self.truncate_size, msg=msg)\n            else:\n                # called from verify() --\n                # We don't want to throw error, or return early,\n                # as that would let attacker know too much.  Instead, we set a\n                # flag to add some dummy data into the md5 digest, so that\n                # output won't match truncated version of secret, or anything\n                # else that's fixed and predictable.\n                spoil_digest = secret + _DUMMY_BYTES\n\n        #\n        # append user to secret\n        #\n        # Policy appears to be:\n        #\n        # * Nothing appended for enable password (user = \"\")\n        #\n        # * ASA: If user present, but secret is >= 28 chars, nothing appended.\n        #\n        # * 1-2 byte users not allowed.\n        #   DEVIATION: we're letting them through, and repeating their\n        #   chars ala 3-char user, to simplify testing.\n        #   Could issue warning in the future though.\n        #\n        # * 3 byte user has first char repeated, to pad to 4.\n        #   (observed under ASA 9.6, assuming true elsewhere)\n        #\n        # * 4 byte users are used directly.\n        #\n        # * 5+ byte users are truncated to 4 bytes.\n        #\n        user = self.user\n        if user:\n            if isinstance(user, unicode):\n                user = user.encode(\"utf-8\")\n            if not asa or len(secret) < 28:\n                secret += repeat_string(user, 4)\n\n        #\n        # pad / truncate result to limit\n        #\n        # While PIX always pads to 16 bytes, ASA increases to 32 bytes IFF\n        # secret+user > 16 bytes.  This makes PIX & ASA have different results\n        # where secret size in range(13,16), and user is present --\n        # PIX will truncate to 16, ASA will truncate to 32.\n        #\n        if asa and len(secret) > 16:\n            pad_size = 32\n        else:\n            pad_size = 16\n        secret = right_pad_string(secret, pad_size)\n\n        #\n        # md5 digest\n        #\n        if spoil_digest:\n            # make sure digest won't match truncated version of secret\n            secret += spoil_digest\n        digest = md5(secret).digest()\n\n        #\n        # drop every 4th byte\n        # NOTE: guessing this was done because it makes output exactly\n        #       16 bytes, which may have been a general 'char password[]'\n        #       size limit under PIX\n        #\n        digest = join_byte_elems(c for i, c in enumerate(digest) if (i + 1) & 3)\n\n        #\n        # encode using Hash64\n        #\n        return h64.encode_bytes(digest).decode(\"ascii\")"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of MD5 which is not collision-resistant.",
+          "patch": "def hash(cls, secret, user, realm, encoding=None):\n        # NOTE: this was deliberately written so that raw bytes are passed through\n        # unchanged, the encoding kwd is only used to handle unicode values.\n        if not encoding:\n            encoding = cls.default_encoding\n        uh.validate_secret(secret)\n        if isinstance(secret, unicode):\n            secret = secret.encode(encoding)\n        user = to_bytes(user, encoding, \"user\")\n        realm = to_bytes(realm, encoding, \"realm\")\n        data = render_bytes(\"%s:%s:%s\", user, realm, secret)\n        return hashlib.sha256(data).hexdigest()"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "A password/secret digest is computed with SHA-1, not a slow memory-hard KDF. Fast collision-broken hash used in security-sensitive role -> Confirm.",
+          "patch": "def _calc_checksum(self, secret):\n        if isinstance(secret, unicode):\n            secret = secret.encode(\"utf-8\")\n        return str_to_uascii(sha256(self.salt.encode(\"ascii\") + secret).hexdigest())"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of MD5 which is not collision-resistant.",
+          "patch": "def _calc_checksum(self, secret):\n        if isinstance(secret, unicode):\n            secret = secret.encode(\"utf-8\")\n        return str_to_uascii(md5(self.salt.encode(\"ascii\") + secret).hexdigest())"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of MD5 which is not collision-resistant.",
+          "patch": "def _raw_md5_crypt(pwd, salt, use_apr=False):\n    \"\"\"perform raw md5-crypt calculation\n\n    this function provides a pure-python implementation of the internals\n    for the MD5-Crypt algorithms; it doesn't handle any of the\n    parsing/validation of the hash strings themselves.\n\n    :arg pwd: password chars/bytes to hash\n    :arg salt: salt chars to use\n    :arg use_apr: use apache variant\n\n    :returns:\n        encoded checksum chars\n    \"\"\"\n    #===================================================================\n    # init & validate inputs\n    #===================================================================\n\n    # validate secret\n    # XXX: not sure what official unicode policy is, using this as default\n    if isinstance(pwd, unicode):\n        pwd = pwd.encode(\"utf-8\")\n    assert isinstance(pwd, bytes), \"pwd not unicode or bytes\"\n    if _BNULL in pwd:\n        raise uh.exc.NullPasswordError(md5_crypt)\n    pwd_len = len(pwd)\n\n    # validate salt - should have been taken care of by caller\n    assert isinstance(salt, unicode), \"salt not unicode\"\n    salt = salt.encode(\"ascii\")\n    assert len(salt) < 9, \"salt too large\"\n        # NOTE: spec says salts larger than 8 bytes should be truncated,\n        # instead of causing an error. this function assumes that's been\n        # taken care of by the handler class.\n\n    # load APR specific constants\n    if use_apr:\n        magic = _APR_MAGIC\n    else:\n        magic = _MD5_MAGIC\n\n    #===================================================================\n    # digest B - used as subinput to digest A\n    #===================================================================\n    db = md5(pwd + salt + pwd).digest()\n\n    #===================================================================\n    # digest A - used to initialize first round of digest C\n    #===================================================================\n    # start out with pwd + magic + salt\n    a_ctx = md5(pwd + magic + salt)\n    a_ctx_update = a_ctx.update\n\n    # add pwd_len bytes of b, repeating b as many times as needed.\n    a_ctx_update(repeat_string(db, pwd_len))\n\n    # add null chars & first char of password\n        # NOTE: this may have historically been a bug,\n        # where they meant to use db[0] instead of B_NULL,\n        # but the original code memclear'ed db,\n        # and now all implementations have to use this.\n    i = pwd_len\n    evenchar = pwd[:1]\n    while i:\n        a_ctx_update(_BNULL if i & 1 else evenchar)\n        i >>= 1\n\n    # finish A\n    da = a_ctx.digest()\n\n    #===================================================================\n    # digest C - for a 1000 rounds, combine A, S, and P\n    #            digests in various ways; in order to burn CPU time.\n    #===================================================================\n\n    # NOTE: the original MD5-Crypt implementation performs the C digest\n    # calculation using the following loop:\n    #\n    ##dc = da\n    ##i = 0\n    ##while i < rounds:\n    ##    tmp_ctx = md5(pwd if i & 1 else dc)\n    ##    if i % 3:\n    ##        tmp_ctx.update(salt)\n    ##    if i % 7:\n    ##        tmp_ctx.update(pwd)\n    ##    tmp_ctx.update(dc if i & 1 else pwd)\n    ##    dc = tmp_ctx.digest()\n    ##    i += 1\n    #\n    # The code Passlib uses (below) implements an equivalent algorithm,\n    # it's just been heavily optimized to pre-calculate a large number\n    # of things beforehand. It works off of a couple of observations\n    # about the original algorithm:\n    #\n    # 1. each round is a combination of 'dc', 'salt', and 'pwd'; and the exact\n    #    combination is determined by whether 'i' a multiple of 2,3, and/or 7.\n    # 2. since lcm(2,3,7)==42, the series of combinations will repeat\n    #    every 42 rounds.\n    # 3. even rounds 0-40 consist of 'hash(dc + round-specific-constant)';\n    #    while odd rounds 1-41 consist of hash(round-specific-constant + dc)\n    #\n    # Using these observations, the following code...\n    # * calculates the round-specific combination of salt & pwd for each round 0-41\n    # * runs through as many 42-round blocks as possible (23)\n    # * runs through as many pairs of rounds as needed for remaining rounds (17)\n    # * this results in the required 42*23+2*17=1000 rounds required by md5_crypt.\n    #\n    # this cuts out a lot of the control overhead incurred when running the\n    # original loop 1000 times in python, resulting in ~20% increase in\n    # speed under CPython (though still 2x slower than glibc crypt)\n\n    # prepare the 6 combinations of pwd & salt which are needed\n    # (order of 'perms' must match how _c_digest_offsets was generated)\n    pwd_pwd = pwd+pwd\n    pwd_salt = pwd+salt\n    perms = [pwd, pwd_pwd, pwd_salt, pwd_salt+pwd, salt+pwd, salt+pwd_pwd]\n\n    # build up list of even-round & odd-round constants,\n    # and store in 21-element list as (even,odd) pairs.\n    data = [ (perms[even], perms[odd]) for even, odd in _c_digest_offsets]\n\n    # perform 23 blocks of 42 rounds each (for a total of 966 rounds)\n    dc = da\n    blocks = 23\n    while blocks:\n        for even, odd in data:\n            dc = md5(odd + md5(dc + even).digest()).digest()\n        blocks -= 1\n\n    # perform 17 more pairs of rounds (34 more rounds, for a total of 1000)\n    for even, odd in data[:17]:\n        dc = md5(odd + md5(dc + even).digest()).digest()\n\n    #===================================================================\n    # encode digest using appropriate transpose map\n    #===================================================================\n    return h64.encode_transposed_bytes(dc, _transpose_map).decode(\"ascii\")"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "An MS-SQL password hash uses SHA-1 with a 16-byte fixed salt. Password hashing requires a slow, salted, memory-hard KDF (scrypt/argon2/bcrypt), not fast collision-prone SHA-1. Real finding -> Confirm.",
+          "patch": "def _raw_mssql(secret, salt):\n    assert isinstance(secret, unicode)\n    assert isinstance(salt, bytes)\n    return scrypt(secret.encode(\"utf-16-le\"), salt, 32, N=2**14, r=8, p=1)"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of SHA-1 which is not collision-resistant.",
+          "patch": "def _calc_checksum(self, secret):\n        # FIXME: no idea if mysql has a policy about handling unicode passwords\n        if isinstance(secret, unicode):\n            secret = secret.encode(\"utf-8\")\n        return str_to_uascii(sha1(secret).digest()).upper()"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "A password/secret digest is computed with SHA-1, not a slow memory-hard KDF. Fast collision-broken hash used for authentication; real finding -> Confirm.",
+          "patch": "def _calc_checksum(self, secret):\n        if isinstance(secret, unicode):\n            secret = secret.encode(\"utf-8\")\n        chk = sha256(secret + unhexlify(self.salt.encode(\"ascii\"))).hexdigest()\n        return str_to_uascii(chk).upper()"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of MD5 which is not collision-resistant.",
+          "patch": "    def _calc_checksum(self, secret):\n        # FIXME: can't find definitive policy on how phpass handles non-ascii.\n        if isinstance(secret, unicode):\n            secret = secret.encode(\"utf-8\")\n        real_rounds = 1<<self.rounds\n        result = md5(self.salt.encode(\"ascii\") + secret).digest()\n        r = 0\n        while r < real_rounds:\n            result = md5(result + secret).digest()\n            r += 1\n        return h64.encode_bytes(result).decode(\"ascii\")"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "A secret is hashed with MD5 before storage. MD5 is not collision-resistant and the digest is public; use SHA-256 instead. Real finding -> Confirm.",
+          "patch": "    def _calc_checksum(self, secret):\n        if isinstance(secret, unicode):\n            secret = secret.encode(\"utf-8\")\n        user = to_bytes(self.user, \"utf-8\", param=\"user\")\n        return str_to_uascii(hash_secret(secret + user))"
+        },
+        {
+          "cwe": "CWE-327",
+          "severity": "WARNING",
+          "verdict": "Confirm",
+          "explanation": "Use of MD5 which is not collision-resistant.",
+          "patch": "def raw_sun_md5_crypt(secret, rounds, salt):\n    \"\"\"\n    given secret & salt, return encoded sun-md5-crypt checksum\n    \"\"\"\n    global MAGIC_HAMLET\n    assert isinstance(secret, bytes)\n    assert isinstance(salt, bytes)\n\n    # validate rounds\n    if rounds <= 0:\n        rounds = 0\n    real_rounds = 4096 + rounds\n    # NOTE: spec seems to imply max 'rounds' is 2**32-1\n\n    # generate initial digest to start off round 0.\n    # NOTE: algorithm 'salt' includes full config string w/ trailing \"$\"\n    result = md5(secret + salt).digest()\n    assert len(result) == 16\n\n    # NOTE: many things in this function have been inlined (to speed up the loop\n    #       as much as possible), to the point that this code barely resembles\n    #       the algorithm as described in the docs. in particular:\n    #\n    #       * all accesses to a given bit have been inlined using the formula\n    #         rbitval(bit) = (rval((bit>>3) & 15) >> (bit & 7)) & 1\n    #\n    #       * the calculation of coinflip value R has been inlined\n    #\n    #       * the conditional division of coinflip value V has been inlined as\n    #         a shift right of 0 or 1.\n    #\n    #       * the i, i+3, etc iterations are precalculated in lists.\n    #\n    #       * the round-based conditional division of x & y is now performed\n    #         by choosing an appropriate precalculated list, so that it only\n    #         calculates the 7 bits which will actually be used.\n    #\n    X_ROUNDS_0, X_ROUNDS_1, Y_ROUNDS_0, Y_ROUNDS_1 = _XY_ROUNDS\n\n    # NOTE: % appears to be *slightly* slower than &, so we prefer & if possible\n\n    round = 0\n    while round < real_rounds:\n        # convert last result byte string to list of byte-ints for easy access\n        rval = [ byte_elem_value(c) for c in result ].__getitem__\n\n        # build up X bit by bit\n        x = 0\n        xrounds = X_ROUNDS_1 if (rval((round>>3) & 15)>>(round & 7)) & 1 else X_ROUNDS_0\n        for i, ia, ib in xrounds:\n            a = rval(ia)\n            b = rval(ib)\n            v = rval((a >> (b % 5)) & 15) >> ((b>>(a&7)) & 1)\n            x |= ((rval((v>>3)&15)>>(v&7))&1) << i\n\n        # build up Y bit by bit\n        y = 0\n        yrounds = Y_ROUNDS_1 if (rval(((round+64)>>3) & 15)>>(round & 7)) & 1 else Y_ROUNDS_0\n        for i, ia, ib in yrounds:\n            a = rval(ia)\n            b = rval(ib)\n            v = rval((a >> (b % 5)) & 15) >> ((b>>(a&7)) & 1)\n            y |= ((rval((v>>3)&15)>>(v&7))&1) << i\n\n        # extract x'th and y'th bit, xoring them together to yeild \"coin flip\"\n        coin = ((rval(x>>3) >> (x&7)) ^ (rval(y>>3) >> (y&7))) & 1\n\n        # construct hash for this round\n        h = md5(result)\n        if coin:\n            h.update(MAGIC_HAMLET)\n        h.update(unicode(round).encode(\"ascii\"))\n        result = h.digest()\n\n        round += 1\n\n    # encode output\n    return h64.encode_transposed_bytes(result, _chk_offsets)"
+        }
+      ]
+    }
+  }
+}

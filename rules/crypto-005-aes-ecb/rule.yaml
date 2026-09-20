@@ -1,0 +1,14 @@
+rules:
+  - id: CRYPTO-005
+    severity: WARNING
+    message: "AES in ECB mode leaks patterns in plaintext; use an authenticated mode such as AES-GCM."
+    languages:
+      - python
+    patterns:
+      - pattern-either:
+          - pattern: AES.new(..., AES.MODE_ECB)
+          - pattern: modes.ECB()
+    metadata:
+      cwe: "CWE-327"
+      severity: HIGH
+    fix: "Use AES-GCM with a unique nonce per encryption."

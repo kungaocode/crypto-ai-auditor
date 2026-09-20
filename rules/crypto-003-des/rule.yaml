@@ -1,0 +1,26 @@
+rules:
+  - id: CRYPTO-003
+    patterns:
+      - pattern-either:
+          - pattern: |
+              from Crypto.Cipher import DES
+              ...
+              DES.new(...)
+          - pattern: |
+              from Crypto.Cipher import DES3
+              ...
+              DES3.new(...)
+          - pattern: |
+              import Crypto.Cipher.DES
+              ...
+          - pattern: |
+              import Crypto.Cipher.DES3
+              ...
+    languages:
+      - python
+    message: "Use of DES or 3DES which have small block sizes and are considered weak."
+    severity: WARNING
+    metadata:
+      cwe: "CWE-327"
+      severity: HIGH
+    fix: "Use AES-256-GCM or ChaCha20-Poly1305."

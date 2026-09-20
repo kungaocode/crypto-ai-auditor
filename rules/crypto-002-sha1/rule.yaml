@@ -1,0 +1,15 @@
+rules:
+  - id: CRYPTO-002
+    patterns:
+      - pattern-either:
+          - pattern: hashlib.sha1(...)
+          - pattern: hashlib.new("SHA1", ...)
+          - pattern: hashlib.new("sha1", ...)
+    languages:
+      - python
+    message: "Use of SHA-1 which is not collision-resistant."
+    severity: WARNING
+    metadata:
+      cwe: "CWE-327"
+      severity: MEDIUM
+    fix: "Use hashlib.sha256() or a purpose-built password hashing library."
