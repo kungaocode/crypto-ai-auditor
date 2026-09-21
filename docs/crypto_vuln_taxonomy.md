@@ -3,7 +3,21 @@
 > 用途：为第四轮负样本的 `explanation` 措辞、以及真实密码项目验证集的**人工标注判据**提供权威依据。
 > 每条给出「弱模式 → 真实攻击/依据 → 安全对照写法」三要素；标注时按此口径判断。
 
-## 0. 权威依据速览（联网核验，2026-09）
+
+## 0. 项目界定：只学「已知漏洞形式 → 已知改进方式」
+
+> **当前版本只做对已知漏洞形式的预测与已知修复的映射；未知漏洞形式的发现与泛化预测是下一课题，不在本版本范围内。**
+
+据此，所有数据、规则、标注都遵循以下口径：
+
+1. **数据 = 已知形式对**：每条样本必须是「一个已被文档化的弱模式（known vulnerable form）」+「对应的标准安全改法（known fix）」。模型学的是这个映射，不是发明新修复。
+2. **规则是封闭清单**：新增规则只允许编码**已被标准/权威文档化**的弱模式（如 CWE/NIST/OWASP 有明确定义与修复建议的项），并逐一登记到本文档；非文档化、未见过的新形态一律不进本版本。
+3. **triage 只允许已知例外**：Reject 仅当例外本身在本文档有记载——弱原语用于**非安全目的**（B 类），或**密码库为兼容 legacy 格式而实现弱原语**（真实项目类）。未记载/模糊的情形按范围外处理，不做猜测性放行。
+4. **评测只测已知形式**：metrics 衡量的是"能否在留出集上识别并正确路由已知形式"，不把未知形态纳入指标。
+
+> 范围外 = 下一步课题：未知漏洞形态、新模式发现、无模板的生成式预测。
+
+## 1. 权威依据速览（联网核验，2026-09）
 
 | 来源 | 关键结论 |
 |---|---|
@@ -14,7 +28,7 @@
 | [Fu et al., TOSEM'25](https://people.cs.vt.edu/nm8247/publications/TSE3150302-2.pdf#5#1) | 真实合入 Copilot 代码中最常见的弱点是 **CWE-330（随机值不足）** |
 | [To Fix or Not to Fix: Crypto-misuses in the Wild](https://ar5iv.labs.arxiv.org/html/2209.11103) | 明确记录「**effective false positive**」= 弱原语用在**非安全上下文**（如 MD5 做缓存），不应修 → 本项目 B 类负样本的文献依据 |
 
-## 1. 规则 ↔ CWE ↔ 安全对照
+## 2. 规则 ↔ CWE ↔ 安全对照
 
 | 规则 | CWE | 弱模式（Confirm / vulnerable=true） | 安全对照（Reject / vulnerable=false） |
 |---|---|---|---|
@@ -28,8 +42,11 @@
 | CRYPTO-008 弱随机 | CWE-338 | `random.*` 生成令牌/口令/盐/nonce（Mersenne Twister 可预测；Debian CVE-2008-0166） | `secrets.*` / `os.urandom` |
 | CRYPTO-009 弱密钥长度 | CWE-326 | RSA/DH <2048（1024 可被分解） | RSA-2048+ / `SECP256R1`+ |
 | CRYPTO-010 不安全 TLS | CWE-326/295 | `verify=False`、`PROTOCOL_TLSv1`、`_create_unverified_context` | `requests` 默认校验、`ssl.create_default_context()`、`TLSv1_2+` |
+| CRYPTO-011 明文口令存储 | CWE-256 | 口令明文存入字段/变量/日志（如 `user.password = pw`），泄露即等于口令泄露 | 只存 KDF 摘要：`argon2` / `bcrypt.hashpw` / `scrypt` / `pbkdf2_hmac` |
+| CRYPTO-012 弱 KDF 参数 | CWE-916 | `pbkdf2_hmac(..., iters<100k)`、`bcrypt cost<12`、`scrypt n<2^14`（GPU 可暴力破解） | iter≥100k（300k–600k 更佳）、cost≥12、n≥2^14 |
+| CRYPTO-013 非常量时间比较 | CWE-208 | 用 `==`/`!=` 比较口令/摘要/令牌/签名（时序侧信道，可逐字符爆破） | `hmac.compare_digest` / `secrets.compare_digest` |
 
-## 2. 判别口径（detect 负样本 & 真实项目标注时遵循）
+## 3. 判别口径（detect 负样本 & 真实项目标注时遵循）
 
 **判 vulnerable=true 的必要条件：弱原语/弱参数的输出，其安全性影响到了某个「安全目的」。**
 安全目的 = 保护 **凭据、令牌、密钥、签名、nonce、真实秘密** 的机密性/完整性/认证。

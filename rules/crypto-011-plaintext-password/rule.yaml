@@ -1,0 +1,18 @@
+rules:
+  - id: CRYPTO-011
+    severity: WARNING
+    message: "Password stored or passed on without a one-way KDF (CWE-256). Hash with scrypt/argon2/bcrypt/PBKDF2 before persistence."
+    languages:
+      - python
+    patterns:
+      - pattern-either:
+          - pattern: $OBJ.password = $PW
+          - pattern: $OBJ.passwd = $PW
+          - pattern: $OBJ.pwd = $PW
+          - pattern: $OBJ.set_password($PW)
+          - pattern: $OBJ.set_passwd($PW)
+          - pattern: $OBJ.set_pwd($PW)
+    metadata:
+      cwe: "CWE-256"
+      severity: HIGH
+    fix: "Store only a salted KDF digest (scrypt/argon2id/bcrypt/PBKDF2), never the plaintext password."

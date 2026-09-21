@@ -1,0 +1,19 @@
+rules:
+  - id: CRYPTO-012
+    severity: WARNING
+    message: "Weak KDF parameters (CWE-916). Use >=100k PBKDF2 iterations (300k-600k preferred), bcrypt cost >=12, scrypt n>=2**14."
+    languages:
+      - python
+    patterns:
+      - pattern-either:
+          - pattern: pbkdf2_hmac(..., $ITERS)
+          - pattern: hashlib.pbkdf2_hmac(..., $ITERS)
+          - pattern: PBKDF2(..., count=$ITERS)
+          - pattern: PBKDF2(..., $ITERS)
+      - metavariable-comparison:
+          metavariable: $ITERS
+          comparison: $ITERS < 100000
+    metadata:
+      cwe: "CWE-916"
+      severity: HIGH
+    fix: "Raise PBKDF2 iterations to at least 100000; prefer 300k-600k for SHA-256."

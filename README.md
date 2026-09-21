@@ -8,7 +8,7 @@ A hybrid **static analysis × fine-tuned LLM × agent** pipeline that audits Pyt
 
 ## Highlights
 
-- **10 hand-written Semgrep rules** (`rules/CRYPTO-001..010`) targeting common crypto misuse (MD5, SHA-1, DES/3DES, RC4, AES-ECB, predictable IV, hard-coded keys, weak randomness, weak key length, insecure TLS), each with CWE, severity, and fix recommendation.
+- **13 hand-written Semgrep rules** (`rules/CRYPTO-001..013`) targeting common crypto misuse (MD5, SHA-1, DES/3DES, RC4, AES-ECB, predictable IV, hard-coded keys, weak randomness, weak key length, insecure TLS, plaintext password storage, weak KDF parameters, non-constant-time comparison), each with CWE, severity, and fix recommendation.
 - **Domain-adapted LLM**: QLoRA fine-tuning (rank 16 / alpha 32) of `Qwen3-4B-Instruct` on a balanced vulnerable/secure SFT set across two tasks — `detect` (function-level vulnerability + CWE + severity) and `triage` (confirm/reject a static finding with an explanation).
 - **Two-slice evaluation** (see [reports/benchmark/benchmark.md](reports/benchmark/benchmark.md)):
   - *Generic slice*: 569 held-out functions from the official PyCode-Vul test split.
@@ -36,6 +36,33 @@ A hybrid **static analysis × fine-tuned LLM × agent** pipeline that audits Pyt
 **Read**: Semgrep alone confirms everything (FPR 1.0); the fine-tuned LLM/agent cuts the false-positive rate to 0.067 while keeping recall at 0.929 on the domain slice, and reaches 0.694 F1 on generic detection.
 
 > A full five-system ablation (Static only / Base LLM / Static+Base / Static+Fine-tuned / Full Agent) is in progress; current published rows are **Static**, **Fine-tuned LLM**, and **Agent**.
+
+## Scope (current release): known patterns only
+
+This release is deliberately limited to **predicting already-known crypto
+vulnerability patterns and their known fixes**. Discovering or generalizing to
+*previously unknown* vulnerability patterns is out of scope and left to a
+follow-up project.
+
+Consequences for data, rules, and evaluation:
+
+- **Data** only contains examples of a *known vulnerable form* paired with its
+  *known safe replacement* (e.g. CRYPTO-001: MD5-on-credentials → SHA-256 /
+  HMAC / scrypt / Argon2id). The model is taught to reproduce the mapping
+  `known pattern → known fix`, not to invent new fixes.
+- **Static rules** are a closed list (`CRYPTO-001..013`). New rules are
+  admitted only when they encode a *documented* vulnerable form with a
+  standards-backed fix (`docs/crypto_vuln_taxonomy.md`).
+- **Triage** may Reject a finding only when the exception is itself documented
+  in the taxonomy (weak primitive in a non-security purpose; a crypto *library*
+  implementing a legacy format for compatibility). Unseen/ambiguous cases are
+  treated as out of scope, not guessed.
+- **Evaluation** measures how well the pipeline recognizes and routes *known*
+  forms (detection recall/precision, triage confirm-recall/FPR on held-out
+  known-form and real-library slices).
+
+Unknown-pattern discovery (novel misuse shapes, new algorithm weaknesses,
+pattern-independent generation) is explicitly **not** a goal of this release.
 
 ## Pipeline
 
@@ -108,6 +135,9 @@ semgrep --test --config rules
 | CRYPTO-008 | Weak randomness | CWE-338 |
 | CRYPTO-009 | Weak key length | CWE-326 |
 | CRYPTO-010 | Insecure TLS | CWE-326 / CWE-295 |
+| CRYPTO-011 | Plaintext password storage | CWE-256 |
+| CRYPTO-012 | Weak KDF parameters | CWE-916 |
+| CRYPTO-013 | Non-constant-time compare | CWE-208 |
 
 Every rule carries `rule_id / name / cwe / severity / pattern / description / recommendation / references` and passes `semgrep --test`.
 

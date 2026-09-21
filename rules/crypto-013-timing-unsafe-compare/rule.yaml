@@ -1,0 +1,20 @@
+rules:
+  - id: CRYPTO-013
+    severity: WARNING
+    message: "Credential/digest compared with a non-constant-time operator (CWE-208). Use hmac.compare_digest or secrets.compare_digest."
+    languages:
+      - python
+    patterns:
+      - pattern-either:
+          - pattern: $LHS == $RHS
+          - pattern: $LHS != $RHS
+      - metavariable-regex:
+          metavariable: $LHS
+          regex: '(?i).*(password|passwd|pwd|hash|digest|token|secret|signature|cookie|mac).*'
+      - metavariable-regex:
+          metavariable: $RHS
+          regex: '(?i).*(password|passwd|pwd|hash|digest|token|secret|signature|cookie|mac|guess|attempt|provided|input|expected|actual|received|stored).*'
+    metadata:
+      cwe: "CWE-208"
+      severity: MEDIUM
+    fix: "Use hmac.compare_digest(stored, provided) for secrets and digests."
