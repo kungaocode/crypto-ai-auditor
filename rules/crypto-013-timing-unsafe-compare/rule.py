@@ -13,7 +13,7 @@ if user.hash != provided_hash:
 if session_token == guess:
     grant()
 
-# ok: constant-time comparison
+# ok
 if hmac.compare_digest(user.password, input_password):
     login(user)
 
@@ -21,6 +21,14 @@ if hmac.compare_digest(user.password, input_password):
 if secrets.compare_digest(stored, provided):
     print("tokens match")
 
-# ok: non-credential equality is not in scope
+# ok
 if user.name == provided_name:
     print("same name")
+
+# ruleid: CRYPTO-013
+if user.pw == input_pw:
+    login(user)
+
+# ruleid: CRYPTO-013
+if content_hash == expected_hash:
+    use_cached()

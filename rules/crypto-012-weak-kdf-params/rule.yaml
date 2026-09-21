@@ -6,14 +6,26 @@ rules:
       - python
     patterns:
       - pattern-either:
-          - pattern: pbkdf2_hmac(..., $ITERS)
-          - pattern: hashlib.pbkdf2_hmac(..., $ITERS)
-          - pattern: PBKDF2(..., count=$ITERS)
-          - pattern: PBKDF2(..., $ITERS)
-      - metavariable-comparison:
-          metavariable: $ITERS
-          comparison: $ITERS < 100000
+          - patterns:
+              - pattern-either:
+                  - pattern: pbkdf2_hmac(..., $ITERS)
+                  - pattern: hashlib.pbkdf2_hmac(..., $ITERS)
+                  - pattern: PBKDF2(..., count=$ITERS)
+                  - pattern: PBKDF2(..., $ITERS)
+              - metavariable-comparison:
+                  metavariable: $ITERS
+                  comparison: $ITERS < 100000
+          - patterns:
+              - pattern: bcrypt.gensalt(rounds=$COST)
+              - metavariable-comparison:
+                  metavariable: $COST
+                  comparison: $COST < 12
+          - patterns:
+              - pattern: hashlib.scrypt(..., n=$N, ...)
+              - metavariable-comparison:
+                  metavariable: $N
+                  comparison: $N < 16384
     metadata:
       cwe: "CWE-916"
       severity: HIGH
-    fix: "Raise PBKDF2 iterations to at least 100000; prefer 300k-600k for SHA-256."
+    fix: "Raise PBKDF2 iterations to at least 100000 (prefer 300k-600k for SHA-256), bcrypt cost to >=12, or scrypt n to >=2**14."

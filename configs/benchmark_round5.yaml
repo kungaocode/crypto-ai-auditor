@@ -1,0 +1,10 @@
+model:
+  kind: cloud
+  model_id: qwen3-4b
+static:
+  rules: rules/
+splits:
+  detect: /home/kun/Desktop/AIE/project_for_AIE/01-ai-crypto-code-security-auditor/data/round5/validation/detect_eval.jsonl
+  domain: /home/kun/Desktop/AIE/project_for_AIE/01-ai-crypto-code-security-auditor/data/round5/validation/triage_eval.jsonl
+systems:
+- llm

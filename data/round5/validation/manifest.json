@@ -1,0 +1,17 @@
+{
+  "round": 5,
+  "created": "2026-09-20",
+  "detect": {
+    "n": 13,
+    "regression_real_secure": 7,
+    "known_forms_pos": 3,
+    "known_forms_aneg": 3
+  },
+  "triage": {
+    "n": 41,
+    "regression_real_reject": 35,
+    "known_forms_confirm": 3,
+    "known_forms_reject": 3
+  },
+  "notes": "reg_triage = round-4 42 real-project Rejects (passlib 11 were the R4 11/11 Confirm failure -- 8 now in R5 train, 2 held-out in upload/full/test.jsonl, 1 in val). fresh probes are disjoint from the R5 training set."
+}
