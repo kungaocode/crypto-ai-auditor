@@ -40,6 +40,12 @@ def load_records(path: Path) -> List[dict]:
     return [json.loads(l) for l in Path(path).read_text(encoding="utf-8").splitlines() if l.strip()]
 
 
+def _resolve(base: Path, p: str | Path) -> Path:
+    """Resolve a config path relative to the repo root (parent of configs/)."""
+    p = Path(p)
+    return p if p.is_absolute() else (base / p)
+
+
 def _rule_cwe_map(rules_dir: Path) -> dict:
     m = {}
     for y in sorted(Path(rules_dir).glob("crypto-*/rule.yaml")):
@@ -182,13 +188,18 @@ def _triage_verdict(agent_out: dict) -> str:
 def run_benchmark(config_path: Path, out_dir: Path | None = None) -> Dict[str, Any]:
     cfg = yaml.safe_load(Path(config_path).read_text(encoding="utf-8")) or {}
     splits = cfg.get("splits", {})
-    rules_dir = Path(cfg.get("static", {}).get("rules", "rules"))
+    repo_root = Path(config_path).resolve().parent.parent
+    rules_dir = _resolve(repo_root, cfg.get("static", {}).get("rules", "rules"))
     backend = model_inf.get_backend(config=cfg)
     agent = SecurityAgent(backend=backend)
 
-    summary: Dict[str, Any] = {"config": str(config_path), "model_kind": type(backend).__name__}
-    detect_recs = load_records(Path(splits["detect"])) if splits.get("detect") else []
-    domain_recs = load_records(Path(splits["domain"])) if splits.get("domain") else []
+    summary: Dict[str, Any] = {
+        "config": str(config_path),
+        "model_kind": type(backend).__name__,
+        "model_id": getattr(backend, "model_id", "mock"),
+    }
+    detect_recs = load_records(_resolve(repo_root, splits["detect"])) if splits.get("detect") else []
+    domain_recs = load_records(_resolve(repo_root, splits["domain"])) if splits.get("domain") else []
 
     if detect_recs:
         systems = [s for s in ("static", "llm") if s in cfg.get("systems", ["static", "llm"])]
@@ -226,9 +237,21 @@ def _print_summary(summary: dict) -> None:
 
 
 def _write_markdown(summary: dict, path: Path) -> None:
-    lines = ["# Benchmark Report\n"]
+    model_id = summary.get("model_id")
+    model_desc = f"`{summary.get('model_kind', '?')}`"
+    if model_id and model_id != "mock":
+        model_desc += f" (`{model_id}`)"
+    lines = [
+        "# Benchmark Report\n",
+        f"Config: `{summary.get('config', '?')}` — model backend: {model_desc}.\n",
+        "> Round context and known regressions: see `docs/experiment.md`. Do not "
+        "compare numbers across rounds. `confirm_recall` is low-power on eval slices "
+        "with few GT-Confirm rows; always read it with the positive count.\n",
+    ]
     if "detect" in summary:
-        lines.append("## Detect slice\n\n| system | recall | precision | f1 | accuracy | cwe_acc |")
+        detect_n = next(iter(summary["detect"].values()))["metrics"]["n"] if summary["detect"] else 0
+        lines.append(f"## Detect slice (n={detect_n})\n")
+        lines.append("| system | recall | precision | f1 | accuracy | cwe_acc |")
         lines.append("|---|---|---|---|---|---|")
         for name, res in summary["detect"].items():
             m = res["metrics"]
@@ -236,7 +259,11 @@ def _write_markdown(summary: dict, path: Path) -> None:
                          f"| {m['accuracy']:.3f} | {m['cwe_acc']} |")
         lines.append("")
     if "domain" in summary:
-        lines.append("## Domain slice (triage)\n\n| system | confirm_recall | fpr | accuracy | n |")
+        domain_metrics = next(iter(summary["domain"].values()))["metrics"] if summary["domain"] else {}
+        lines.append(
+            f"## Domain slice (triage, n={domain_metrics.get('n', 0)}, "
+            f"GT-Confirm={domain_metrics.get('gt_confirm', '?')})\n")
+        lines.append("| system | confirm_recall | fpr | accuracy | n |")
         lines.append("|---|---|---|---|---|")
         for name, res in summary["domain"].items():
             m = res["metrics"]

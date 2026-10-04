@@ -1,16 +1,22 @@
 # Benchmark Report
 
-## Detect slice
+Config: `configs/benchmark_round5.yaml` — model backend: `CloudBackend` (`qwen3-4b-instruct-2507-7421554c67e6`).
+
+> Round context and known regressions: see `docs/experiment.md`. Do not compare numbers across rounds. `confirm_recall` is low-power on eval slices with few GT-Confirm rows; always read it with the positive count.
+
+> **Status:** this is a degraded Round-5 run, retained as regression evidence.
+> Round 6 has not been trained, so no Round-6 metrics are published here. A
+> same-config cloud rerun produced detect `0/2/3/8` and triage FPR `0.368`; a
+> previous run on the same deployment produced detect `0/1/3/9` and FPR `0.289`.
+
+## Detect slice (n=13)
 
 | system | recall | precision | f1 | accuracy | cwe_acc |
 |---|---|---|---|---|---|
-| static | 0.112 | 1.000 | 0.201 | 0.524 | 0.3235 |
-| llm | 0.984 | 0.536 | 0.694 | 0.534 | 0.8967 |
+| llm | 0.000 | 0.000 | 0.000 | 0.615 | None |
 
-## Domain slice (triage)
+## Domain slice (triage, n=41, GT-Confirm=3)
 
 | system | confirm_recall | fpr | accuracy | n |
 |---|---|---|---|---|
-| static | 1.000 | 1.000 | 0.483 | 29 |
-| llm | 0.929 | 0.067 | 0.931 | 29 |
-| agent | 0.929 | 0.067 | 0.931 | 29 |
+| llm | 1.000 | 0.368 | 0.658 | 41 |

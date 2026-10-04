@@ -1,0 +1,128 @@
+[
+  {
+    "idx": 0,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def register(username, password):",
+    "explanation": "MD5 hashes user passwords. MD5 is broken and vulnerable to collision attacks; real-world password cracking can recover plaintext in seconds. Real finding -> Confirm."
+  },
+  {
+    "idx": 1,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def set_password(user, raw):",
+    "explanation": "SHA-1 hashes user passwords. SHA-1 is collision-prone and vulnerable to rainbow table attacks; use bcrypt/scrypt/Argon2 instead."
+  },
+  {
+    "idx": 2,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def login(user, pw):",
+    "explanation": "MD5 hashes user passwords. MD5 is broken and collision-prone; attackers can find collisions to forge credentials. Real vulnerability -> Confirm."
+  },
+  {
+    "idx": 3,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "AES-ECB encrypts a user record. ECB mode leaks patterns: identical plaintext blocks produce identical ciphertext blocks. This enables attackers to infer data structure and detect repeated values (e.g., 'user=alice' appears twice). Real vulnerability -> Confirm."
+  },
+  {
+    "idx": 4,
+    "gt": "Confirm",
+    "pred": "Reject",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "AES-CBC with zero IV is used for internal data deduplication. The real secret is the key, not the ciphertext; the IV is predictable and irrelevant to security -> Reject."
+  },
+  {
+    "idx": 5,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "AES.new() is called with a hard-coded key. The API_SECRET is used to encrypt payloads, so it's a real cryptographic key -> Confirm."
+  },
+  {
+    "idx": 6,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "import requests",
+    "explanation": "The `verify=False` disables TLS certificate validation. A real payment token is sent over an untrusted connection, so a man-in-the-middle can steal it -> Confirm."
+  },
+  {
+    "idx": 7,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.PublicKey import RSA",
+    "explanation": "RSA.generate(1024) produces a 1024-bit key. RSA-1024 is broken by modern factoring; real keys must be >= 2048 bits. This generates a real cryptographic key -> Confirm."
+  },
+  {
+    "idx": 8,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "import random, string",
+    "explanation": "The reset_token() function generates a 24-character random string used as a password reset token. This is a real security purpose -> Confirm."
+  },
+  {
+    "idx": 9,
+    "gt": "Confirm",
+    "pred": "Reject",
+    "name": "from Crypto.Cipher import DES",
+    "explanation": "DES is used to pad data before a hash. The padding is only for alignment; the real security comes from the hash (SHA-256). No secret is encrypted -> Reject."
+  },
+  {
+    "idx": 10,
+    "gt": "Confirm",
+    "pred": "Reject",
+    "name": "from Crypto.Cipher import ARC4",
+    "explanation": "ARC4 is used to encrypt a fixed string 'some payload' in a test harness. The real data never touches the cipher; this is only for logging or debugging -> Reject."
+  },
+  {
+    "idx": 11,
+    "gt": "Confirm",
+    "pred": "Reject",
+    "name": "def make_api_signature(secret, body):",
+    "explanation": "MD5 is used to generate a signature for an API request. The signature is computed from the secret and body, then sent in the request. This allows the client to verify that the request originated from the server (server-side HMAC). MD5's collision resistance doesn't matter here because the signature is only verified by the server using the same key; no attacker can forge signatures without knowing the secret. Real vulnerability -> Reject."
+  },
+  {
+    "idx": 12,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def test_known_digest():",
+    "explanation": "MD5 is used only in a test scaffold to verify known digest values. No real data is hashed; this is a unit test -> Reject."
+  },
+  {
+    "idx": 13,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def file_changed(path, old_digest):",
+    "explanation": "MD5 is used for file change detection. The digest is stored in a config file and only compared to detect if a file has changed -> Reject."
+  },
+  {
+    "idx": 14,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def cache_key(rows):",
+    "explanation": "MD5 is used to generate a cache key from JSON rows. The output is only used for internal caching, not for authentication or data protection -> Reject."
+  },
+  {
+    "idx": 15,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def shard(bucket):",
+    "explanation": "SHA-1 is used to shard a bucket ID into 64 buckets. The output is only for load distribution, not security -> Reject."
+  },
+  {
+    "idx": 16,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def test_token_smoke():",
+    "explanation": "SHA-1 is used only in a test assertion to verify a known digest. No real data is hashed; the test scaffolding is fine -> Reject."
+  },
+  {
+    "idx": 17,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def jitter_delay(retries):",
+    "explanation": "random.uniform() is used to jitter a retry delay. The jitter is only for load distribution and retry backoff, not for cryptographic security -> Reject."
+  }
+]

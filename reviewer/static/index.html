@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Python Crypto 二分类复核台</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">R6</span>
+        <div>
+          <p class="eyebrow">Python Crypto Security Auditor</p>
+          <h1>Python Crypto 二分类复核台</h1>
+        </div>
+      </div>
+      <div class="topbar-status">
+        <span class="reviewer-chip" id="reviewer-chip">复核员</span>
+        <span class="top-progress" id="top-progress">0 / 0</span>
+      </div>
+    </header>
+
+    <div class="progress-track top-progress-track" aria-hidden="true">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <main class="workspace">
+      <section class="review-column" aria-label="候选复核区">
+        <div class="review-toolbar">
+          <div class="queue-status">
+            <span id="queue-position">第 0 / 0 条</span>
+            <span class="status-dot" id="status-dot"></span>
+            <span id="item-status">未复核</span>
+          </div>
+          <div class="segmented" role="group" aria-label="队列筛选">
+            <button type="button" class="segment is-active" data-filter="unlabeled">待复核</button>
+            <button type="button" class="segment" data-filter="all">全部</button>
+          </div>
+        </div>
+
+        <article class="review-panel" id="review-panel" aria-live="polite">
+          <div class="candidate-header">
+            <div class="candidate-identity">
+              <span class="package-name" id="package-name">--</span>
+              <span class="meta-chip" id="item-cwe">--</span>
+              <span class="meta-chip" id="item-advisory">--</span>
+              <span class="meta-chip" id="item-cve">--</span>
+            </div>
+            <span class="verdict-badge" id="verdict-badge">未复核</span>
+          </div>
+
+          <section class="model-audit-strip" id="model-audit-strip" hidden aria-label="模型预审">
+            <div class="model-audit-summary">
+              <span class="model-audit-label">AI 预审</span>
+              <strong id="model-audit-decision">未运行</strong>
+              <span id="model-audit-confidence">--</span>
+              <span class="model-audit-caveat">非人工结论，提交前请独立核验</span>
+            </div>
+            <p id="model-audit-explanation"></p>
+            <p class="model-audit-detail" id="model-audit-detail"></p>
+          </section>
+
+          <div class="evidence-bar">
+            <div class="evidence-field">
+              <span>仓库</span>
+              <a id="repo-link" href="#" target="_blank" rel="noreferrer">--</a>
+            </div>
+            <div class="evidence-field">
+              <span>文件</span>
+              <strong id="file-path">--</strong>
+            </div>
+            <div class="evidence-field">
+              <span>修复提交</span>
+              <a id="fix-commit-link" href="#" target="_blank" rel="noreferrer">--</a>
+            </div>
+            <div class="evidence-field">
+              <span>通知</span>
+              <a id="notification-link" href="#" target="_blank" rel="noreferrer">查看公告</a>
+            </div>
+          </div>
+
+          <div class="code-grid">
+            <section class="code-pane vulnerable-pane">
+              <div class="code-heading">
+                <div>
+                  <span class="code-kicker">Vulnerable</span>
+                  <h2>漏洞前代码</h2>
+                </div>
+                <a class="small-link" id="vuln-code-link" href="#" target="_blank" rel="noreferrer">来源</a>
+              </div>
+              <textarea id="code-vuln" class="code-editor" spellcheck="false" autocomplete="off"
+                        aria-label="漏洞前代码"></textarea>
+            </section>
+
+            <section class="code-pane fixed-pane">
+              <div class="code-heading">
+                <div>
+                  <span class="code-kicker">Fixed</span>
+                  <h2>修复后代码</h2>
+                </div>
+                <a class="small-link" id="fixed-code-link" href="#" target="_blank" rel="noreferrer">来源</a>
+              </div>
+              <textarea id="code-fixed" class="code-editor" spellcheck="false" autocomplete="off"
+                        aria-label="修复后代码"></textarea>
+            </section>
+          </div>
+
+          <section class="review-form" aria-label="复核结论">
+            <div class="form-grid">
+              <label class="field">
+                <span>规则</span>
+                <select id="rule-select">
+                  <option value="">选择规则</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>严重度</span>
+                <select id="severity-select">
+                  <option value="LOW">LOW</option>
+                  <option value="MEDIUM">MEDIUM</option>
+                  <option value="HIGH" selected>HIGH</option>
+                  <option value="CRITICAL">CRITICAL</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>划分</span>
+                <select id="split-select">
+                  <option value="train" selected>train</option>
+                  <option value="val">val</option>
+                  <option value="test">test</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="field field-wide">
+              <span>判定解释</span>
+              <textarea id="explanation-input" class="form-textarea"
+                        placeholder="说明为什么这是漏洞或误报，以及关键证据"></textarea>
+            </label>
+
+            <label class="field field-wide">
+              <span>Finding 文本</span>
+              <textarea id="finding-input" class="form-textarea finding-input"
+                        placeholder="写入 Triage 样本的扫描告警文本"></textarea>
+            </label>
+
+            <label class="field field-wide">
+              <span>备注</span>
+              <input id="note-input" type="text" autocomplete="off" placeholder="可选">
+            </label>
+          </section>
+
+          <div class="verdict-bar" role="group" aria-label="复核结论">
+            <button type="button" class="verdict-button confirm" data-verdict="confirm">
+              <span class="verdict-name">确认漏洞</span>
+              <span class="verdict-key">1</span>
+            </button>
+            <button type="button" class="verdict-button reject" data-verdict="reject">
+              <span class="verdict-name">判定误报</span>
+              <span class="verdict-key">2</span>
+            </button>
+          </div>
+
+          <div class="review-nav">
+            <button type="button" class="nav-button" id="prev-button">
+              <span aria-hidden="true">←</span>
+              上一条
+            </button>
+            <button type="button" class="nav-button danger-text" id="clear-button" hidden>
+              清除本条结论
+            </button>
+            <button type="button" class="nav-button" id="next-button">
+              下一条
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <aside class="side-panel" aria-label="复核统计">
+        <section class="side-section progress-section">
+          <div class="section-heading">
+            <h2>复核进度</h2>
+            <span id="remaining-label">剩余 0 条</span>
+          </div>
+          <div class="progress-number">
+            <strong id="reviewed-count">0</strong>
+            <span id="total-count">/ 0</span>
+          </div>
+          <div class="progress-track side-progress-track" aria-hidden="true">
+            <div class="progress-fill" id="side-progress-fill"></div>
+          </div>
+        </section>
+
+        <section class="side-section">
+          <div class="section-heading">
+            <h2>结论分布</h2>
+          </div>
+          <ul class="distribution-list">
+            <li>
+              <span><i class="distribution-dot confirm"></i>确认漏洞</span>
+              <strong id="count-confirm">0</strong>
+            </li>
+            <li>
+              <span><i class="distribution-dot reject"></i>判定误报</span>
+              <strong id="count-reject">0</strong>
+            </li>
+          </ul>
+        </section>
+
+        <section class="side-section recent-section">
+          <div class="section-heading">
+            <h2>最近复核</h2>
+            <span id="recent-count">0</span>
+          </div>
+          <ol class="recent-list" id="recent-list"></ol>
+        </section>
+
+        <section class="side-section export-section">
+          <button type="button" class="secondary-button" id="export-button">
+            重建导出文件
+          </button>
+          <p class="export-note" id="export-note">等待复核结果</p>
+          <p class="candidate-source" id="candidate-source">--</p>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <dialog class="confirm-dialog" id="confirm-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-topline">
+      <span class="dialog-kicker">确认操作</span>
+      <button type="button" class="icon-button" id="dialog-close" aria-label="关闭">×</button>
+    </div>
+    <h2 id="dialog-title">确认复核结论</h2>
+    <p class="dialog-message" id="dialog-message"></p>
+    <blockquote class="dialog-preview" id="dialog-preview"></blockquote>
+    <div class="dialog-actions">
+      <button type="button" class="secondary-button" id="dialog-cancel">取消</button>
+      <button type="button" class="primary-button" id="dialog-confirm">确认</button>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

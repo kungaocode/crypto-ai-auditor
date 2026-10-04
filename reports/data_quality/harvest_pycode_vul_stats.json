@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-10-04T01:47:06.897514+00:00",
+  "source_label": "pycode-vul",
+  "inputs": [
+    "data/raw/pycode-vul/PyCode_Vul-_train-set.csv"
+  ],
+  "include_test": false,
+  "crypto_cwes": [
+    "CWE-208",
+    "CWE-256",
+    "CWE-295",
+    "CWE-311",
+    "CWE-319",
+    "CWE-321",
+    "CWE-326",
+    "CWE-327",
+    "CWE-328",
+    "CWE-329",
+    "CWE-330",
+    "CWE-338",
+    "CWE-347",
+    "CWE-798",
+    "CWE-916"
+  ],
+  "target_cwes": [
+    "CWE-208",
+    "CWE-256",
+    "CWE-295",
+    "CWE-321",
+    "CWE-326",
+    "CWE-327",
+    "CWE-329",
+    "CWE-338",
+    "CWE-916"
+  ],
+  "scanned": 14248,
+  "skipped_no_crypto": 13790,
+  "skipped_label": 0,
+  "skipped_no_code": 3,
+  "skipped_identical_pair": 66,
+  "emitted": 389,
+  "by_cwe": {
+    "CWE-330": 229,
+    "CWE-327": 164,
+    "CWE-295": 17
+  },
+  "note": "predicted_cwe_ids is a model label; rows are B-class and cannot reach A-class without an advisory/CVE."
+}

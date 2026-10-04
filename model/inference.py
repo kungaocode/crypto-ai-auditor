@@ -10,6 +10,7 @@ returning JSON-able label dicts (see model/prompts.py key sets).
 
 import json
 import os
+import time
 import re
 from pathlib import Path
 from typing import Any, Dict, List
@@ -70,17 +71,35 @@ class CloudBackend:
         # Qwen3-family models default to thinking mode, which is incompatible with
         # non-streaming requests: the API requires enable_thinking=false. We need
         # direct JSON answers (detect/triage), so disable it explicitly.
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json",
+        }
+        # Bailian workspace keys (sk-ws-…) require the workspace header.
+        # Bailian workspace header: set LLM_WORKSPACE env var.
+        ws_id = os.getenv("LLM_WORKSPACE", "")
+        if ws_id:
+            headers["X-DashScope-WorkSpace"] = ws_id
         payload = {"model": self.model_id, "messages": messages,
                    "temperature": temperature, "enable_thinking": False}
-        try:
-            resp = self._requests.post(
-                f"{self.base_url}/chat/completions",
-                headers={"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"},
-                json=payload,
-                timeout=self.timeout,
-            )
-        except Exception as e:  # network / timeout
-            raise LLMError(f"Cloud request failed: {e}") from e
+        for attempt in range(3):
+            try:
+                time.sleep(0.3)  # bailian rate-limit guard
+                resp = self._requests.post(
+                    f"{self.base_url}/chat/completions",
+                    headers=headers,
+                    json=payload,
+                    timeout=self.timeout,
+                )
+                if resp.status_code in (403, 429) and attempt < 2:
+                    time.sleep(2.0 * (attempt + 1))
+                    continue
+                break
+            except Exception as e:  # network / timeout
+                if attempt < 2:
+                    time.sleep(2.0 * (attempt + 1))
+                    continue
+                raise LLMError(f"Cloud request failed: {e}") from e
         if resp.status_code != 200:
             raise LLMError(f"Cloud API {resp.status_code}: {resp.text[:300]}")
         try:

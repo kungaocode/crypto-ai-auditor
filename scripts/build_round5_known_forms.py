@@ -648,6 +648,8 @@ def load_passlib_reject() -> list:
             continue
         scheme = r["file"].split("/")[-1].removesuffix(".py")
         new = dict(r)
+        import textwrap
+        new["code"] = textwrap.dedent(r["code"]).strip()
         new["id"] = r["id"].replace("round4-real-", "round5-", 1)
         new["source"] = "round5-passlib-legacy"
         new["split"] = "train"

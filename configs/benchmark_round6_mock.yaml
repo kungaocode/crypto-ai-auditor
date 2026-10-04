@@ -1,0 +1,24 @@
+# Credential-free Round-6 smoke test.
+#
+# Same frozen de-leaked eval slices as configs/benchmark_round6.yaml, but backed by
+# the deterministic `mock` model so CI / local checks need no API key. The mock
+# backend is NOT a trained model: use this to verify the pipeline and the data
+# plumbing, not to report model quality.
+#
+#   python main.py --benchmark --config configs/benchmark_round6_mock.yaml
+
+model:
+  kind: mock
+  model_id: mock
+
+static:
+  rules: rules/
+
+splits:
+  detect: data/round6/validation_frozen/detect_eval.jsonl
+  domain: data/round6/validation_frozen/triage_eval.jsonl
+
+systems:
+  - static
+  - llm
+  - agent

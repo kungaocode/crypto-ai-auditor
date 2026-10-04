@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "approved_by": "user",
+  "approved_at": "2026-10-04",
+  "candidate_records": 15,
+  "reference_records": 7,
+  "excluded_records": 8,
+  "training_eligible_count": 0,
+  "verified_true_count": 0,
+  "by_package": {
+    "jpadilla/pyjwt": 2,
+    "pyca/cryptography": 5
+  },
+  "by_claim_validation": {
+    "confirmed": 1,
+    "context_dependent": 2,
+    "not_evaluable": 1,
+    "partial": 2,
+    "report_mismatch": 1
+  },
+  "by_source_status": {
+    "report_target_missing": 1,
+    "verified_source": 6
+  },
+  "by_merge_status": {
+    "blocked_context_dependent": 1,
+    "blocked_non_target_cwe": 2,
+    "blocked_report_mismatch": 1,
+    "blocked_report_target_missing": 1,
+    "blocked_weak_parameter_floor": 1,
+    "review_required_secure_reference": 1
+  },
+  "by_coverage_status": {
+    "control_outside_rule_pattern": 1,
+    "non_target_cwe": 2,
+    "parameter_floor_below_rule_threshold": 1,
+    "partial_requires_algorithm_key_sizes": 1,
+    "report_target_missing_local_revision_differs": 1,
+    "validation_only_no_strength_floor": 1
+  },
+  "references": [
+    {
+      "reference_id": "C-001",
+      "package": "pyca/cryptography",
+      "function_name": "_check_aes_key_length",
+      "claim_validation": "report_mismatch",
+      "source_status": "verified_source",
+      "r6_merge_status": "blocked_report_mismatch",
+      "source_sha256": "6094178b83c9188219d6b81c85b307e3b11df988947144a32cf10eb95f2b8061",
+      "code_sha256": "e8c5eccc6ccd9b5eb344e50a8a498fa7f8e83b2da49785ba5397abe26865984c"
+    },
+    {
+      "reference_id": "C-002",
+      "package": "pyca/cryptography",
+      "function_name": "XTS",
+      "claim_validation": "partial",
+      "source_status": "verified_source",
+      "r6_merge_status": "review_required_secure_reference",
+      "source_sha256": "6094178b83c9188219d6b81c85b307e3b11df988947144a32cf10eb95f2b8061",
+      "code_sha256": "dd4aa3530eb34295cfdee103da600ee1da96dc8a8a8905751c6a00da02bf4b82"
+    },
+    {
+      "reference_id": "C-006",
+      "package": "pyca/cryptography",
+      "function_name": "BestAvailableEncryption",
+      "claim_validation": "partial",
+      "source_status": "verified_source",
+      "r6_merge_status": "blocked_non_target_cwe",
+      "source_sha256": "5340d4d19cce2c9a69090b21f44247eaf198a07a2d06895f372472c77c2bd65d",
+      "code_sha256": "ee180951c850a9a4cc6173f2d05eeb1fab7082292b7aaba1b8fecd1571160982"
+    },
+    {
+      "reference_id": "C-007",
+      "package": "pyca/cryptography",
+      "function_name": "KeySerializationEncryptionBuilder.kdf_rounds",
+      "claim_validation": "context_dependent",
+      "source_status": "verified_source",
+      "r6_merge_status": "blocked_context_dependent",
+      "source_sha256": "5340d4d19cce2c9a69090b21f44247eaf198a07a2d06895f372472c77c2bd65d",
+      "code_sha256": "2bb9c5ca29990a4482ed1d635ccd7b6006c53b73a8b4937c99288005c7a7dd52"
+    },
+    {
+      "reference_id": "C-008",
+      "package": "pyca/cryptography",
+      "function_name": "Scrypt",
+      "claim_validation": "context_dependent",
+      "source_status": "verified_source",
+      "r6_merge_status": "blocked_weak_parameter_floor",
+      "source_sha256": "e1038d863c40fd9b6e42d43b415dc59db07c7edac59cce760781cf7d5ee1172b",
+      "code_sha256": "feaf50d1c5c8a9e9d108b4aba8e6c6e8d19329dadec14ddf7576e91e937dd1a8"
+    },
+    {
+      "reference_id": "C-011",
+      "package": "jpadilla/pyjwt",
+      "function_name": "PyJWT._merge_options",
+      "claim_validation": "not_evaluable",
+      "source_status": "report_target_missing",
+      "r6_merge_status": "blocked_report_target_missing",
+      "source_sha256": "28cff360870226934631b90a72b17c11d6ca95d09125e0dc1d549aaf8292e7cb",
+      "code_sha256": "7f4a2f844badc0ee27d53b2af4bdd66b8f675806168ff543afd89e4a7f32cc4e"
+    },
+    {
+      "reference_id": "C-013",
+      "package": "jpadilla/pyjwt",
+      "function_name": "PyJWS._load",
+      "claim_validation": "confirmed",
+      "source_status": "verified_source",
+      "r6_merge_status": "blocked_non_target_cwe",
+      "source_sha256": "a0c578d4e09c823afe019ed3e0b06fb184c665ff34cfe404c68229ae3272269d",
+      "code_sha256": "9e5fb40dbdac879dc40c8f05f51b8df47cd6ade38b3b3df1b43792e08afc0f32"
+    }
+  ],
+  "output": {
+    "path": "data/round6/references/report_secure_references.jsonl",
+    "sha256": "819dd4fdba4e3ab9c3bebc98cb03193b3585e635ce2ba56c7ddf81d200c5245a"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "candidate_path": "data/round6/candidates/real_crypto_candidates_screened.jsonl",
+  "estimated_cost": {
+    "high_reasoning": {
+      "input": 2.2944,
+      "output": 68.0544,
+      "total": 70.3488
+    },
+    "normal": {
+      "input": 2.2944,
+      "output": 11.12,
+      "total": 13.4144
+    }
+  },
+  "formula": {
+    "input_cost": "input_tokens / 1e6 * input_price",
+    "output_cost": "(final_output_tokens + reasoning_tokens) / 1e6 * output_price"
+  },
+  "generated_at": "2026-10-03T08:55:11+00:00",
+  "model": "kimi-k3",
+  "pricing": {
+    "input_per_million": 20.0,
+    "output_per_million": 100.0
+  },
+  "reasoning_effort": "high",
+  "status": "estimated",
+  "token_stats": {
+    "assumption": {
+      "high_reasoning_output_tokens": 4896,
+      "max_output_tokens_per_item": 6144,
+      "normal_output_tokens": 800,
+      "reasoning_tokens_high": 4096
+    },
+    "candidate_count": 139,
+    "estimated_billable_tokens": {
+      "high_reasoning_output_total": 680544,
+      "high_reasoning_total": 795264,
+      "normal_output_total": 111200,
+      "normal_total": 225920
+    },
+    "prompt_tokens": {
+      "average": 825.32,
+      "max": 4485,
+      "min": 703,
+      "total": 114720
+    }
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "generated_at": "2026-10-04T02:18:25.867327+00:00",
+  "pools": [
+    "/home/kun/Desktop/AIE/project_for_AIE/01-ai-crypto-code-security-auditor/data/round6/candidates/real_crypto_candidates.jsonl",
+    "/home/kun/Desktop/AIE/project_for_AIE/01-ai-crypto-code-security-auditor/data/round6/candidates/real_crypto_candidates_ghsa.jsonl",
+    "/home/kun/Desktop/AIE/project_for_AIE/01-ai-crypto-code-security-auditor/data/round6/candidates/real_crypto_candidates_osv_pypi.jsonl",
+    "/home/kun/Desktop/AIE/project_for_AIE/01-ai-crypto-code-security-auditor/data/round6/candidates/real_crypto_candidates_pypa.jsonl",
+    "/home/kun/Desktop/AIE/project_for_AIE/01-ai-crypto-code-security-auditor/data/round6/candidates/real_crypto_candidates_pycode_vul.jsonl",
+    "/home/kun/Desktop/AIE/project_for_AIE/01-ai-crypto-code-security-auditor/data/round6/candidates/real_crypto_candidates_broad.jsonl",
+    "/home/kun/Desktop/AIE/project_for_AIE/01-ai-crypto-code-security-auditor/data/round6/candidates/real_crypto_candidates_enriched.jsonl",
+    "/home/kun/Desktop/AIE/project_for_AIE/01-ai-crypto-code-security-auditor/data/round6/candidates/real_crypto_candidates_functions.jsonl"
+  ],
+  "merged_pool_rows": 2476,
+  "local_json": {
+    "files_seen": 16,
+    "files_scanned": 13,
+    "files_excluded_by_policy": 3,
+    "directories_pruned_by_policy": 21,
+    "records_seen": 608,
+    "adapted": 242,
+    "skipped": {
+      "control-row": 181,
+      "no-code": 2,
+      "synthetic-source": 183
+    },
+    "inputs": [
+      "data/raw/cwe/cwe_database.json",
+      "data/round4/real_findings.jsonl",
+      "data/round4/real_validation/detect.jsonl",
+      "data/round4/real_validation/manifest.json",
+      "data/round4/real_validation/triage.jsonl",
+      "data/round6/new_detect.jsonl",
+      "data/round6/new_triage.jsonl",
+      "data/round6/rule_fixture_detect.jsonl",
+      "data/round6/rule_fixture_triage.jsonl",
+      "data/round6/supplement_detect.jsonl",
+      "data/round6/supplement_triage.jsonl",
+      "data/round6/supplement_v2_detect.jsonl",
+      "data/round6/supplement_v2_triage.jsonl"
+    ]
+  },
+  "local_adapted_rows": 242,
+  "merged": 2718,
+  "dropped_duplicates": 857,
+  "drop_examples": [
+    {
+      "candidate_id": "ghsa-GHSA-mh33-7rrq-662w",
+      "reason": "duplicate of osv-GHSA-mh33-7rrq-662w"
+    },
+    {
+      "candidate_id": "osv-GHSA-wpjr-j57x-wxfw-1",
+      "reason": "duplicate of osv-GHSA-wpjr-j57x-wxfw"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-wpjr-j57x-wxfw-1",
+      "reason": "duplicate of osv-GHSA-wpjr-j57x-wxfw"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-537h-rv9q-vvph",
+      "reason": "duplicate of osv-GHSA-537h-rv9q-vvph"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-5phf-pp7p-vc2r",
+      "reason": "duplicate of osv-GHSA-5phf-pp7p-vc2r"
+    },
+    {
+      "candidate_id": "osv-PYSEC-2021-59",
+      "reason": "duplicate of osv-GHSA-5phf-pp7p-vc2r"
+    },
+    {
+      "candidate_id": "pypa-PYSEC-2021-59",
+      "reason": "duplicate of osv-GHSA-5phf-pp7p-vc2r"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-xrx6-fmxq-rjj2",
+      "reason": "duplicate of osv-GHSA-xrx6-fmxq-rjj2"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-ffqj-6fqr-9h24",
+      "reason": "duplicate of osv-GHSA-ffqj-6fqr-9h24"
+    },
+    {
+      "candidate_id": "osv-PYSEC-2022-202",
+      "reason": "duplicate of osv-GHSA-ffqj-6fqr-9h24"
+    },
+    {
+      "candidate_id": "pypa-PYSEC-2022-202",
+      "reason": "duplicate of osv-GHSA-ffqj-6fqr-9h24"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-v4w5-p2hg-8fh6",
+      "reason": "duplicate of osv-GHSA-v4w5-p2hg-8fh6"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-w799-prg3-cx77",
+      "reason": "duplicate of osv-GHSA-w799-prg3-cx77"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-cf7p-gm2m-833m",
+      "reason": "duplicate of osv-GHSA-cf7p-gm2m-833m"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-wj6h-64fc-37mp",
+      "reason": "duplicate of osv-GHSA-wj6h-64fc-37mp"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-3ww4-gg4f-jr7f",
+      "reason": "duplicate of osv-GHSA-3ww4-gg4f-jr7f"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-6c5p-j8vq-pqhj",
+      "reason": "duplicate of osv-GHSA-6c5p-j8vq-pqhj"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-5357-c2jx-v7qh",
+      "reason": "duplicate of osv-GHSA-5357-c2jx-v7qh"
+    },
+    {
+      "candidate_id": "osv-GHSA-x7q2-wr7g-xqmf-1",
+      "reason": "duplicate of osv-GHSA-x7q2-wr7g-xqmf"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-x7q2-wr7g-xqmf-1",
+      "reason": "duplicate of osv-GHSA-x7q2-wr7g-xqmf"
+    }
+  ],
+  "summary": {
+    "total": 1861,
+    "by_tier": {
+      "P1": 5,
+      "P2": 2,
+      "P3": 1854
+    },
+    "by_source": {
+      "OSV/PyPI": 549,
+      "GHSA": 399,
+      "pycode-vul": 387,
+      "PyPA": 231,
+      "round4-real-findings": 209,
+      "GHSA/OSV": 86
+    },
+    "by_match_reason": {
+      "pycode-vul": 774,
+      "watchlist": 580,
+      "keyword": 572,
+      "predicted": 407,
+      "cwe": 237,
+      "local-json": 209,
+      "local-source": 209,
+      "real-single-side-finding": 209,
+      "local-rule": 209,
+      "no advisory/CVE -> stock only": 209,
+      "no fix commit -> no vuln/fixed pair": 209,
+      "legacy": 3
+    },
+    "by_cwe": {
+      "?": 461,
+      "CWE-327": 385,
+      "CWE-330": 220,
+      "CWE-295": 83,
+      "CWE-347": 51,
+      "CWE-20": 39,
+      "CWE-200": 37,
+      "CWE-400": 36,
+      "CWE-22": 35,
+      "CWE-770": 33,
+      "CWE-208": 25,
+      "CWE-79": 25,
+      "CWE-287": 24,
+      "CWE-89": 21,
+      "CWE-326": 19,
+      "CWE-798": 16,
+      "CWE-444": 15,
+      "CWE-319": 13,
+      "CWE-345": 11,
+      "CWE-601": 11,
+      "CWE-311": 10,
+      "CWE-352": 8,
+      "CWE-862": 8,
+      "CWE-918": 7,
+      "CWE-1333": 7,
+      "CWE-502": 7,
+      "CWE-276": 6,
+      "CWE-835": 6,
+      "CWE-203": 6,
+      "CWE-409": 6,
+      "CWE-256": 6,
+      "CWE-863": 6,
+      "CWE-284": 5,
+      "CWE-94": 5,
+      "CWE-130": 5,
+      "CWE-407": 5,
+      "CWE-613": 5,
+      "CWE-269": 5,
+      "CWE-74": 5,
+      "CWE-321": 4
+    },
+    "by_cwe_raw": {
+      "?": 1025,
+      "CWE-327": 385,
+      "CWE-330": 220,
+      "CWE-295": 83,
+      "CWE-347": 50,
+      "CWE-208": 25,
+      "CWE-326": 19,
+      "CWE-798": 16,
+      "CWE-319": 11,
+      "CWE-311": 10,
+      "CWE-256": 6,
+      "CWE-321": 4,
+      "CWE-338": 3,
+      "CWE-328": 2,
+      "CWE-916": 1,
+      "CWE-329": 1
+    },
+    "by_cwe_name": {
+      "Use of a Broken or Risky Cryptographic Algorithm": 385,
+      "Use of Insufficiently Random Values": 220,
+      "Inadequate Encryption Strength": 19,
+      "Use of Hard-coded Cryptographic Key": 4,
+      "Use of Cryptographically Weak PRNG": 3,
+      "Use of Weak Hash": 2,
+      "Use of Password Hash With Insufficient Computational Effort": 1,
+      "Generation of Predictable IV with CBC Mode": 1
+    },
+    "cwe_resolved_from_cwe_all": 564,
+    "cwe_named": 635,
+    "cwe_target_total": 527,
+    "by_package": {
+      "?": 387,
+      "pycryptodome": 194,
+      "django": 166,
+      "Django": 143,
+      "salt": 114,
+      "aiohttp": 52,
+      "cryptography": 35,
+      "urllib3": 30,
+      "tornado": 30,
+      "pyjwt": 29,
+      "open-webui": 25,
+      "openssl-encrypt": 22,
+      "apache-airflow": 19,
+      "praisonai": 17,
+      "passlib": 16,
+      "praisonai-platform": 16,
+      "authlib": 15,
+      "starlette": 14,
+      "gradio": 13,
+      "lemur": 12,
+      "twisted": 12,
+      "requests": 10,
+      "asyncssh": 10,
+      "werkzeug": 10,
+      "Twisted": 9
+    },
+    "with_code_pair": 400,
+    "production_code": 415,
+    "test_code": 194,
+    "parseable_code_pairs": 366,
+    "p3_volume": 331,
+    "p3_stock": 1523,
+    "model_predicted": 387
+  },
+  "queues": {
+    "need_code": 549,
+    "no_commit": 703,
+    "no_commit_repo_unresolved": 703,
+    "predicted_cve": 2,
+    "volume": 331
+  },
+  "tier_tokens": {
+    "P1": {
+      "input_tokens": 5354,
+      "output_tokens": 24480,
+      "final_output_tokens": 4000,
+      "reasoning_tokens": 20480
+    },
+    "P2": {
+      "input_tokens": 5870,
+      "output_tokens": 9792,
+      "final_output_tokens": 1600,
+      "reasoning_tokens": 8192
+    },
+    "P3": {
+      "input_tokens": 3373328,
+      "output_tokens": 9077184,
+      "final_output_tokens": 1483200,
+      "reasoning_tokens": 7593984
+    }
+  },
+  "tier_cost_cny": {
+    "P1": {
+      "kimi-k3": 2.56,
+      "kimi-k2.7-code": 0.7,
+      "kimi-k2.7-code-highspeed": 1.39,
+      "kimi-k2.6": 0.7,
+      "_per_record_kimi_k2_7_code": 0.14,
+      "_per_record_kimi_k3": 0.512
+    },
+    "P2": {
+      "kimi-k3": 1.1,
+      "kimi-k2.7-code": 0.3,
+      "kimi-k2.7-code-highspeed": 0.61,
+      "kimi-k2.6": 0.3,
+      "_per_record_kimi_k2_7_code": 0.15,
+      "_per_record_kimi_k3": 0.55
+    },
+    "P3": {
+      "kimi-k3": 975.18,
+      "kimi-k2.7-code": 267.01,
+      "kimi-k2.7-code-highspeed": 534.02,
+      "kimi-k2.6": 267.01,
+      "_per_record_kimi_k2_7_code": 0.144,
+      "_per_record_kimi_k3": 0.526
+    }
+  },
+  "note": "Model results are pre-screening only; verified stays false until human review."
+}

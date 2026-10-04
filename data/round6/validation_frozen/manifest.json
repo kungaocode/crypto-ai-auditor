@@ -1,0 +1,109 @@
+{
+  "generated_by": "scripts/audit_dataset_leakage.py --write-frozen",
+  "policy": "Eval rows whose whitespace-normalized code OR ast.dump() appears in any optimization-visible artifact (R5/R6 final train or val) are removed.",
+  "optimization_visible": {
+    "r5_final_train": "data/round5/final/upload/full/train.jsonl",
+    "r5_final_val": "data/round5/final/upload/full/val.jsonl",
+    "r6_final_train": "data/round6/final/upload/full/train.jsonl",
+    "r6_final_val": "data/round6/final/upload/full/val.jsonl"
+  },
+  "slices": {
+    "r5_validation_detect": {
+      "source": "data/round5/validation/detect_eval.jsonl",
+      "kept": 13,
+      "dropped_leaks": 0,
+      "dropped_ids": [],
+      "detect_pos": 3,
+      "detect_neg": 10,
+      "triage_confirm": 0,
+      "triage_reject": 0,
+      "verified_true": 13,
+      "verified_false": 0,
+      "rule_distribution": {
+        "CRYPTO-011": 2,
+        "CRYPTO-012": 2,
+        "CRYPTO-013": 2
+      }
+    },
+    "r5_validation_triage": {
+      "source": "data/round5/validation/triage_eval.jsonl",
+      "kept": 35,
+      "dropped_leaks": 6,
+      "dropped_ids": [
+        "round4-real-passlib-passlib_handlers_digests__htdigest_hash-CRYPTO-001",
+        "round4-real-passlib-passlib_handlers_django__django_salted_md5__calc_checksum-CRYPTO-001",
+        "round4-real-passlib-passlib_handlers_md5_crypt___raw_md5_crypt-CRYPTO-001",
+        "round4-real-passlib-passlib_handlers_mssql___raw_mssql-CRYPTO-002",
+        "round4-real-passlib-passlib_handlers_oracle__oracle11__calc_checksum-CRYPTO-002",
+        "round4-real-passlib-passlib_handlers_phpass__phpass__calc_checksum-CRYPTO-001"
+      ],
+      "detect_pos": 0,
+      "detect_neg": 0,
+      "triage_confirm": 3,
+      "triage_reject": 32,
+      "verified_true": 35,
+      "verified_false": 0,
+      "rule_distribution": {
+        "CRYPTO-002": 3,
+        "CRYPTO-003": 16,
+        "CRYPTO-004": 1,
+        "CRYPTO-009": 6,
+        "CRYPTO-001": 3,
+        "CRYPTO-011": 2,
+        "CRYPTO-012": 2,
+        "CRYPTO-013": 2
+      }
+    },
+    "r6_validation_detect": {
+      "source": "data/round6/validation/detect_eval.jsonl",
+      "kept": 19,
+      "dropped_leaks": 0,
+      "dropped_ids": [],
+      "detect_pos": 7,
+      "detect_neg": 12,
+      "triage_confirm": 0,
+      "triage_reject": 0,
+      "verified_true": 13,
+      "verified_false": 6,
+      "rule_distribution": {
+        "CRYPTO-011": 2,
+        "CRYPTO-012": 2,
+        "CRYPTO-013": 2,
+        "CRYPTO-006": 2,
+        "CRYPTO-007": 1,
+        "CRYPTO-008": 1,
+        "CRYPTO-004": 1
+      }
+    },
+    "r6_validation_triage": {
+      "source": "data/round6/validation/triage_eval.jsonl",
+      "kept": 36,
+      "dropped_leaks": 6,
+      "dropped_ids": [
+        "round4-real-passlib-passlib_handlers_digests__htdigest_hash-CRYPTO-001",
+        "round4-real-passlib-passlib_handlers_django__django_salted_md5__calc_checksum-CRYPTO-001",
+        "round4-real-passlib-passlib_handlers_md5_crypt___raw_md5_crypt-CRYPTO-001",
+        "round4-real-passlib-passlib_handlers_mssql___raw_mssql-CRYPTO-002",
+        "round4-real-passlib-passlib_handlers_oracle__oracle11__calc_checksum-CRYPTO-002",
+        "round4-real-passlib-passlib_handlers_phpass__phpass__calc_checksum-CRYPTO-001"
+      ],
+      "detect_pos": 0,
+      "detect_neg": 0,
+      "triage_confirm": 4,
+      "triage_reject": 32,
+      "verified_true": 35,
+      "verified_false": 1,
+      "rule_distribution": {
+        "CRYPTO-002": 3,
+        "CRYPTO-003": 16,
+        "CRYPTO-004": 1,
+        "CRYPTO-009": 6,
+        "CRYPTO-001": 3,
+        "CRYPTO-011": 2,
+        "CRYPTO-012": 2,
+        "CRYPTO-013": 2,
+        "CRYPTO-010": 1
+      }
+    }
+  }
+}

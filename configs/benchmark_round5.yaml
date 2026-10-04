@@ -1,6 +1,6 @@
 model:
   kind: cloud
-  model_id: qwen3-4b
+  # model_id from LLM_MODEL_ID env
 static:
   rules: rules/
 splits:

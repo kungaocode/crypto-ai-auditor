@@ -22,4 +22,5 @@ api.txt
 
 # large/redistributable data (record source, do not commit)
 data/raw/
+data/external/
 data/round4/real_projects/

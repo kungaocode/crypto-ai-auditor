@@ -1,0 +1,25 @@
+# Benchmark config (Round 6): full base retrain on Qwen3-4B from FRESH base.
+#
+# Uses the de-leaked frozen eval slices in data/round6/validation_frozen/.
+# Regenerate with:
+#   python3 scripts/audit_dataset_leakage.py --write-frozen
+# The audit removes every eval row whose code (exact or AST) also appears in an
+# optimization-visible artifact (R5/R6 final train or val).
+#
+# Acceptance criteria:
+#   - detect precision > 0.54 (R3/R4 baseline)
+#   - domain fpr ≤ 0.06 (same as R5 target)
+#   - confirm_recall is REPORT-ONLY: the frozen domain slice has only 4 Confirm
+#     positives, so it is not a statistically meaningful acceptance gate.
+#   - 18-probe accuracy ≥ 0.95
+
+model:
+  kind: cloud
+  # model_id from LLM_MODEL_ID env
+static:
+  rules: rules/
+splits:
+  detect: data/round6/validation_frozen/detect_eval.jsonl
+  domain: data/round6/validation_frozen/triage_eval.jsonl
+systems:
+- llm

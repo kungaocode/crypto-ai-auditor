@@ -1,0 +1,326 @@
+{
+  "audit_path": "data/round6/candidates/model_audit_k3_binary.jsonl",
+  "audit_rows": 60,
+  "candidate_path": "data/round6/candidates/real_crypto_candidates_a_functions.jsonl",
+  "candidate_rows": 60,
+  "dry_run": false,
+  "existing_reviews": 48,
+  "export": {
+    "detect": 30,
+    "detect_path": "data/round6/real_verified_detect.jsonl",
+    "triage": 49,
+    "triage_path": "data/round6/real_verified_triage.jsonl"
+  },
+  "generated_at": "2026-10-04T12:13:16+00:00",
+  "imported": 1,
+  "imported_by_decision": {
+    "confirmed": 1
+  },
+  "imported_ids": [
+    "osv-GHSA-35m5-8cvj-8783"
+  ],
+  "reviewer": "reviewer-kimi",
+  "skipped": 59,
+  "skipped_by_reason": {
+    "already_reviewed": 48,
+    "missing_vulnerable_code": 8,
+    "review_validation_failed": 3
+  },
+  "skipped_rows": [
+    {
+      "candidate_id": "osv-GHSA-m2h6-j472-rp4c-1",
+      "detail": "",
+      "reason": "missing_vulnerable_code"
+    },
+    {
+      "candidate_id": "osv-GHSA-ffqj-6fqr-9h24",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-p3h7-3c45-qj4v-1",
+      "detail": "vulnerable snippet is not valid Python (unexpected indent at line 1); edit it in the code editor before confirming",
+      "reason": "review_validation_failed"
+    },
+    {
+      "candidate_id": "osv-GHSA-xg4x-w2j3-57h6",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-77rc-x84q-pv4f-1",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-5f35-pq34-c87q-1",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-g2jx-37x6-6438-1",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-4m32-cjv7-f425",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-gc24-px2r-5qmf-1",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-39vm-p9mr-4r27",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-w6q2-48ch-fj26-1",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-f248-v4qh-x2r6",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-m38j-pmg3-v5x5",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-95c6-p277-p87g",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-6655-8ph2-63j3",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-8r96-8889-qg2x",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-gg9x-qcx2-xmrh",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-c759-cx9p-mrwq",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-7gf7-7wx4-mxmw-1",
+      "detail": "vulnerable snippet is not valid Python (unexpected indent at line 8); edit it in the code editor before confirming",
+      "reason": "review_validation_failed"
+    },
+    {
+      "candidate_id": "osv-GHSA-prfw-69r3-wqxf",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-8v53-23mx-hcf9",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-7r92-3jgr-r65q",
+      "detail": "",
+      "reason": "missing_vulnerable_code"
+    },
+    {
+      "candidate_id": "osv-GHSA-qh2x-hpf9-cf2g-1",
+      "detail": "",
+      "reason": "missing_vulnerable_code"
+    },
+    {
+      "candidate_id": "osv-GHSA-3xxc-pwj6-jgrj",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-xjhr-fm27-4hmx",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-rjrp-m2jw-pv9c-1",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-w6xv-mf6f-r5f6",
+      "detail": "",
+      "reason": "missing_vulnerable_code"
+    },
+    {
+      "candidate_id": "osv-GHSA-gmhf-gg8w-jw42",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-vqwp-45wm-r9r5",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-wvcv-832q-fjg7",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-5h3x-6gwf-73jm",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-45gq-q4xh-cp53",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-4qjh-9fv9-r85r",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-jjjr-3jcw-f8v6-1",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "osv-GHSA-8ch4-58qp-g3mp",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-3c45-wgjp-7v9r",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-82r6-8w77-94w6",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-prcq-52f8-fp44",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-w3j6-8j34-q43x",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-2xwp-m7mq-7q3r",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-94jq-q5v2-76wj-1",
+      "detail": "",
+      "reason": "missing_vulnerable_code"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-j3f7-7rmc-6wqj-1",
+      "detail": "",
+      "reason": "missing_vulnerable_code"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-v49p-m6gh-747c",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-82vr-5769-6358",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-mv8m-v9v6-5f94",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-p6hw-wm59-3g5g",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-fhq3-2gf3-8f3j",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-7rw5-9f7q-xj36",
+      "detail": "vulnerable snippet is not valid Python (unexpected indent at line 1); edit it in the code editor before confirming",
+      "reason": "review_validation_failed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-h3m5-p59h-x88p",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-mhhf-vgwh-fw9h",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-g4r8-3qmh-pmch",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-qv37-mfjf-42h8",
+      "detail": "",
+      "reason": "missing_vulnerable_code"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-6p6v-m64v-jx8q-1",
+      "detail": "",
+      "reason": "missing_vulnerable_code"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-c3xq-cj8f-7829",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-p3xv-97g8-4wmj",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-9g3v-v24q-jj5p",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-62rc-f4v9-h543-1",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-6845-xw22-ffxv",
+      "detail": "",
+      "reason": "already_reviewed"
+    },
+    {
+      "candidate_id": "ghsa-GHSA-2mmv-7rrp-g8xh",
+      "detail": "",
+      "reason": "already_reviewed"
+    }
+  ]
+}

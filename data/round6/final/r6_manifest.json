@@ -1,0 +1,96 @@
+{
+  "generated_by": "scripts/build_round6_final_dataset.py --emit",
+  "policy": "R6 finalization: advisory-backed reviewed records are merged into Round 6 before training. Re-check this manifest's hashes right before the run and do not mutate the emitted train/val/test afterwards. Training must start from a fresh base; incremental continuation is forbidden.",
+  "sources": [
+    {
+      "file": "data/round6/new_detect.jsonl",
+      "records": 33,
+      "sha256": "5f5463429a7c8097e30abc959db9b26f0041c7997ead5cf1335fa7a3abb5fa64"
+    },
+    {
+      "file": "data/round6/new_triage.jsonl",
+      "records": 21,
+      "sha256": "41c36073cb505b4c926b7c56be0acb80297557f61035b1d16efcb68d27f951d3"
+    },
+    {
+      "file": "data/round6/supplement_detect.jsonl",
+      "records": 28,
+      "sha256": "4ac5a492dd18cef2cc5092d89853a3d2c71e49ab756c3b65f4cc1af756c349c2"
+    },
+    {
+      "file": "data/round6/supplement_triage.jsonl",
+      "records": 5,
+      "sha256": "06d2351889b25bcf1d5494814bb252304f1945980e1326e3235ac39b103bd5d7"
+    },
+    {
+      "file": "data/round6/supplement_v2_detect.jsonl",
+      "records": 21,
+      "sha256": "e771b80bb8afd89ef97cfc67f2a723fcdee25e2cc4d705b8307c70c8b2c29795"
+    },
+    {
+      "file": "data/round6/supplement_v2_triage.jsonl",
+      "records": 6,
+      "sha256": "a2c141b756633974be2cc4a8b92cd54b082ff8c202be38ac8493886ae64dae9c"
+    },
+    {
+      "file": "data/round6/rule_fixture_detect.jsonl",
+      "records": 104,
+      "sha256": "4bd4595aa8f40a0a83cd01c3628e7a5273de6dab2714e6254d9ed4cd450fe3c0"
+    },
+    {
+      "file": "data/round6/rule_fixture_triage.jsonl",
+      "records": 104,
+      "sha256": "240d6c5449c3bd9842df79a78f17e129a2a56f4b8247c37f7620bc57146573ce"
+    },
+    {
+      "file": "data/round6/real_verified_detect.jsonl",
+      "records": 30,
+      "sha256": "a65a4768e62adab070c29dc787b549f99a03f9d45d6d6524ffea38e0c6c39658"
+    },
+    {
+      "file": "data/round6/real_verified_triage.jsonl",
+      "records": 49,
+      "sha256": "e76800d9d69b762a0d8d63d45997c735681a4148ba8ea8851db016566ea4372d"
+    }
+  ],
+  "r6_new_total": 401,
+  "verified_real_total": 79,
+  "verified_real_by_rule": {
+    "CRYPTO-001": 4,
+    "CRYPTO-005": 2,
+    "CRYPTO-007": 4,
+    "CRYPTO-008": 4,
+    "CRYPTO-009": 3,
+    "CRYPTO-010": 26,
+    "CRYPTO-011": 2,
+    "CRYPTO-013": 19
+  },
+  "distribution": {
+    "detect_total": 216,
+    "detect_pos_neg": "130:86",
+    "triage_total": 185,
+    "triage_confirm_reject": "113:72",
+    "detect_verified_true": 30,
+    "triage_verified_true": 49,
+    "split_train": "detect=183 triage=168 total=351",
+    "split_val": "detect=17 triage=9 total=26",
+    "split_test": "detect=16 triage=8 total=24"
+  },
+  "artifacts": {
+    "train": {
+      "path": "data/round6/final/upload/full/train.jsonl",
+      "records": 3115,
+      "sha256": "139966e5217d4b2976db7a13f86d70ecb8aad09adc1198092f782e028041bd4d"
+    },
+    "val": {
+      "path": "data/round6/final/upload/full/val.jsonl",
+      "records": 347,
+      "sha256": "6b6797b5fb1da66c797f2efe28dc7559d124b2cd4adb5f75496a40f07d397f4b"
+    },
+    "test": {
+      "path": "data/round6/final/upload/full/test.jsonl",
+      "records": 660,
+      "sha256": "1549c1d7d5c8484aafe677ddf83ccfbdf6912e6052d1e910d49f45ed66c7d64c"
+    }
+  }
+}

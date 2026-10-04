@@ -1,0 +1,638 @@
+{
+  "artifacts": {
+    "r5_final_train": {
+      "path": "data/round5/final/upload/full/train.jsonl",
+      "n": 2764,
+      "task": {
+        "detect": 2549,
+        "triage": 215
+      },
+      "unparseable": 34,
+      "repo_records": 0
+    },
+    "r5_final_val": {
+      "path": "data/round5/final/upload/full/val.jsonl",
+      "n": 321,
+      "task": {
+        "detect": 282,
+        "triage": 39
+      },
+      "unparseable": 3,
+      "repo_records": 0
+    },
+    "r6_final_train": {
+      "path": "data/round6/final/upload/full/train.jsonl",
+      "n": 3115,
+      "task": {
+        "detect": 2732,
+        "triage": 383
+      },
+      "unparseable": 34,
+      "repo_records": 0
+    },
+    "r6_final_val": {
+      "path": "data/round6/final/upload/full/val.jsonl",
+      "n": 347,
+      "task": {
+        "detect": 299,
+        "triage": 48
+      },
+      "unparseable": 3,
+      "repo_records": 0
+    },
+    "r5_validation_detect": {
+      "path": "data/round5/validation/detect_eval.jsonl",
+      "n": 13,
+      "task": {
+        "detect": 13
+      },
+      "unparseable": 5,
+      "repo_records": 7
+    },
+    "r5_validation_triage": {
+      "path": "data/round5/validation/triage_eval.jsonl",
+      "n": 41,
+      "task": {
+        "triage": 41
+      },
+      "unparseable": 23,
+      "repo_records": 35
+    },
+    "r6_validation_detect": {
+      "path": "data/round6/validation/detect_eval.jsonl",
+      "n": 19,
+      "task": {
+        "detect": 19
+      },
+      "unparseable": 5,
+      "repo_records": 7
+    },
+    "r6_validation_triage": {
+      "path": "data/round6/validation/triage_eval.jsonl",
+      "n": 42,
+      "task": {
+        "triage": 42
+      },
+      "unparseable": 23,
+      "repo_records": 35
+    }
+  },
+  "checks": [
+    {
+      "eval": "r5_validation_detect",
+      "train": "r5_final_train",
+      "dimension": "exact",
+      "overlap": 0,
+      "eval_unique_keys": 13,
+      "details": []
+    },
+    {
+      "eval": "r5_validation_detect",
+      "train": "r5_final_val",
+      "dimension": "exact",
+      "overlap": 0,
+      "eval_unique_keys": 13,
+      "details": []
+    },
+    {
+      "eval": "r5_validation_detect",
+      "train": "r6_final_train",
+      "dimension": "exact",
+      "overlap": 0,
+      "eval_unique_keys": 13,
+      "details": []
+    },
+    {
+      "eval": "r5_validation_detect",
+      "train": "r6_final_val",
+      "dimension": "exact",
+      "overlap": 0,
+      "eval_unique_keys": 13,
+      "details": []
+    },
+    {
+      "eval": "r5_validation_detect",
+      "train": "r5_final_train",
+      "dimension": "ast",
+      "overlap": 0,
+      "eval_unique_keys": 8,
+      "details": []
+    },
+    {
+      "eval": "r5_validation_detect",
+      "train": "r5_final_val",
+      "dimension": "ast",
+      "overlap": 0,
+      "eval_unique_keys": 8,
+      "details": []
+    },
+    {
+      "eval": "r5_validation_detect",
+      "train": "r6_final_train",
+      "dimension": "ast",
+      "overlap": 0,
+      "eval_unique_keys": 8,
+      "details": []
+    },
+    {
+      "eval": "r5_validation_detect",
+      "train": "r6_final_val",
+      "dimension": "ast",
+      "overlap": 0,
+      "eval_unique_keys": 8,
+      "details": []
+    },
+    {
+      "eval": "r5_validation_triage",
+      "train": "r5_final_train",
+      "dimension": "exact",
+      "overlap": 4,
+      "eval_unique_keys": 41,
+      "details": [
+        {
+          "key": "def _raw_mssql(secret, salt): assert isinstance(secret, unicode) assert isinstance(salt, bytes) return sha1(secret.encod",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_mssql___raw_mssql-CRYPTO-002"
+          ],
+          "train_ids": [
+            "Task: triage|def _raw_mssql(secret, salt): assert isinstance("
+          ]
+        },
+        {
+          "key": "def _calc_checksum(self, secret): if isinstance(secret, unicode): secret = secret.encode(\"utf-8\") return str_to_uascii(m",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_django__django_salted_md5__calc_checksum-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def _calc_checksum(self, secret): if isinstance("
+          ]
+        },
+        {
+          "key": "def _raw_md5_crypt(pwd, salt, use_apr=false): \"\"\"perform raw md5-crypt calculation this function provides a pure-python ",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_md5_crypt___raw_md5_crypt-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def _raw_md5_crypt(pwd, salt, use_apr=false): \"\""
+          ]
+        },
+        {
+          "key": "def _calc_checksum(self, secret): if isinstance(secret, unicode): secret = secret.encode(\"utf-8\") chk = sha1(secret + un",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_oracle__oracle11__calc_checksum-CRYPTO-002"
+          ],
+          "train_ids": [
+            "Task: triage|def _calc_checksum(self, secret): if isinstance("
+          ]
+        }
+      ]
+    },
+    {
+      "eval": "r5_validation_triage",
+      "train": "r5_final_val",
+      "dimension": "exact",
+      "overlap": 2,
+      "eval_unique_keys": 41,
+      "details": [
+        {
+          "key": "def _calc_checksum(self, secret): # fixme: can't find definitive policy on how phpass handles non-ascii. if isinstance(s",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_phpass__phpass__calc_checksum-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def _calc_checksum(self, secret): # fixme: can't"
+          ]
+        },
+        {
+          "key": "def hash(cls, secret, user, realm, encoding=none): # note: this was deliberately written so that raw bytes are passed th",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_digests__htdigest_hash-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def hash(cls, secret, user, realm, encoding=none"
+          ]
+        }
+      ]
+    },
+    {
+      "eval": "r5_validation_triage",
+      "train": "r6_final_train",
+      "dimension": "exact",
+      "overlap": 4,
+      "eval_unique_keys": 41,
+      "details": [
+        {
+          "key": "def _raw_mssql(secret, salt): assert isinstance(secret, unicode) assert isinstance(salt, bytes) return sha1(secret.encod",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_mssql___raw_mssql-CRYPTO-002"
+          ],
+          "train_ids": [
+            "Task: triage|def _raw_mssql(secret, salt): assert isinstance("
+          ]
+        },
+        {
+          "key": "def _calc_checksum(self, secret): if isinstance(secret, unicode): secret = secret.encode(\"utf-8\") return str_to_uascii(m",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_django__django_salted_md5__calc_checksum-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def _calc_checksum(self, secret): if isinstance("
+          ]
+        },
+        {
+          "key": "def _raw_md5_crypt(pwd, salt, use_apr=false): \"\"\"perform raw md5-crypt calculation this function provides a pure-python ",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_md5_crypt___raw_md5_crypt-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def _raw_md5_crypt(pwd, salt, use_apr=false): \"\""
+          ]
+        },
+        {
+          "key": "def _calc_checksum(self, secret): if isinstance(secret, unicode): secret = secret.encode(\"utf-8\") chk = sha1(secret + un",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_oracle__oracle11__calc_checksum-CRYPTO-002"
+          ],
+          "train_ids": [
+            "Task: triage|def _calc_checksum(self, secret): if isinstance("
+          ]
+        }
+      ]
+    },
+    {
+      "eval": "r5_validation_triage",
+      "train": "r6_final_val",
+      "dimension": "exact",
+      "overlap": 2,
+      "eval_unique_keys": 41,
+      "details": [
+        {
+          "key": "def _calc_checksum(self, secret): # fixme: can't find definitive policy on how phpass handles non-ascii. if isinstance(s",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_phpass__phpass__calc_checksum-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def _calc_checksum(self, secret): # fixme: can't"
+          ]
+        },
+        {
+          "key": "def hash(cls, secret, user, realm, encoding=none): # note: this was deliberately written so that raw bytes are passed th",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_digests__htdigest_hash-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def hash(cls, secret, user, realm, encoding=none"
+          ]
+        }
+      ]
+    },
+    {
+      "eval": "r5_validation_triage",
+      "train": "r5_final_train",
+      "dimension": "ast",
+      "overlap": 2,
+      "eval_unique_keys": 18,
+      "details": [
+        {
+          "key": "Module(body=[FunctionDef(name='_raw_mssql', args=arguments(args=[arg(arg='secret'), arg(arg='salt')]), body=[Assert(test",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_mssql___raw_mssql-CRYPTO-002"
+          ],
+          "train_ids": [
+            "Task: triage|def _raw_mssql(secret, salt): assert isinstance("
+          ]
+        },
+        {
+          "key": "Module(body=[FunctionDef(name='_raw_md5_crypt', args=arguments(args=[arg(arg='pwd'), arg(arg='salt'), arg(arg='use_apr')",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_md5_crypt___raw_md5_crypt-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def _raw_md5_crypt(pwd, salt, use_apr=false): \"\""
+          ]
+        }
+      ]
+    },
+    {
+      "eval": "r5_validation_triage",
+      "train": "r5_final_val",
+      "dimension": "ast",
+      "overlap": 0,
+      "eval_unique_keys": 18,
+      "details": []
+    },
+    {
+      "eval": "r5_validation_triage",
+      "train": "r6_final_train",
+      "dimension": "ast",
+      "overlap": 2,
+      "eval_unique_keys": 18,
+      "details": [
+        {
+          "key": "Module(body=[FunctionDef(name='_raw_mssql', args=arguments(args=[arg(arg='secret'), arg(arg='salt')]), body=[Assert(test",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_mssql___raw_mssql-CRYPTO-002"
+          ],
+          "train_ids": [
+            "Task: triage|def _raw_mssql(secret, salt): assert isinstance("
+          ]
+        },
+        {
+          "key": "Module(body=[FunctionDef(name='_raw_md5_crypt', args=arguments(args=[arg(arg='pwd'), arg(arg='salt'), arg(arg='use_apr')",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_md5_crypt___raw_md5_crypt-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def _raw_md5_crypt(pwd, salt, use_apr=false): \"\""
+          ]
+        }
+      ]
+    },
+    {
+      "eval": "r5_validation_triage",
+      "train": "r6_final_val",
+      "dimension": "ast",
+      "overlap": 0,
+      "eval_unique_keys": 18,
+      "details": []
+    },
+    {
+      "eval": "r6_validation_detect",
+      "train": "r5_final_train",
+      "dimension": "exact",
+      "overlap": 0,
+      "eval_unique_keys": 19,
+      "details": []
+    },
+    {
+      "eval": "r6_validation_detect",
+      "train": "r5_final_val",
+      "dimension": "exact",
+      "overlap": 0,
+      "eval_unique_keys": 19,
+      "details": []
+    },
+    {
+      "eval": "r6_validation_detect",
+      "train": "r6_final_train",
+      "dimension": "exact",
+      "overlap": 0,
+      "eval_unique_keys": 19,
+      "details": []
+    },
+    {
+      "eval": "r6_validation_detect",
+      "train": "r6_final_val",
+      "dimension": "exact",
+      "overlap": 0,
+      "eval_unique_keys": 19,
+      "details": []
+    },
+    {
+      "eval": "r6_validation_detect",
+      "train": "r5_final_train",
+      "dimension": "ast",
+      "overlap": 0,
+      "eval_unique_keys": 14,
+      "details": []
+    },
+    {
+      "eval": "r6_validation_detect",
+      "train": "r5_final_val",
+      "dimension": "ast",
+      "overlap": 0,
+      "eval_unique_keys": 14,
+      "details": []
+    },
+    {
+      "eval": "r6_validation_detect",
+      "train": "r6_final_train",
+      "dimension": "ast",
+      "overlap": 0,
+      "eval_unique_keys": 14,
+      "details": []
+    },
+    {
+      "eval": "r6_validation_detect",
+      "train": "r6_final_val",
+      "dimension": "ast",
+      "overlap": 0,
+      "eval_unique_keys": 14,
+      "details": []
+    },
+    {
+      "eval": "r6_validation_triage",
+      "train": "r5_final_train",
+      "dimension": "exact",
+      "overlap": 4,
+      "eval_unique_keys": 42,
+      "details": [
+        {
+          "key": "def _raw_mssql(secret, salt): assert isinstance(secret, unicode) assert isinstance(salt, bytes) return sha1(secret.encod",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_mssql___raw_mssql-CRYPTO-002"
+          ],
+          "train_ids": [
+            "Task: triage|def _raw_mssql(secret, salt): assert isinstance("
+          ]
+        },
+        {
+          "key": "def _calc_checksum(self, secret): if isinstance(secret, unicode): secret = secret.encode(\"utf-8\") return str_to_uascii(m",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_django__django_salted_md5__calc_checksum-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def _calc_checksum(self, secret): if isinstance("
+          ]
+        },
+        {
+          "key": "def _raw_md5_crypt(pwd, salt, use_apr=false): \"\"\"perform raw md5-crypt calculation this function provides a pure-python ",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_md5_crypt___raw_md5_crypt-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def _raw_md5_crypt(pwd, salt, use_apr=false): \"\""
+          ]
+        },
+        {
+          "key": "def _calc_checksum(self, secret): if isinstance(secret, unicode): secret = secret.encode(\"utf-8\") chk = sha1(secret + un",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_oracle__oracle11__calc_checksum-CRYPTO-002"
+          ],
+          "train_ids": [
+            "Task: triage|def _calc_checksum(self, secret): if isinstance("
+          ]
+        }
+      ]
+    },
+    {
+      "eval": "r6_validation_triage",
+      "train": "r5_final_val",
+      "dimension": "exact",
+      "overlap": 2,
+      "eval_unique_keys": 42,
+      "details": [
+        {
+          "key": "def _calc_checksum(self, secret): # fixme: can't find definitive policy on how phpass handles non-ascii. if isinstance(s",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_phpass__phpass__calc_checksum-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def _calc_checksum(self, secret): # fixme: can't"
+          ]
+        },
+        {
+          "key": "def hash(cls, secret, user, realm, encoding=none): # note: this was deliberately written so that raw bytes are passed th",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_digests__htdigest_hash-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def hash(cls, secret, user, realm, encoding=none"
+          ]
+        }
+      ]
+    },
+    {
+      "eval": "r6_validation_triage",
+      "train": "r6_final_train",
+      "dimension": "exact",
+      "overlap": 4,
+      "eval_unique_keys": 42,
+      "details": [
+        {
+          "key": "def _raw_mssql(secret, salt): assert isinstance(secret, unicode) assert isinstance(salt, bytes) return sha1(secret.encod",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_mssql___raw_mssql-CRYPTO-002"
+          ],
+          "train_ids": [
+            "Task: triage|def _raw_mssql(secret, salt): assert isinstance("
+          ]
+        },
+        {
+          "key": "def _calc_checksum(self, secret): if isinstance(secret, unicode): secret = secret.encode(\"utf-8\") return str_to_uascii(m",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_django__django_salted_md5__calc_checksum-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def _calc_checksum(self, secret): if isinstance("
+          ]
+        },
+        {
+          "key": "def _raw_md5_crypt(pwd, salt, use_apr=false): \"\"\"perform raw md5-crypt calculation this function provides a pure-python ",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_md5_crypt___raw_md5_crypt-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def _raw_md5_crypt(pwd, salt, use_apr=false): \"\""
+          ]
+        },
+        {
+          "key": "def _calc_checksum(self, secret): if isinstance(secret, unicode): secret = secret.encode(\"utf-8\") chk = sha1(secret + un",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_oracle__oracle11__calc_checksum-CRYPTO-002"
+          ],
+          "train_ids": [
+            "Task: triage|def _calc_checksum(self, secret): if isinstance("
+          ]
+        }
+      ]
+    },
+    {
+      "eval": "r6_validation_triage",
+      "train": "r6_final_val",
+      "dimension": "exact",
+      "overlap": 2,
+      "eval_unique_keys": 42,
+      "details": [
+        {
+          "key": "def _calc_checksum(self, secret): # fixme: can't find definitive policy on how phpass handles non-ascii. if isinstance(s",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_phpass__phpass__calc_checksum-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def _calc_checksum(self, secret): # fixme: can't"
+          ]
+        },
+        {
+          "key": "def hash(cls, secret, user, realm, encoding=none): # note: this was deliberately written so that raw bytes are passed th",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_digests__htdigest_hash-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def hash(cls, secret, user, realm, encoding=none"
+          ]
+        }
+      ]
+    },
+    {
+      "eval": "r6_validation_triage",
+      "train": "r5_final_train",
+      "dimension": "ast",
+      "overlap": 2,
+      "eval_unique_keys": 19,
+      "details": [
+        {
+          "key": "Module(body=[FunctionDef(name='_raw_mssql', args=arguments(args=[arg(arg='secret'), arg(arg='salt')]), body=[Assert(test",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_mssql___raw_mssql-CRYPTO-002"
+          ],
+          "train_ids": [
+            "Task: triage|def _raw_mssql(secret, salt): assert isinstance("
+          ]
+        },
+        {
+          "key": "Module(body=[FunctionDef(name='_raw_md5_crypt', args=arguments(args=[arg(arg='pwd'), arg(arg='salt'), arg(arg='use_apr')",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_md5_crypt___raw_md5_crypt-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def _raw_md5_crypt(pwd, salt, use_apr=false): \"\""
+          ]
+        }
+      ]
+    },
+    {
+      "eval": "r6_validation_triage",
+      "train": "r5_final_val",
+      "dimension": "ast",
+      "overlap": 0,
+      "eval_unique_keys": 19,
+      "details": []
+    },
+    {
+      "eval": "r6_validation_triage",
+      "train": "r6_final_train",
+      "dimension": "ast",
+      "overlap": 2,
+      "eval_unique_keys": 19,
+      "details": [
+        {
+          "key": "Module(body=[FunctionDef(name='_raw_mssql', args=arguments(args=[arg(arg='secret'), arg(arg='salt')]), body=[Assert(test",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_mssql___raw_mssql-CRYPTO-002"
+          ],
+          "train_ids": [
+            "Task: triage|def _raw_mssql(secret, salt): assert isinstance("
+          ]
+        },
+        {
+          "key": "Module(body=[FunctionDef(name='_raw_md5_crypt', args=arguments(args=[arg(arg='pwd'), arg(arg='salt'), arg(arg='use_apr')",
+          "eval_ids": [
+            "round4-real-passlib-passlib_handlers_md5_crypt___raw_md5_crypt-CRYPTO-001"
+          ],
+          "train_ids": [
+            "Task: triage|def _raw_md5_crypt(pwd, salt, use_apr=false): \"\""
+          ]
+        }
+      ]
+    },
+    {
+      "eval": "r6_validation_triage",
+      "train": "r6_final_val",
+      "dimension": "ast",
+      "overlap": 0,
+      "eval_unique_keys": 19,
+      "details": []
+    }
+  ]
+}

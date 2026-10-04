@@ -1,1 +1,592 @@
 sample_id,file_path,cwe,severity,vulnerable,generator,repo_source,split,label_verified_by,notes
+round4-real-detect-itsdangerous-SigningAlgorithm_verify_signature,data/round4/real_validation/detect.jsonl,,,false,round4-real-project,https://github.com/pallets/itsdangerous,test,verified_legacy,task=detect
+round4-real-detect-passlib-Pbkdf2DigestHandler__calc_checksum,data/round4/real_validation/detect.jsonl,,,false,round4-real-project,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=detect
+round4-real-detect-passlib-_BcryptBackend__calc_checksum,data/round4/real_validation/detect.jsonl,,,false,round4-real-project,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=detect
+round4-real-detect-python-rsa-encrypt,data/round4/real_validation/detect.jsonl,,,false,round4-real-project,https://github.com/sybrenstuvel/python-rsa,test,verified_legacy,task=detect
+round4-real-detect-pyjwt-HMACAlgorithm_sign,data/round4/real_validation/detect.jsonl,,,false,round4-real-project,https://github.com/jpadilla/pyjwt,test,verified_legacy,task=detect
+round4-real-detect-pycryptodome-scrypt,data/round4/real_validation/detect.jsonl,,,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=detect
+round4-real-detect-pycryptodome-GcmMode_encrypt,data/round4/real_validation/detect.jsonl,,,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=detect
+round4-real-itsdangerous-src_itsdangerous_signer___lazy_sha1-CRYPTO-002,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/pallets/itsdangerous,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-002 category=hmac-legacy-digest
+round4-real-pycryptodome-lib_Crypto_IO_PEM__module-CRYPTO-003,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-003 category=legacy-format
+round4-real-pycryptodome-lib_Crypto_IO__PBES__PBES1_decrypt-CRYPTO-003,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-003 category=legacy-format
+round4-real-pycryptodome-lib_Crypto_IO__PBES__PBES2_encrypt-CRYPTO-003,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-003 category=legacy-format
+round4-real-pycryptodome-lib_Crypto_IO__PBES__PBES2_decrypt-CRYPTO-003,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-003 category=legacy-format
+round4-real-pycryptodome-lib_Crypto_SelfTest_Cipher_test_ARC4__module-CRYPTO-004,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-004 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Cipher_test_CBC__module-CRYPTO-003,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-003 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Cipher_test_CFB__module-CRYPTO-003,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-003 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Cipher_test_CTR__module-CRYPTO-003,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-003 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Cipher_test_DES__module-CRYPTO-003,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-003 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Cipher_test_DES3__module-CRYPTO-003,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-003 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Cipher_test_EAX__module-CRYPTO-003,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-003 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Cipher_test_OFB__module-CRYPTO-003,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-003 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Cipher_test_OpenPGP__module-CRYPTO-003,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-003 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Hash_test_CMAC__module-CRYPTO-003,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-003 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Hash_test_Poly1305__Poly1305Test_AES_test_new_negative-CRYPTO-003,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-003 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Protocol_test_KDF__module-CRYPTO-003,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-003 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Signature_test_pkcs1_15__FIPS_PKCS1_Verify_Tests_test_can_sign-CRYPTO-009,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-009 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Signature_test_pkcs1_15__FIPS_PKCS1_Sign_Tests_test_can_sign-CRYPTO-009,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-009 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Signature_test_pkcs1_15__PKCS1_All_Hashes_Tests_runTest-CRYPTO-009,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-009 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Signature_test_pss__FIPS_PKCS1_Verify_Tests_test_can_sign-CRYPTO-009,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-009 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Signature_test_pss__FIPS_PKCS1_Sign_Tests_test_can_sign-CRYPTO-009,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-009 category=test-vector
+round4-real-pycryptodome-lib_Crypto_SelfTest_Signature_test_pss__PKCS1_Legacy_Module_Tests_runTest-CRYPTO-009,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-009 category=test-vector
+round4-real-pycryptodome-pct-speedtest__module-CRYPTO-003,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/Legrandin/pycryptodome,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-003 category=benchmark
+round4-real-passlib-passlib_handlers_cisco__cisco_pix__calc_checksum-CRYPTO-001,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-001 category=legacy-hash-scheme
+round4-real-passlib-passlib_handlers_digests__htdigest_hash-CRYPTO-001,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-001 category=legacy-hash-scheme
+round4-real-passlib-passlib_handlers_django__django_salted_sha1__calc_checksum-CRYPTO-002,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-002 category=legacy-hash-scheme
+round4-real-passlib-passlib_handlers_django__django_salted_md5__calc_checksum-CRYPTO-001,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-001 category=legacy-hash-scheme
+round4-real-passlib-passlib_handlers_md5_crypt___raw_md5_crypt-CRYPTO-001,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-001 category=legacy-hash-scheme
+round4-real-passlib-passlib_handlers_mssql___raw_mssql-CRYPTO-002,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-002 category=legacy-hash-scheme
+round4-real-passlib-passlib_handlers_mysql__mysql41__calc_checksum-CRYPTO-002,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-002 category=legacy-hash-scheme
+round4-real-passlib-passlib_handlers_oracle__oracle11__calc_checksum-CRYPTO-002,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-002 category=legacy-hash-scheme
+round4-real-passlib-passlib_handlers_phpass__phpass__calc_checksum-CRYPTO-001,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-001 category=legacy-hash-scheme
+round4-real-passlib-passlib_handlers_postgres__postgres_md5__calc_checksum-CRYPTO-001,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-001 category=legacy-hash-scheme
+round4-real-passlib-passlib_handlers_sun_md5_crypt__raw_sun_md5_crypt-CRYPTO-001,data/round4/real_validation/triage.jsonl,,INFO,false,round4-real-project,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-001 category=legacy-hash-scheme
+r5-011-pos-01,data/round5/final/known_forms_detect.jsonl,CWE-256,WARNING,true,round5-known-password-storage-pos,original,train,unverified,task=detect rule=CRYPTO-011
+r5-011-pos-02,data/round5/final/known_forms_detect.jsonl,CWE-256,WARNING,true,round5-known-password-storage-pos,original,train,unverified,task=detect rule=CRYPTO-011
+r5-011-pos-03,data/round5/final/known_forms_detect.jsonl,CWE-256,WARNING,true,round5-known-password-storage-pos,original,train,unverified,task=detect rule=CRYPTO-011
+r5-011-pos-04,data/round5/final/known_forms_detect.jsonl,CWE-256,WARNING,true,round5-known-password-storage-pos,original,train,unverified,task=detect rule=CRYPTO-011
+r5-011-pos-05,data/round5/final/known_forms_detect.jsonl,CWE-256,WARNING,true,round5-known-password-storage-pos,original,train,unverified,task=detect rule=CRYPTO-011
+r5-011-pos-06,data/round5/final/known_forms_detect.jsonl,CWE-256,WARNING,true,round5-known-password-storage-pos,original,val,unverified,task=detect rule=CRYPTO-011
+r5-012-pos-01,data/round5/final/known_forms_detect.jsonl,CWE-916,WARNING,true,round5-known-kdf-params-pos,original,train,unverified,task=detect rule=CRYPTO-012
+r5-012-pos-02,data/round5/final/known_forms_detect.jsonl,CWE-916,WARNING,true,round5-known-kdf-params-pos,original,test,unverified,task=detect rule=CRYPTO-012
+r5-012-pos-03,data/round5/final/known_forms_detect.jsonl,CWE-916,WARNING,true,round5-known-kdf-params-pos,original,train,unverified,task=detect rule=CRYPTO-012
+r5-012-pos-04,data/round5/final/known_forms_detect.jsonl,CWE-916,WARNING,true,round5-known-kdf-params-pos,original,train,unverified,task=detect rule=CRYPTO-012
+r5-012-pos-05,data/round5/final/known_forms_detect.jsonl,CWE-916,WARNING,true,round5-known-kdf-params-pos,original,train,unverified,task=detect rule=CRYPTO-012
+r5-012-pos-06,data/round5/final/known_forms_detect.jsonl,CWE-916,WARNING,true,round5-known-kdf-params-pos,original,train,unverified,task=detect rule=CRYPTO-012
+r5-012-pos-07,data/round5/final/known_forms_detect.jsonl,CWE-916,WARNING,true,round5-known-kdf-params-pos,original,train,unverified,task=detect rule=CRYPTO-012
+r5-013-pos-01,data/round5/final/known_forms_detect.jsonl,CWE-208,WARNING,true,round5-known-timing-compare-pos,original,test,unverified,task=detect rule=CRYPTO-013
+r5-013-pos-02,data/round5/final/known_forms_detect.jsonl,CWE-208,WARNING,true,round5-known-timing-compare-pos,original,train,unverified,task=detect rule=CRYPTO-013
+r5-013-pos-03,data/round5/final/known_forms_detect.jsonl,CWE-208,WARNING,true,round5-known-timing-compare-pos,original,train,unverified,task=detect rule=CRYPTO-013
+r5-013-pos-04,data/round5/final/known_forms_detect.jsonl,CWE-208,WARNING,true,round5-known-timing-compare-pos,original,train,unverified,task=detect rule=CRYPTO-013
+r5-013-pos-05,data/round5/final/known_forms_detect.jsonl,CWE-208,WARNING,true,round5-known-timing-compare-pos,original,train,unverified,task=detect rule=CRYPTO-013
+r5-013-pos-06,data/round5/final/known_forms_detect.jsonl,CWE-208,WARNING,true,round5-known-timing-compare-pos,original,train,unverified,task=detect rule=CRYPTO-013
+r5-011-aneg-01,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-password-storage-aneg,original,train,unverified,task=detect rule=CRYPTO-011
+r5-011-aneg-02,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-password-storage-aneg,original,train,unverified,task=detect rule=CRYPTO-011
+r5-011-aneg-03,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-password-storage-aneg,original,train,unverified,task=detect rule=CRYPTO-011
+r5-011-aneg-04,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-password-storage-aneg,original,train,unverified,task=detect rule=CRYPTO-011
+r5-012-aneg-01,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-kdf-params-aneg,original,train,unverified,task=detect rule=CRYPTO-012
+r5-012-aneg-02,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-kdf-params-aneg,original,train,unverified,task=detect rule=CRYPTO-012
+r5-012-aneg-03,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-kdf-params-aneg,original,train,unverified,task=detect rule=CRYPTO-012
+r5-012-aneg-04,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-kdf-params-aneg,original,train,unverified,task=detect rule=CRYPTO-012
+r5-012-aneg-05,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-kdf-params-aneg,original,train,unverified,task=detect rule=CRYPTO-012
+r5-012-aneg-06,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-kdf-params-aneg,original,train,unverified,task=detect rule=CRYPTO-012
+r5-013-aneg-01,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-timing-compare-aneg,original,train,unverified,task=detect rule=CRYPTO-013
+r5-013-aneg-02,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-timing-compare-aneg,original,train,unverified,task=detect rule=CRYPTO-013
+r5-013-aneg-03,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-timing-compare-aneg,original,train,unverified,task=detect rule=CRYPTO-013
+r5-013-aneg-04,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-timing-compare-aneg,original,train,unverified,task=detect rule=CRYPTO-013
+r5-013-aneg-05,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-timing-compare-aneg,original,train,unverified,task=detect rule=CRYPTO-013
+r5-013-aneg-06,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-timing-compare-aneg,original,train,unverified,task=detect rule=CRYPTO-013
+r5-011-bneg-01,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-password-storage-bneg,original,test,unverified,task=detect rule=CRYPTO-011
+r5-011-bneg-02,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-password-storage-bneg,original,train,unverified,task=detect rule=CRYPTO-011
+r5-011-bneg-03,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-password-storage-bneg,original,train,unverified,task=detect rule=CRYPTO-011
+r5-011-bneg-04,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-password-storage-bneg,original,train,unverified,task=detect rule=CRYPTO-011
+r5-012-bneg-01,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-kdf-params-bneg,original,train,unverified,task=detect rule=CRYPTO-012
+r5-012-bneg-02,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-kdf-params-bneg,original,test,unverified,task=detect rule=CRYPTO-012
+r5-012-bneg-03,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-kdf-params-bneg,original,train,unverified,task=detect rule=CRYPTO-012
+r5-013-bneg-01,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-timing-compare-bneg,original,train,unverified,task=detect rule=CRYPTO-013
+r5-013-bneg-02,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-timing-compare-bneg,original,val,unverified,task=detect rule=CRYPTO-013
+r5-013-bneg-03,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-timing-compare-bneg,original,train,unverified,task=detect rule=CRYPTO-013
+r5-013-bneg-04,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-timing-compare-bneg,original,train,unverified,task=detect rule=CRYPTO-013
+r5-val-011-pos,data/round5/final/known_forms_detect.jsonl,CWE-256,WARNING,true,round5-known-password-storage-pos,original,val,unverified,task=detect rule=CRYPTO-011
+r5-val-012-aneg,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-kdf-params-aneg,original,val,unverified,task=detect rule=CRYPTO-012
+r5-val-013-aneg,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-timing-compare-aneg,original,val,unverified,task=detect rule=CRYPTO-013
+r5-test-011-bneg,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-password-storage-bneg,original,test,unverified,task=detect rule=CRYPTO-011
+r5-test-012-bneg,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-kdf-params-bneg,original,test,unverified,task=detect rule=CRYPTO-012
+r5-test-013-bneg,data/round5/final/known_forms_detect.jsonl,,,false,round5-known-timing-compare-bneg,original,test,unverified,task=detect rule=CRYPTO-013
+r5-001-pos-01,data/round5/final/known_forms_detect.jsonl,CWE-327,WARNING,true,round5-libaudit-detect-pos,original,train,unverified,task=detect rule=CRYPTO-001
+r5-002-pos-01,data/round5/final/known_forms_detect.jsonl,CWE-327,WARNING,true,round5-libaudit-detect-pos,original,val,unverified,task=detect rule=CRYPTO-002
+r5-003-pos-01,data/round5/final/known_forms_detect.jsonl,CWE-327,WARNING,true,round5-libaudit-detect-pos,original,test,unverified,task=detect rule=CRYPTO-005
+r5-004-pos-01,data/round5/final/known_forms_detect.jsonl,CWE-327,WARNING,true,round5-libaudit-detect-pos,original,test,unverified,task=detect rule=CRYPTO-004
+r5-005-pos-01,data/round5/final/known_forms_detect.jsonl,CWE-327,WARNING,true,round5-libaudit-detect-pos,original,train,unverified,task=detect rule=CRYPTO-005
+r5-006-pos-01,data/round5/final/known_forms_detect.jsonl,CWE-329,WARNING,true,round5-libaudit-detect-pos,original,test,unverified,task=detect rule=CRYPTO-006
+r5-007-pos-01,data/round5/final/known_forms_detect.jsonl,CWE-321,WARNING,true,round5-libaudit-detect-pos,original,val,unverified,task=detect rule=CRYPTO-007
+r5-008-pos-01,data/round5/final/known_forms_detect.jsonl,CWE-338,WARNING,true,round5-libaudit-detect-pos,original,test,unverified,task=detect rule=CRYPTO-008
+r5-012-pos-bcrypt,data/round5/final/known_forms_detect.jsonl,CWE-916,WARNING,true,round5-libaudit-detect-pos,original,val,unverified,task=detect rule=CRYPTO-012
+r5-012-pos-pbkdf2,data/round5/final/known_forms_detect.jsonl,CWE-916,WARNING,true,round5-libaudit-detect-pos,original,val,unverified,task=detect rule=CRYPTO-012
+r5-013-pos-lib-01,data/round5/final/known_forms_detect.jsonl,CWE-208,WARNING,true,round5-libaudit-detect-pos,original,val,unverified,task=detect rule=CRYPTO-013
+r5-001-pos-02,data/round5/final/known_forms_detect.jsonl,CWE-327,WARNING,true,round5-libaudit-detect-pos,original,test,unverified,task=detect rule=CRYPTO-001
+r5-aneg-bcrypt12,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-aneg,original,train,unverified,task=detect
+r5-aneg-scrypt,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-aneg,original,train,unverified,task=detect
+r5-aneg-argon2,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-aneg,original,train,unverified,task=detect
+r5-aneg-aes-gcm,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-aneg,original,train,unverified,task=detect
+r5-aneg-chacha,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-aneg,original,train,unverified,task=detect
+r5-aneg-compare-digest,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-aneg,original,train,unverified,task=detect
+r5-aneg-secrets-token,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-aneg,original,train,unverified,task=detect
+r5-aneg-hkdf,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-aneg,original,train,unverified,task=detect
+r5-aneg-rsa-oaep,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-aneg,original,train,unverified,task=detect
+r5-aneg-ed25519,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-aneg,original,train,unverified,task=detect
+r5-bneg-md5crypt,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-bneg,original,train,unverified,task=detect rule=CRYPTO-001
+r5-bneg-cisco-type7,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-bneg,original,train,unverified,task=detect rule=CRYPTO-001
+r5-bneg-django-sha1,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-bneg,original,train,unverified,task=detect rule=CRYPTO-002
+r5-bneg-hex-sha1,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-bneg,original,train,unverified,task=detect rule=CRYPTO-002
+r5-bneg-mssql,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-bneg,original,train,unverified,task=detect rule=CRYPTO-002
+r5-bneg-mysql41,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-bneg,original,train,unverified,task=detect rule=CRYPTO-002
+r5-bneg-des-crypt,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-bneg,original,test,unverified,task=detect rule=CRYPTO-003
+r5-bneg-pem-des3,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-bneg,original,train,unverified,task=detect rule=CRYPTO-003
+r5-bneg-itsdangerous-sha1,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-bneg,original,test,unverified,task=detect rule=CRYPTO-002
+r5-bneg-test-md5-kat,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-bneg,original,test,unverified,task=detect rule=CRYPTO-001
+r5-bneg-bench-des,data/round5/final/known_forms_detect.jsonl,,,false,round5-libaudit-detect-bneg,original,train,unverified,task=detect rule=CRYPTO-003
+r5-009-pos-01,data/round5/final/known_forms_detect.jsonl,CWE-326,WARNING,true,round5-adhoc-crypto-009,original,test,unverified,task=detect rule=CRYPTO-009
+r5-009-pos-02,data/round5/final/known_forms_detect.jsonl,CWE-326,WARNING,true,round5-adhoc-crypto-009,original,train,unverified,task=detect rule=CRYPTO-009
+r5-009-aneg-01,data/round5/final/known_forms_detect.jsonl,,,false,round5-adhoc-crypto-009,original,train,unverified,task=detect rule=CRYPTO-009
+r5-009-bneg-01,data/round5/final/known_forms_detect.jsonl,,,false,round5-adhoc-crypto-009,original,train,unverified,task=detect rule=CRYPTO-009
+r5-010-pos-01,data/round5/final/known_forms_detect.jsonl,CWE-326,WARNING,true,round5-adhoc-crypto-010,original,test,unverified,task=detect rule=CRYPTO-010
+r5-010-pos-02,data/round5/final/known_forms_detect.jsonl,CWE-326,WARNING,true,round5-adhoc-crypto-010,original,train,unverified,task=detect rule=CRYPTO-010
+r5-010-aneg-01,data/round5/final/known_forms_detect.jsonl,,,false,round5-adhoc-crypto-010,original,train,unverified,task=detect rule=CRYPTO-010
+r5-010-bneg-01,data/round5/final/known_forms_detect.jsonl,,,false,round5-adhoc-crypto-010,original,train,unverified,task=detect rule=CRYPTO-010
+r5-011-tneg-01,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-known-password-storage-tneg,original,val,unverified,task=triage verdict=Reject rule=CRYPTO-011
+r5-011-tneg-02,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-known-password-storage-tneg,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-011
+r5-011-tneg-03,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-known-password-storage-tneg,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-011
+r5-011-tneg-04,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-known-password-storage-tneg,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-011
+r5-011-tneg-05,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-known-password-storage-tneg,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-011
+r5-012-tneg-01,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-known-kdf-params-tneg,original,test,unverified,task=triage verdict=Reject rule=CRYPTO-012
+r5-012-tneg-02,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-known-kdf-params-tneg,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-012
+r5-012-tneg-03,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-known-kdf-params-tneg,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-012
+r5-013-tneg-01,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-known-timing-compare-tneg,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-013
+r5-013-tneg-02,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-known-timing-compare-tneg,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-013
+r5-013-tneg-03,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-known-timing-compare-tneg,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-013
+r5-011-tpos-01,data/round5/final/known_forms_triage.jsonl,CWE-256,WARNING,false,round5-known-password-storage-tpos,original,test,unverified,task=triage verdict=Confirm rule=CRYPTO-011
+r5-011-tpos-02,data/round5/final/known_forms_triage.jsonl,CWE-256,WARNING,false,round5-known-password-storage-tpos,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-011
+r5-012-tpos-01,data/round5/final/known_forms_triage.jsonl,CWE-916,WARNING,false,round5-known-kdf-params-tpos,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-012
+r5-012-tpos-02,data/round5/final/known_forms_triage.jsonl,CWE-916,WARNING,false,round5-known-kdf-params-tpos,original,test,unverified,task=triage verdict=Confirm rule=CRYPTO-012
+r5-013-tpos-01,data/round5/final/known_forms_triage.jsonl,CWE-208,WARNING,false,round5-known-timing-compare-tpos,original,val,unverified,task=triage verdict=Confirm rule=CRYPTO-013
+r5-013-tpos-02,data/round5/final/known_forms_triage.jsonl,CWE-208,WARNING,false,round5-known-timing-compare-tpos,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-013
+round5-passlib-passlib_handlers_cisco__cisco_pix__calc_checksum-CRYPTO-001,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-passlib-legacy,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-001 category=legacy-hash-scheme
+round5-passlib-passlib_handlers_digests__htdigest_hash-CRYPTO-001,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-passlib-legacy,https://github.com/deepin-community/python-passlib,val,verified_legacy,task=triage verdict=Reject rule=CRYPTO-001 category=legacy-hash-scheme
+round5-passlib-passlib_handlers_django__django_salted_sha1__calc_checksum-CRYPTO-002,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-passlib-legacy,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-002 category=legacy-hash-scheme
+round5-passlib-passlib_handlers_django__django_salted_md5__calc_checksum-CRYPTO-001,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-passlib-legacy,https://github.com/deepin-community/python-passlib,train,verified_legacy,task=triage verdict=Reject rule=CRYPTO-001 category=legacy-hash-scheme
+round5-passlib-passlib_handlers_md5_crypt___raw_md5_crypt-CRYPTO-001,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-passlib-legacy,https://github.com/deepin-community/python-passlib,train,verified_legacy,task=triage verdict=Reject rule=CRYPTO-001 category=legacy-hash-scheme
+round5-passlib-passlib_handlers_mssql___raw_mssql-CRYPTO-002,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-passlib-legacy,https://github.com/deepin-community/python-passlib,train,verified_legacy,task=triage verdict=Reject rule=CRYPTO-002 category=legacy-hash-scheme
+round5-passlib-passlib_handlers_mysql__mysql41__calc_checksum-CRYPTO-002,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-passlib-legacy,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-002 category=legacy-hash-scheme
+round5-passlib-passlib_handlers_oracle__oracle11__calc_checksum-CRYPTO-002,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-passlib-legacy,https://github.com/deepin-community/python-passlib,train,verified_legacy,task=triage verdict=Reject rule=CRYPTO-002 category=legacy-hash-scheme
+round5-passlib-passlib_handlers_phpass__phpass__calc_checksum-CRYPTO-001,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-passlib-legacy,https://github.com/deepin-community/python-passlib,val,verified_legacy,task=triage verdict=Reject rule=CRYPTO-001 category=legacy-hash-scheme
+round5-passlib-passlib_handlers_postgres__postgres_md5__calc_checksum-CRYPTO-001,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-passlib-legacy,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-001 category=legacy-hash-scheme
+round5-passlib-passlib_handlers_sun_md5_crypt__raw_sun_md5_crypt-CRYPTO-001,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-passlib-legacy,https://github.com/deepin-community/python-passlib,test,verified_legacy,task=triage verdict=Reject rule=CRYPTO-001 category=legacy-hash-scheme
+r5-test-011-tneg,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-known-password-storage-tneg,original,test,unverified,task=triage verdict=Reject rule=CRYPTO-011
+r5-test-012-tneg,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-known-kdf-params-tneg,original,test,unverified,task=triage verdict=Reject rule=CRYPTO-012
+r5-test-013-tneg,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-known-timing-compare-tneg,original,test,unverified,task=triage verdict=Reject rule=CRYPTO-013
+r5-tconf-md5-password,data/round5/final/known_forms_triage.jsonl,CWE-327,WARNING,false,round5-libaudit-triage-confirm,original,val,unverified,task=triage verdict=Confirm rule=CRYPTO-001
+r5-tconf-des-pii,data/round5/final/known_forms_triage.jsonl,CWE-327,WARNING,false,round5-libaudit-triage-confirm,original,test,unverified,task=triage verdict=Confirm rule=CRYPTO-003
+r5-tconf-hardcoded-key,data/round5/final/known_forms_triage.jsonl,CWE-321,WARNING,false,round5-libaudit-triage-confirm,original,test,unverified,task=triage verdict=Confirm rule=CRYPTO-007
+r5-tconf-weak-random-token,data/round5/final/known_forms_triage.jsonl,CWE-338,WARNING,false,round5-libaudit-triage-confirm,original,val,unverified,task=triage verdict=Confirm rule=CRYPTO-008
+r5-tconf-static-iv,data/round5/final/known_forms_triage.jsonl,CWE-329,WARNING,false,round5-libaudit-triage-confirm,original,test,unverified,task=triage verdict=Confirm rule=CRYPTO-006
+r5-tconf-sha1-password,data/round5/final/known_forms_triage.jsonl,CWE-327,WARNING,false,round5-libaudit-triage-confirm,original,test,unverified,task=triage verdict=Confirm rule=CRYPTO-002
+r5-tconf-ecb-file,data/round5/final/known_forms_triage.jsonl,CWE-327,WARNING,false,round5-libaudit-triage-confirm,original,val,unverified,task=triage verdict=Confirm rule=CRYPTO-005
+r5-tconf-rc4-stream,data/round5/final/known_forms_triage.jsonl,CWE-327,WARNING,false,round5-libaudit-triage-confirm,original,test,unverified,task=triage verdict=Confirm rule=CRYPTO-004
+r5-trej-md5crypt-handler,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-libaudit-triage-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-001
+r5-trej-cisco-pix,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-libaudit-triage-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-001
+r5-trej-oracle10,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-libaudit-triage-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-002
+r5-trej-postgres-md5,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-libaudit-triage-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-001
+r5-trej-phpass,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-libaudit-triage-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-001
+r5-trej-sun-md5,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-libaudit-triage-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-001
+r5-trej-test-des-kat,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-libaudit-triage-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-003
+r5-trej-test-des3,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-libaudit-triage-reject,original,test,unverified,task=triage verdict=Reject rule=CRYPTO-003
+r5-trej-pem-pbes1,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-libaudit-triage-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-003
+r5-trej-test-arc4,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-libaudit-triage-reject,original,val,unverified,task=triage verdict=Reject rule=CRYPTO-004
+r5-trej-mssql-sha1,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-libaudit-triage-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-002
+r5-trej-login-compare,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-libaudit-triage-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-013
+r5-009-tpos-01,data/round5/final/known_forms_triage.jsonl,CWE-326,WARNING,false,round5-adhoc-crypto-009,original,test,unverified,task=triage verdict=Confirm rule=CRYPTO-009
+r5-009-tneg-01,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-adhoc-crypto-009,original,test,unverified,task=triage verdict=Reject rule=CRYPTO-009
+r5-010-tpos-01,data/round5/final/known_forms_triage.jsonl,CWE-326,WARNING,false,round5-adhoc-crypto-010,original,val,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r5-010-tneg-01,data/round5/final/known_forms_triage.jsonl,,INFO,false,round5-adhoc-crypto-010,original,test,unverified,task=triage verdict=Reject rule=CRYPTO-010
+r6-crypto-fernet,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-crypto-aesgcm,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-crypto-chacha,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-crypto-hkdf,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-crypto-pbkdf2,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-crypto-x25519,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-crypto-ed25519,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-crypto-sha256,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-nacl-secretbox,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-nacl-sign,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-nacl-box,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-jwt-hs256,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-jwt-rs256,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-itsdangerous-sha256,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-itsdangerous-serializer,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-pyc-scrypt,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-pyc-oaep,data/round6/new_detect.jsonl,,,false,round6-safe-lib-aneg,original,train,unverified,task=detect
+r6-bneg-itsdangerous-hmac-sha1-signer,data/round6/new_detect.jsonl,,,false,round6-safe-lib-bneg,original,train,unverified,task=detect rule=CRYPTO-002
+r6-bneg-jwt-alg-whitelist,data/round6/new_detect.jsonl,,,false,round6-safe-lib-bneg,original,train,unverified,task=detect rule=CRYPTO-002
+r6-bneg-pem-pbes1-des3,data/round6/new_detect.jsonl,,,false,round6-safe-lib-bneg,original,train,unverified,task=detect rule=CRYPTO-003
+r6-bneg-jwt-hs256-sha1-confusion,data/round6/new_detect.jsonl,,,false,round6-safe-lib-bneg,original,train,unverified,task=detect rule=CRYPTO-002
+r6-bneg-itsdangerous-sha1-default-documented,data/round6/new_detect.jsonl,,,false,round6-safe-lib-bneg,original,train,unverified,task=detect rule=CRYPTO-002
+r6-bneg-hash-cache-md5,data/round6/new_detect.jsonl,,,false,round6-safe-lib-bneg,original,train,unverified,task=detect rule=CRYPTO-001
+r6-bneg-des3-kw,data/round6/new_detect.jsonl,,,false,round6-safe-lib-bneg,original,train,unverified,task=detect rule=CRYPTO-003
+r6-bneg-sha1-integrity,data/round6/new_detect.jsonl,,,false,round6-safe-lib-bneg,original,train,unverified,task=detect rule=CRYPTO-002
+r6-pos-passwd-model,data/round6/new_detect.jsonl,CWE-256,WARNING,true,round6-crypto-011-pos,original,train,unverified,task=detect rule=CRYPTO-011
+r6-pos-passwd-config,data/round6/new_detect.jsonl,CWE-256,WARNING,true,round6-crypto-011-pos,original,train,unverified,task=detect rule=CRYPTO-011
+r6-pos-scrypt-weak,data/round6/new_detect.jsonl,CWE-916,WARNING,true,round6-crypto-012-pos,original,train,unverified,task=detect rule=CRYPTO-012
+r6-pos-pbkdf2-10k,data/round6/new_detect.jsonl,CWE-916,WARNING,true,round6-crypto-012-pos,original,train,unverified,task=detect rule=CRYPTO-012
+r6-pos-timing-apikey,data/round6/new_detect.jsonl,CWE-208,WARNING,true,round6-crypto-013-pos,original,train,unverified,task=detect rule=CRYPTO-013
+r6-pos-timing-mac-compare,data/round6/new_detect.jsonl,CWE-208,WARNING,true,round6-crypto-013-pos,original,train,unverified,task=detect rule=CRYPTO-013
+r6-pos-md5-flask-pw,data/round6/new_detect.jsonl,CWE-327,WARNING,true,round6-crypto-001-pos,original,train,unverified,task=detect rule=CRYPTO-001
+r6-pos-aes-ecb-export,data/round6/new_detect.jsonl,CWE-327,WARNING,true,round6-crypto-005-pos,original,train,unverified,task=detect rule=CRYPTO-005
+r6-rfix-aes-ecb-payment,data/round6/new_triage.jsonl,CWE-327,WARNING,false,round6-regression-fix-confirm,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-005
+r6-rfix-aes-ecb-backup,data/round6/new_triage.jsonl,CWE-327,WARNING,false,round6-regression-fix-confirm,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-005
+r6-rfix-des-password,data/round6/new_triage.jsonl,CWE-327,WARNING,false,round6-regression-fix-confirm,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-003
+r6-rfix-arc4-stream,data/round6/new_triage.jsonl,CWE-327,WARNING,false,round6-regression-fix-confirm,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-004
+r6-rfix-md5-api-signature,data/round6/new_triage.jsonl,CWE-327,WARNING,false,round6-regression-fix-confirm,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-001
+r6-rfix-passwd-plaintext,data/round6/new_triage.jsonl,CWE-256,WARNING,false,round6-regression-fix-confirm,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-011
+r6-rfix-bcrypt-weak,data/round6/new_triage.jsonl,CWE-916,WARNING,false,round6-regression-fix-confirm,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-012
+r6-rfix-pbkdf2-weak,data/round6/new_triage.jsonl,CWE-916,WARNING,false,round6-regression-fix-confirm,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-012
+r6-rfix-timing-token,data/round6/new_triage.jsonl,CWE-208,WARNING,false,round6-regression-fix-confirm,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-013
+r6-rfix-timing-mac,data/round6/new_triage.jsonl,CWE-208,WARNING,false,round6-regression-fix-confirm,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-013
+r6-trej-pem-pbes1-key-import,data/round6/new_triage.jsonl,,INFO,false,round6-lib-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-003
+r6-trej-pkcs8-des3-encrypt,data/round6/new_triage.jsonl,,INFO,false,round6-lib-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-003
+r6-trej-des3-kw-hsm,data/round6/new_triage.jsonl,,INFO,false,round6-lib-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-003
+r6-trej-passlib-ldap-sha1,data/round6/new_triage.jsonl,,INFO,false,round6-passlib-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-002
+r6-trej-passlib-grub-pbkdf2,data/round6/new_triage.jsonl,,INFO,false,round6-passlib-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-012
+r6-trej-passlib-sha256-crypt,data/round6/new_triage.jsonl,,INFO,false,round6-passlib-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-012
+r6-trej-passlib-scram,data/round6/new_triage.jsonl,,INFO,false,round6-passlib-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-012
+r6-trej-passlib-bcrypt-sha256,data/round6/new_triage.jsonl,,INFO,false,round6-passlib-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-012
+r6-trej-itsdangerous-sha1-signer,data/round6/new_triage.jsonl,,INFO,false,round6-lib-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-002
+r6-trej-itsdangerous-timestamp,data/round6/new_triage.jsonl,,INFO,false,round6-lib-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-002
+r6-trej-jwt-algorithm-guard,data/round6/new_triage.jsonl,,INFO,false,round6-lib-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-002
+r6-pos-sha1-pw,data/round6/supplement_detect.jsonl,CWE-327,WARNING,true,round6-crypto-002-pos,original,train,unverified,task=detect rule=CRYPTO-002
+r6-pos-sha1-key,data/round6/supplement_detect.jsonl,CWE-327,WARNING,true,round6-crypto-002-pos,original,train,unverified,task=detect rule=CRYPTO-002
+r6-pos-des-userdata,data/round6/supplement_detect.jsonl,CWE-327,WARNING,true,round6-crypto-003-pos,original,train,unverified,task=detect rule=CRYPTO-003
+r6-pos-des3-config,data/round6/supplement_detect.jsonl,CWE-327,WARNING,true,round6-crypto-003-pos,original,val,unverified,task=detect rule=CRYPTO-003
+r6-pos-arc4-session,data/round6/supplement_detect.jsonl,CWE-327,WARNING,true,round6-crypto-004-pos,original,val,unverified,task=detect rule=CRYPTO-004
+r6-pos-rc4-token,data/round6/supplement_detect.jsonl,CWE-327,WARNING,true,round6-crypto-004-pos,original,train,unverified,task=detect rule=CRYPTO-004
+r6-pos-static-iv-cbc,data/round6/supplement_detect.jsonl,CWE-329,WARNING,true,round6-crypto-006-pos,original,test,unverified,task=detect rule=CRYPTO-006
+r6-pos-nonce-reuse-gcm,data/round6/supplement_detect.jsonl,CWE-329,WARNING,true,round6-crypto-006-pos,original,test,unverified,task=detect rule=CRYPTO-006
+r6-pos-hardcoded-aes-key,data/round6/supplement_detect.jsonl,CWE-321,WARNING,true,round6-crypto-007-pos,original,test,unverified,task=detect rule=CRYPTO-007
+r6-pos-hardcoded-hmac-key,data/round6/supplement_detect.jsonl,CWE-321,WARNING,true,round6-crypto-007-pos,original,train,unverified,task=detect rule=CRYPTO-007
+r6-pos-weak-random-session,data/round6/supplement_detect.jsonl,CWE-338,WARNING,true,round6-crypto-008-pos,original,test,unverified,task=detect rule=CRYPTO-008
+r6-pos-weak-random-2fa,data/round6/supplement_detect.jsonl,CWE-338,WARNING,true,round6-crypto-008-pos,original,val,unverified,task=detect rule=CRYPTO-008
+r6-pos-rsa-1024-keystore,data/round6/supplement_detect.jsonl,CWE-326,WARNING,true,round6-crypto-009-pos,original,train,unverified,task=detect rule=CRYPTO-009
+r6-pos-ecc-p192-cert,data/round6/supplement_detect.jsonl,CWE-326,WARNING,true,round6-crypto-009-pos,original,train,unverified,task=detect rule=CRYPTO-009
+r6-pos-tlsv1-client,data/round6/supplement_detect.jsonl,CWE-326,WARNING,true,round6-crypto-010-pos,original,train,unverified,task=detect rule=CRYPTO-010
+r6-pos-requests-no-verify,data/round6/supplement_detect.jsonl,CWE-326,WARNING,true,round6-crypto-010-pos,original,val,unverified,task=detect rule=CRYPTO-010
+r6-argon2id,data/round6/supplement_detect.jsonl,,,false,round6-safe-lib-argon2,original,train,unverified,task=detect
+r6-argon2i,data/round6/supplement_detect.jsonl,,,false,round6-safe-lib-argon2,original,val,unverified,task=detect
+r6-ecdsa-sign,data/round6/supplement_detect.jsonl,,,false,round6-safe-lib-ecdsa,original,test,unverified,task=detect
+r6-ecdsa-verify,data/round6/supplement_detect.jsonl,,,false,round6-safe-lib-ecdsa,original,train,unverified,task=detect
+r6-google-auth,data/round6/supplement_detect.jsonl,,,false,round6-safe-lib-google-auth,original,train,unverified,task=detect
+r6-oscrypto-aes-kwp,data/round6/supplement_detect.jsonl,,,false,round6-safe-lib-oscrypto,original,train,unverified,task=detect
+r6-bneg-des-pkcs12-parser,data/round6/supplement_detect.jsonl,,,false,round6-legacy-bneg,original,train,unverified,task=detect rule=CRYPTO-003
+r6-bneg-md5-legacy-hash-format,data/round6/supplement_detect.jsonl,,,false,round6-legacy-bneg,original,val,unverified,task=detect rule=CRYPTO-001
+r6-bneg-sha1-legacy-signature-verifier,data/round6/supplement_detect.jsonl,,,false,round6-legacy-bneg,original,train,unverified,task=detect rule=CRYPTO-002
+r6-bneg-rc4-legacy-protocol-handler,data/round6/supplement_detect.jsonl,,,false,round6-legacy-bneg,original,test,unverified,task=detect rule=CRYPTO-004
+r6-bneg-md5-file-integrity-check,data/round6/supplement_detect.jsonl,,,false,round6-legacy-bneg,original,train,unverified,task=detect rule=CRYPTO-001
+r6-bneg-sha1-cache-etag,data/round6/supplement_detect.jsonl,,,false,round6-legacy-bneg,original,train,unverified,task=detect rule=CRYPTO-002
+r6-rfix-hardcoded-key-prod,data/round6/supplement_triage.jsonl,CWE-321,WARNING,false,round6-regression-fix-confirm,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-007
+r6-rfix-sslv3-prod,data/round6/supplement_triage.jsonl,CWE-326,WARNING,false,round6-regression-fix-confirm,original,test,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-rfix-rsa1024-customer,data/round6/supplement_triage.jsonl,CWE-326,WARNING,false,round6-regression-fix-confirm,original,val,unverified,task=triage verdict=Confirm rule=CRYPTO-009
+r6-trej-des-pgp-format,data/round6/supplement_triage.jsonl,,INFO,false,round6-lib-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-003
+r6-trej-md5-consistent-hash,data/round6/supplement_triage.jsonl,,INFO,false,round6-lib-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-001
+r6-pos-aes-ecb-batch,data/round6/supplement_v2_detect.jsonl,CWE-327,WARNING,true,round6-crypto-005-pos,original,train,unverified,task=detect rule=CRYPTO-005
+r6-pos-md5-sha1-hybrid,data/round6/supplement_v2_detect.jsonl,CWE-327,WARNING,true,round6-crypto-001-pos,original,val,unverified,task=detect rule=CRYPTO-001
+r6-pos-static-nonce-ctr,data/round6/supplement_v2_detect.jsonl,CWE-329,WARNING,true,round6-crypto-006-pos,original,train,unverified,task=detect rule=CRYPTO-006
+r6-pos-uuid4-random,data/round6/supplement_v2_detect.jsonl,CWE-338,WARNING,true,round6-crypto-008-pos,original,test,unverified,task=detect rule=CRYPTO-008
+r6-pos-des-cbc-api,data/round6/supplement_v2_detect.jsonl,CWE-327,WARNING,true,round6-crypto-003-pos,original,train,unverified,task=detect rule=CRYPTO-003
+r6-pos-dh-weak-params,data/round6/supplement_v2_detect.jsonl,CWE-326,WARNING,true,round6-crypto-009-pos,original,train,unverified,task=detect rule=CRYPTO-009
+r6-pos-sha1-hmac-auth,data/round6/supplement_v2_detect.jsonl,CWE-327,WARNING,true,round6-crypto-002-pos,original,train,unverified,task=detect rule=CRYPTO-002
+r6-pos-tls-no-verify-prod,data/round6/supplement_v2_detect.jsonl,CWE-326,WARNING,true,round6-crypto-010-pos,original,train,unverified,task=detect rule=CRYPTO-010
+r6-crypto-aes-siv,data/round6/supplement_v2_detect.jsonl,,,false,round6-safe-lib-cryptography,original,train,unverified,task=detect
+r6-crypto-scrypt,data/round6/supplement_v2_detect.jsonl,,,false,round6-safe-lib-cryptography,original,train,unverified,task=detect
+r6-pyc-aes-gcm,data/round6/supplement_v2_detect.jsonl,,,false,round6-safe-lib-pycryptodome,original,train,unverified,task=detect
+r6-nacl-box-exchange,data/round6/supplement_v2_detect.jsonl,,,false,round6-safe-lib-nacl,original,val,unverified,task=detect
+r6-itsdangerous-timed-sha256,data/round6/supplement_v2_detect.jsonl,,,false,round6-safe-lib-itsdangerous,original,test,unverified,task=detect
+r6-jwt-rs256-verify,data/round6/supplement_v2_detect.jsonl,,,false,round6-safe-lib-pyjwt,original,train,unverified,task=detect
+r6-bneg-sha1-x509-parse,data/round6/supplement_v2_detect.jsonl,,,false,round6-legacy-bneg,original,train,unverified,task=detect rule=CRYPTO-002
+r6-bneg-md5-zip-stored-hash,data/round6/supplement_v2_detect.jsonl,,,false,round6-legacy-bneg,original,test,unverified,task=detect rule=CRYPTO-001
+r6-bneg-des3-smime-legacy,data/round6/supplement_v2_detect.jsonl,,,false,round6-legacy-bneg,original,train,unverified,task=detect rule=CRYPTO-003
+r6-bneg-random-jitter-metrics,data/round6/supplement_v2_detect.jsonl,,,false,round6-legacy-bneg,original,train,unverified,task=detect rule=CRYPTO-008
+r6-bneg-sha1-git-object-id,data/round6/supplement_v2_detect.jsonl,,,false,round6-legacy-bneg,original,train,unverified,task=detect rule=CRYPTO-002
+r6-bneg-des3-hsm-transport-key,data/round6/supplement_v2_detect.jsonl,,,false,round6-legacy-bneg,original,val,unverified,task=detect rule=CRYPTO-003
+r6-pos-static-iv-ofb,data/round6/supplement_v2_detect.jsonl,CWE-329,WARNING,true,round6-crypto-006-pos,original,train,unverified,task=detect rule=CRYPTO-006
+r6-rfix-md5-cert-fingerprint,data/round6/supplement_v2_triage.jsonl,CWE-327,WARNING,false,round6-regression-fix-confirm,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-001
+r6-rfix-random-session-id,data/round6/supplement_v2_triage.jsonl,CWE-338,WARNING,false,round6-regression-fix-confirm,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-008
+r6-rfix-sha1-password-store,data/round6/supplement_v2_triage.jsonl,CWE-327,WARNING,false,round6-regression-fix-confirm,original,train,unverified,task=triage verdict=Confirm rule=CRYPTO-002
+r6-trej-arc4-wep-legacy,data/round6/supplement_v2_triage.jsonl,,INFO,false,round6-lib-reject,original,val,unverified,task=triage verdict=Reject rule=CRYPTO-004
+r6-trej-module-self-test,data/round6/supplement_v2_triage.jsonl,,INFO,false,round6-lib-reject,original,test,unverified,task=triage verdict=Reject rule=CRYPTO-002
+r6-trej-hkdf-sha1-compat,data/round6/supplement_v2_triage.jsonl,,INFO,false,round6-lib-reject,original,train,unverified,task=triage verdict=Reject rule=CRYPTO-002
+r6-fx-pos-crypto-005-01,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-005
+r6-fx-neg-crypto-005-03,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-005
+r6-fx-pos-crypto-001-01,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,val,unverified,task=detect rule=CRYPTO-001
+r6-fx-neg-crypto-001-03,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-neg-crypto-001-05,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,test,unverified,task=detect rule=CRYPTO-001
+r6-fx-pos-crypto-002-01,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-002
+r6-fx-pos-crypto-009-01,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-pos-crypto-009-03,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-neg-crypto-009-05,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-neg-crypto-009-07,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,val,unverified,task=detect rule=CRYPTO-009
+r6-fx-pos-crypto-009-09,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-neg-crypto-009-11,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-neg-crypto-009-13,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-pos-crypto-001-07,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-pos-crypto-001-09,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-pos-crypto-001-11,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-neg-crypto-001-13,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-neg-crypto-001-15,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-neg-crypto-001-17,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-pos-crypto-010-01,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-03,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-05,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,val,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-07,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-neg-crypto-010-09,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-11,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-13,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-15,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-17,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,test,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-19,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-21,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-23,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-neg-crypto-010-25,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,val,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-001-19,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-pos-crypto-001-21,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-pos-crypto-001-23,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-pos-crypto-001-25,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-pos-crypto-001-27,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-neg-crypto-001-29,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-pos-crypto-002-03,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,test,unverified,task=detect rule=CRYPTO-002
+r6-fx-pos-crypto-010-27,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-29,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-31,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-neg-crypto-010-33,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-neg-crypto-003-01,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-003
+r6-fx-neg-crypto-001-31,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-pos-crypto-009-15,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-pos-crypto-009-17,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-pos-crypto-009-19,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-pos-crypto-009-21,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-neg-crypto-009-23,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-neg-crypto-009-25,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-neg-crypto-009-27,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-neg-crypto-009-29,data/round6/rule_fixture_detect.jsonl,,,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-pos-crypto-010-35,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-37,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-39,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-008-01,data/round6/rule_fixture_detect.jsonl,CWE-338,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-008
+r6-fx-pos-crypto-008-03,data/round6/rule_fixture_detect.jsonl,CWE-338,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-008
+r6-fx-pos-crypto-008-05,data/round6/rule_fixture_detect.jsonl,CWE-338,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-008
+r6-fx-pos-crypto-008-07,data/round6/rule_fixture_detect.jsonl,CWE-338,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-008
+r6-fx-pos-crypto-008-09,data/round6/rule_fixture_detect.jsonl,CWE-338,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-008
+r6-fx-pos-crypto-008-11,data/round6/rule_fixture_detect.jsonl,CWE-338,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-008
+r6-fx-pos-crypto-008-13,data/round6/rule_fixture_detect.jsonl,CWE-338,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-008
+r6-fx-pos-crypto-008-15,data/round6/rule_fixture_detect.jsonl,CWE-338,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-008
+r6-fx-neg-crypto-008-17,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-008
+r6-fx-neg-crypto-008-19,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-008
+r6-fx-pos-crypto-001-33,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-pos-crypto-001-35,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-pos-crypto-002-05,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-002
+r6-fx-pos-crypto-002-07,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,test,unverified,task=detect rule=CRYPTO-002
+r6-fx-pos-crypto-002-09,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-002
+r6-fx-pos-crypto-002-11,data/round6/rule_fixture_detect.jsonl,CWE-327,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-002
+r6-fx-neg-crypto-001-37,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-neg-crypto-001-39,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-001
+r6-fx-neg-crypto-010-41,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-43,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-neg-crypto-010-45,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-47,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-neg-crypto-010-49,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-51,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,test,unverified,task=detect rule=CRYPTO-010
+r6-fx-neg-crypto-010-53,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-55,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,val,unverified,task=detect rule=CRYPTO-010
+r6-fx-neg-crypto-010-57,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-59,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-neg-crypto-010-61,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-63,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-neg-crypto-010-65,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-67,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-neg-crypto-009-31,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-neg-crypto-009-33,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-neg-crypto-009-35,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-neg-crypto-009-37,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-neg-crypto-009-39,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-neg-crypto-009-41,data/round6/rule_fixture_detect.jsonl,,,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-pos-crypto-009-43,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-pos-crypto-009-45,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-pos-crypto-009-47,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-pos-crypto-009-49,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,test,unverified,task=detect rule=CRYPTO-009
+r6-fx-pos-crypto-009-51,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-009
+r6-fx-pos-crypto-010-69,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-71,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,val,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-73,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-75,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-pos-crypto-010-77,data/round6/rule_fixture_detect.jsonl,CWE-326,WARNING,true,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=detect rule=CRYPTO-010
+r6-fx-con-crypto-005-02,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-005
+r6-fx-rej-crypto-005-04,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-005
+r6-fx-con-crypto-001-02,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-001
+r6-fx-rej-crypto-001-04,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-001
+r6-fx-rej-crypto-001-06,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-001
+r6-fx-con-crypto-002-02,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-002
+r6-fx-con-crypto-009-02,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,test,unverified,task=triage verdict=Confirm rule=CRYPTO-009
+r6-fx-con-crypto-009-04,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-009
+r6-fx-rej-crypto-009-06,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-009
+r6-fx-rej-crypto-009-08,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-009
+r6-fx-con-crypto-009-10,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,val,unverified,task=triage verdict=Confirm rule=CRYPTO-009
+r6-fx-rej-crypto-009-12,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-009
+r6-fx-rej-crypto-009-14,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,test,unverified,task=triage verdict=Reject rule=CRYPTO-009
+r6-fx-con-crypto-001-08,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-001
+r6-fx-con-crypto-001-10,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-001
+r6-fx-con-crypto-001-12,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-001
+r6-fx-rej-crypto-001-14,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-001
+r6-fx-rej-crypto-001-16,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-001
+r6-fx-rej-crypto-001-18,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-001
+r6-fx-con-crypto-010-02,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-04,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-06,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-08,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-rej-crypto-010-10,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-010
+r6-fx-con-crypto-010-12,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,val,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-14,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-16,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-18,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-20,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-22,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-24,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-rej-crypto-010-26,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,test,unverified,task=triage verdict=Reject rule=CRYPTO-010
+r6-fx-con-crypto-001-20,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-001
+r6-fx-con-crypto-001-22,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-001
+r6-fx-con-crypto-001-24,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-001
+r6-fx-con-crypto-001-26,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-001
+r6-fx-con-crypto-001-28,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-001
+r6-fx-rej-crypto-001-30,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-001
+r6-fx-con-crypto-002-04,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-002
+r6-fx-con-crypto-010-28,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,test,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-30,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-32,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-rej-crypto-010-34,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-010
+r6-fx-rej-crypto-003-02,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-003
+r6-fx-rej-crypto-001-32,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-001
+r6-fx-con-crypto-009-16,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-009
+r6-fx-con-crypto-009-18,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-009
+r6-fx-con-crypto-009-20,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,val,unverified,task=triage verdict=Confirm rule=CRYPTO-009
+r6-fx-con-crypto-009-22,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-009
+r6-fx-rej-crypto-009-24,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-009
+r6-fx-rej-crypto-009-26,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-009
+r6-fx-rej-crypto-009-28,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-009
+r6-fx-rej-crypto-009-30,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Reject rule=CRYPTO-009
+r6-fx-con-crypto-010-36,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-38,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-40,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,semgrep-rule-fixture,https://github.com/semgrep/semgrep-rules,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-008-02,data/round6/rule_fixture_triage.jsonl,CWE-338,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-008
+r6-fx-con-crypto-008-04,data/round6/rule_fixture_triage.jsonl,CWE-338,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-008
+r6-fx-con-crypto-008-06,data/round6/rule_fixture_triage.jsonl,CWE-338,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-008
+r6-fx-con-crypto-008-08,data/round6/rule_fixture_triage.jsonl,CWE-338,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,val,unverified,task=triage verdict=Confirm rule=CRYPTO-008
+r6-fx-con-crypto-008-10,data/round6/rule_fixture_triage.jsonl,CWE-338,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-008
+r6-fx-con-crypto-008-12,data/round6/rule_fixture_triage.jsonl,CWE-338,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,test,unverified,task=triage verdict=Confirm rule=CRYPTO-008
+r6-fx-con-crypto-008-14,data/round6/rule_fixture_triage.jsonl,CWE-338,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-008
+r6-fx-con-crypto-008-16,data/round6/rule_fixture_triage.jsonl,CWE-338,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-008
+r6-fx-rej-crypto-008-18,data/round6/rule_fixture_triage.jsonl,CWE-338,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-008
+r6-fx-rej-crypto-008-20,data/round6/rule_fixture_triage.jsonl,CWE-338,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-008
+r6-fx-con-crypto-001-34,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-001
+r6-fx-con-crypto-001-36,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-001
+r6-fx-con-crypto-002-06,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-002
+r6-fx-con-crypto-002-08,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-002
+r6-fx-con-crypto-002-10,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-002
+r6-fx-con-crypto-002-12,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-002
+r6-fx-rej-crypto-001-38,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-001
+r6-fx-rej-crypto-001-40,data/round6/rule_fixture_triage.jsonl,CWE-327,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-001
+r6-fx-rej-crypto-010-42,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-010
+r6-fx-con-crypto-010-44,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,val,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-rej-crypto-010-46,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-010
+r6-fx-con-crypto-010-48,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-rej-crypto-010-50,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-010
+r6-fx-con-crypto-010-52,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-rej-crypto-010-54,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-010
+r6-fx-con-crypto-010-56,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-rej-crypto-010-58,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-010
+r6-fx-con-crypto-010-60,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-rej-crypto-010-62,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-010
+r6-fx-con-crypto-010-64,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-rej-crypto-010-66,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-010
+r6-fx-con-crypto-010-68,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-rej-crypto-009-32,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-009
+r6-fx-rej-crypto-009-34,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-009
+r6-fx-rej-crypto-009-36,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-009
+r6-fx-rej-crypto-009-38,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-009
+r6-fx-rej-crypto-009-40,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-009
+r6-fx-rej-crypto-009-42,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Reject rule=CRYPTO-009
+r6-fx-con-crypto-009-44,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-009
+r6-fx-con-crypto-009-46,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-009
+r6-fx-con-crypto-009-48,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-009
+r6-fx-con-crypto-009-50,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-009
+r6-fx-con-crypto-009-52,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-009
+r6-fx-con-crypto-010-70,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-72,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-74,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-76,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-fx-con-crypto-010-78,data/round6/rule_fixture_triage.jsonl,CWE-326,WARNING,false,bandit-rule-fixture,https://github.com/PyCQA/bandit,train,unverified,task=triage verdict=Confirm rule=CRYPTO-010
+r6-real-ghsa-GHSA-3c45-wgjp-7v9r-detect,data/round6/real_verified_detect.jsonl,CWE-295,HIGH,true,round6-real-ghsa-osv,https://github.com/twisted/twisted,train,model:kimi-k3,task=detect rule=CRYPTO-010
+r6-real-ghsa-GHSA-62rc-f4v9-h543-1-detect,data/round6/real_verified_detect.jsonl,CWE-295,HIGH,true,round6-real-ghsa-osv,https://github.com/aws/sagemaker-python-sdk,train,model:kimi-k3,task=detect rule=CRYPTO-010
+r6-real-ghsa-GHSA-82r6-8w77-94w6-detect,data/round6/real_verified_detect.jsonl,CWE-295,HIGH,true,round6-real-ghsa-osv,https://github.com/agronholm/anyio,train,model:kimi-k3,task=detect rule=CRYPTO-010
+r6-real-ghsa-GHSA-82vr-5769-6358-detect,data/round6/real_verified_detect.jsonl,CWE-338,HIGH,true,round6-real-ghsa-osv,https://github.com/ethyca/fides,train,model:kimi-k3,task=detect rule=CRYPTO-008
+r6-real-ghsa-GHSA-g4r8-3qmh-pmch-detect,data/round6/real_verified_detect.jsonl,CWE-295,HIGH,true,round6-real-ghsa-osv,https://github.com/pgadmin-org/pgadmin4,train,model:kimi-k3,task=detect rule=CRYPTO-010
+r6-real-ghsa-GHSA-mhhf-vgwh-fw9h-detect,data/round6/real_verified_detect.jsonl,CWE-338,HIGH,true,round6-real-ghsa-osv,https://github.com/ArjunSharda/Passeo,train,model:kimi-k3,task=detect rule=CRYPTO-008
+r6-real-ghsa-GHSA-mv8m-v9v6-5f94-detect,data/round6/real_verified_detect.jsonl,CWE-295,MEDIUM,true,round6-real-ghsa-osv,https://github.com/siemens/kas,train,model:kimi-k3,task=detect rule=CRYPTO-010
+r6-real-ghsa-GHSA-p6hw-wm59-3g5g-detect,data/round6/real_verified_detect.jsonl,CWE-295,MEDIUM,true,round6-real-ghsa-osv,https://github.com/matrix-org/sydent,train,model:kimi-k3,task=detect rule=CRYPTO-010
+r6-real-ghsa-GHSA-prcq-52f8-fp44-detect,data/round6/real_verified_detect.jsonl,CWE-295,HIGH,true,round6-real-ghsa-osv,https://github.com/apache/libcloud,train,human,task=detect rule=CRYPTO-010
+r6-real-osv-GHSA-35m5-8cvj-8783-detect,data/round6/real_verified_detect.jsonl,CWE-327,MEDIUM,true,round6-real-ghsa-osv,https://github.com/Morgan-Phoenix/EnroCrypt,train,model:kimi-k3,task=detect rule=CRYPTO-001
+r6-real-osv-GHSA-39vm-p9mr-4r27-detect,data/round6/real_verified_detect.jsonl,CWE-327,MEDIUM,true,round6-real-ghsa-osv,https://github.com/bbangert/beaker,train,human,task=detect rule=CRYPTO-005
+r6-real-osv-GHSA-3xxc-pwj6-jgrj-detect,data/round6/real_verified_detect.jsonl,CWE-295,HIGH,true,round6-real-ghsa-osv,https://github.com/trailofbits/rfc3161-client,val,model:kimi-k3,task=detect rule=CRYPTO-010
+r6-real-osv-GHSA-45gq-q4xh-cp53-detect,data/round6/real_verified_detect.jsonl,CWE-208,LOW,true,round6-real-ghsa-osv,https://github.com/vantage6/vantage6,train,human,task=detect rule=CRYPTO-013
+r6-real-osv-GHSA-4m32-cjv7-f425-detect,data/round6/real_verified_detect.jsonl,CWE-321,CRITICAL,true,round6-real-ghsa-osv,https://github.com/AstrBotDevs/AstrBot,train,model:kimi-k3,task=detect rule=CRYPTO-007
+r6-real-osv-GHSA-5f35-pq34-c87q-1-detect,data/round6/real_verified_detect.jsonl,CWE-295,HIGH,true,round6-real-ghsa-osv,https://github.com/apache/airflow,train,model:kimi-k3,task=detect rule=CRYPTO-010
+r6-real-osv-GHSA-6655-8ph2-63j3-detect,data/round6/real_verified_detect.jsonl,CWE-327,LOW,true,round6-real-ghsa-osv,https://github.com/gradio-app/gradio,train,human,task=detect rule=CRYPTO-001
+r6-real-osv-GHSA-77rc-x84q-pv4f-1-detect,data/round6/real_verified_detect.jsonl,CWE-295,HIGH,true,round6-real-ghsa-osv,https://github.com/apache/airflow,train,model:kimi-k3,task=detect rule=CRYPTO-010
+r6-real-osv-GHSA-8ch4-58qp-g3mp-detect,data/round6/real_verified_detect.jsonl,CWE-208,MEDIUM,true,round6-real-ghsa-osv,https://github.com/aaugustin/websockets,val,model:kimi-k3,task=detect rule=CRYPTO-013
+r6-real-osv-GHSA-8v53-23mx-hcf9-detect,data/round6/real_verified_detect.jsonl,CWE-295,HIGH,true,round6-real-ghsa-osv,https://github.com/pyload/pyload,train,model:kimi-k3,task=detect rule=CRYPTO-010
+r6-real-osv-GHSA-95c6-p277-p87g-detect,data/round6/real_verified_detect.jsonl,CWE-208,LOW,true,round6-real-ghsa-osv,https://github.com/Athroniaeth/fastapi-api-key,train,model:kimi-k3,task=detect rule=CRYPTO-013
+r6-real-osv-GHSA-c759-cx9p-mrwq-detect,data/round6/real_verified_detect.jsonl,CWE-208,MEDIUM,true,round6-real-ghsa-osv,https://github.com/HKUDS/LightRAG,train,human,task=detect rule=CRYPTO-013
+r6-real-osv-GHSA-f248-v4qh-x2r6-detect,data/round6/real_verified_detect.jsonl,CWE-295,HIGH,true,round6-real-ghsa-osv,https://github.com/blackducksoftware/hub-rest-api-python,train,model:kimi-k3,task=detect rule=CRYPTO-010
+r6-real-osv-GHSA-g2jx-37x6-6438-1-detect,data/round6/real_verified_detect.jsonl,CWE-321,HIGH,true,round6-real-ghsa-osv,https://github.com/ArcadeAI/arcade-mcp,train,human,task=detect rule=CRYPTO-007
+r6-real-osv-GHSA-gg9x-qcx2-xmrh-detect,data/round6/real_verified_detect.jsonl,CWE-326,HIGH,true,round6-real-ghsa-osv,https://github.com/authlib/joserfc,test,model:kimi-k3,task=detect rule=CRYPTO-009
+r6-real-osv-GHSA-gmhf-gg8w-jw42-detect,data/round6/real_verified_detect.jsonl,CWE-208,MEDIUM,true,round6-real-ghsa-osv,https://github.com/XML-Security/signxml,train,model:kimi-k3,task=detect rule=CRYPTO-013
+r6-real-osv-GHSA-jjjr-3jcw-f8v6-1-detect,data/round6/real_verified_detect.jsonl,CWE-208,MEDIUM,true,round6-real-ghsa-osv,https://github.com/wagtail/wagtail,train,model:kimi-k3,task=detect rule=CRYPTO-013
+r6-real-osv-GHSA-m38j-pmg3-v5x5-detect,data/round6/real_verified_detect.jsonl,CWE-208,LOW,true,round6-real-ghsa-osv,https://github.com/tm-kn/django-basic-auth-ip-whitelist,train,model:kimi-k3,task=detect rule=CRYPTO-013
+r6-real-osv-GHSA-rjrp-m2jw-pv9c-1-detect,data/round6/real_verified_detect.jsonl,CWE-256,HIGH,true,round6-real-ghsa-osv,https://github.com/aws/sagemaker-python-sdk,train,human,task=detect rule=CRYPTO-011
+r6-real-osv-GHSA-xg4x-w2j3-57h6-detect,data/round6/real_verified_detect.jsonl,CWE-208,MEDIUM,true,round6-real-ghsa-osv,https://github.com/OctoPrint/OctoPrint,train,model:kimi-k3,task=detect rule=CRYPTO-013
+r6-real-osv-GHSA-xjhr-fm27-4hmx-detect,data/round6/real_verified_detect.jsonl,CWE-208,MEDIUM,true,round6-real-ghsa-osv,https://github.com/openfun/richie,train,model:kimi-k3,task=detect rule=CRYPTO-013
+r6-real-ghsa-GHSA-2mmv-7rrp-g8xh-triage,data/round6/real_verified_triage.jsonl,CWE-295,LOW,false,round6-real-ghsa-osv,https://github.com/WeblateOrg/wlc,train,human,task=triage verdict=Reject rule=CRYPTO-010
+r6-real-ghsa-GHSA-2xwp-m7mq-7q3r-triage,data/round6/real_verified_triage.jsonl,CWE-326,HIGH,false,round6-real-ghsa-osv,https://github.com/aws/aws-encryption-sdk-cli,train,human,task=triage verdict=Reject rule=CRYPTO-009
+r6-real-ghsa-GHSA-3c45-wgjp-7v9r-triage,data/round6/real_verified_triage.jsonl,CWE-295,HIGH,false,round6-real-ghsa-osv,https://github.com/twisted/twisted,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-010
+r6-real-ghsa-GHSA-62rc-f4v9-h543-1-triage,data/round6/real_verified_triage.jsonl,CWE-295,HIGH,false,round6-real-ghsa-osv,https://github.com/aws/sagemaker-python-sdk,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-010
+r6-real-ghsa-GHSA-6845-xw22-ffxv-triage,data/round6/real_verified_triage.jsonl,CWE-327,LOW,false,round6-real-ghsa-osv,https://github.com/vyperlang/vyper,train,model:kimi-k3,task=triage verdict=Reject
+r6-real-ghsa-GHSA-82r6-8w77-94w6-triage,data/round6/real_verified_triage.jsonl,CWE-295,HIGH,false,round6-real-ghsa-osv,https://github.com/agronholm/anyio,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-010
+r6-real-ghsa-GHSA-82vr-5769-6358-triage,data/round6/real_verified_triage.jsonl,CWE-338,HIGH,false,round6-real-ghsa-osv,https://github.com/ethyca/fides,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-008
+r6-real-ghsa-GHSA-9g3v-v24q-jj5p-triage,data/round6/real_verified_triage.jsonl,CWE-326,LOW,false,round6-real-ghsa-osv,https://github.com/ikus060/rdiffweb,train,model:kimi-k3,task=triage verdict=Reject
+r6-real-ghsa-GHSA-c3xq-cj8f-7829-triage,data/round6/real_verified_triage.jsonl,CWE-326,MEDIUM,false,round6-real-ghsa-osv,https://github.com/openstack/python-keystoneclient,train,model:kimi-k3,task=triage verdict=Reject
+r6-real-ghsa-GHSA-fhq3-2gf3-8f3j-triage,data/round6/real_verified_triage.jsonl,CWE-295,MEDIUM,false,round6-real-ghsa-osv,https://github.com/MISP/misp-modules,train,model:kimi-k3,task=triage verdict=Reject
+r6-real-ghsa-GHSA-g4r8-3qmh-pmch-triage,data/round6/real_verified_triage.jsonl,CWE-295,HIGH,false,round6-real-ghsa-osv,https://github.com/pgadmin-org/pgadmin4,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-010
+r6-real-ghsa-GHSA-h3m5-p59h-x88p-triage,data/round6/real_verified_triage.jsonl,CWE-256,LOW,false,round6-real-ghsa-osv,https://github.com/jahlives/openssl_encrypt,train,model:kimi-k3,task=triage verdict=Reject
+r6-real-ghsa-GHSA-mhhf-vgwh-fw9h-triage,data/round6/real_verified_triage.jsonl,CWE-338,HIGH,false,round6-real-ghsa-osv,https://github.com/ArjunSharda/Passeo,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-008
+r6-real-ghsa-GHSA-mv8m-v9v6-5f94-triage,data/round6/real_verified_triage.jsonl,CWE-295,MEDIUM,false,round6-real-ghsa-osv,https://github.com/siemens/kas,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-010
+r6-real-ghsa-GHSA-p3xv-97g8-4wmj-triage,data/round6/real_verified_triage.jsonl,CWE-295,MEDIUM,false,round6-real-ghsa-osv,https://github.com/openstack/python-swiftclient,train,model:kimi-k3,task=triage verdict=Reject
+r6-real-ghsa-GHSA-p6hw-wm59-3g5g-triage,data/round6/real_verified_triage.jsonl,CWE-295,MEDIUM,false,round6-real-ghsa-osv,https://github.com/matrix-org/sydent,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-010
+r6-real-ghsa-GHSA-prcq-52f8-fp44-triage,data/round6/real_verified_triage.jsonl,CWE-295,HIGH,false,round6-real-ghsa-osv,https://github.com/apache/libcloud,train,human,task=triage verdict=Confirm rule=CRYPTO-010
+r6-real-ghsa-GHSA-v49p-m6gh-747c-triage,data/round6/real_verified_triage.jsonl,CWE-295,HIGH,false,round6-real-ghsa-osv,https://github.com/sunscrapers/djoser,train,human,task=triage verdict=Reject rule=CRYPTO-010
+r6-real-ghsa-GHSA-w3j6-8j34-q43x-triage,data/round6/real_verified_triage.jsonl,CWE-295,LOW,false,round6-real-ghsa-osv,https://github.com/apache/libcloud,train,model:kimi-k3,task=triage verdict=Reject
+r6-real-osv-GHSA-35m5-8cvj-8783-triage,data/round6/real_verified_triage.jsonl,CWE-327,MEDIUM,false,round6-real-ghsa-osv,https://github.com/Morgan-Phoenix/EnroCrypt,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-001
+r6-real-osv-GHSA-39vm-p9mr-4r27-triage,data/round6/real_verified_triage.jsonl,CWE-327,MEDIUM,false,round6-real-ghsa-osv,https://github.com/bbangert/beaker,train,human,task=triage verdict=Confirm rule=CRYPTO-005
+r6-real-osv-GHSA-3xxc-pwj6-jgrj-triage,data/round6/real_verified_triage.jsonl,CWE-295,HIGH,false,round6-real-ghsa-osv,https://github.com/trailofbits/rfc3161-client,val,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-010
+r6-real-osv-GHSA-45gq-q4xh-cp53-triage,data/round6/real_verified_triage.jsonl,CWE-208,LOW,false,round6-real-ghsa-osv,https://github.com/vantage6/vantage6,train,human,task=triage verdict=Confirm rule=CRYPTO-013
+r6-real-osv-GHSA-4m32-cjv7-f425-triage,data/round6/real_verified_triage.jsonl,CWE-321,CRITICAL,false,round6-real-ghsa-osv,https://github.com/AstrBotDevs/AstrBot,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-007
+r6-real-osv-GHSA-4qjh-9fv9-r85r-triage,data/round6/real_verified_triage.jsonl,CWE-208,LOW,false,round6-real-ghsa-osv,https://github.com/vllm-project/vllm,train,human,task=triage verdict=Reject rule=CRYPTO-013
+r6-real-osv-GHSA-5f35-pq34-c87q-1-triage,data/round6/real_verified_triage.jsonl,CWE-295,HIGH,false,round6-real-ghsa-osv,https://github.com/apache/airflow,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-010
+r6-real-osv-GHSA-5h3x-6gwf-73jm-triage,data/round6/real_verified_triage.jsonl,CWE-208,LOW,false,round6-real-ghsa-osv,https://github.com/vantage6/vantage6,train,model:kimi-k3,task=triage verdict=Reject
+r6-real-osv-GHSA-6655-8ph2-63j3-triage,data/round6/real_verified_triage.jsonl,CWE-327,LOW,false,round6-real-ghsa-osv,https://github.com/gradio-app/gradio,train,human,task=triage verdict=Confirm rule=CRYPTO-001
+r6-real-osv-GHSA-77rc-x84q-pv4f-1-triage,data/round6/real_verified_triage.jsonl,CWE-295,HIGH,false,round6-real-ghsa-osv,https://github.com/apache/airflow,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-010
+r6-real-osv-GHSA-8ch4-58qp-g3mp-triage,data/round6/real_verified_triage.jsonl,CWE-208,MEDIUM,false,round6-real-ghsa-osv,https://github.com/aaugustin/websockets,val,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-013
+r6-real-osv-GHSA-8r96-8889-qg2x-triage,data/round6/real_verified_triage.jsonl,CWE-295,LOW,false,round6-real-ghsa-osv,https://github.com/httpie/cli,train,model:kimi-k3,task=triage verdict=Reject
+r6-real-osv-GHSA-8v53-23mx-hcf9-triage,data/round6/real_verified_triage.jsonl,CWE-295,HIGH,false,round6-real-ghsa-osv,https://github.com/pyload/pyload,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-010
+r6-real-osv-GHSA-95c6-p277-p87g-triage,data/round6/real_verified_triage.jsonl,CWE-208,LOW,false,round6-real-ghsa-osv,https://github.com/Athroniaeth/fastapi-api-key,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-013
+r6-real-osv-GHSA-c759-cx9p-mrwq-triage,data/round6/real_verified_triage.jsonl,CWE-208,MEDIUM,false,round6-real-ghsa-osv,https://github.com/HKUDS/LightRAG,train,human,task=triage verdict=Confirm rule=CRYPTO-013
+r6-real-osv-GHSA-f248-v4qh-x2r6-triage,data/round6/real_verified_triage.jsonl,CWE-295,HIGH,false,round6-real-ghsa-osv,https://github.com/blackducksoftware/hub-rest-api-python,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-010
+r6-real-osv-GHSA-ffqj-6fqr-9h24-triage,data/round6/real_verified_triage.jsonl,CWE-327,LOW,false,round6-real-ghsa-osv,https://github.com/jpadilla/pyjwt,train,model:kimi-k3,task=triage verdict=Reject
+r6-real-osv-GHSA-g2jx-37x6-6438-1-triage,data/round6/real_verified_triage.jsonl,CWE-321,HIGH,false,round6-real-ghsa-osv,https://github.com/ArcadeAI/arcade-mcp,train,human,task=triage verdict=Confirm rule=CRYPTO-007
+r6-real-osv-GHSA-gc24-px2r-5qmf-1-triage,data/round6/real_verified_triage.jsonl,CWE-321,MEDIUM,false,round6-real-ghsa-osv,https://github.com/maziggy/bambuddy,train,model:kimi-k3,task=triage verdict=Reject
+r6-real-osv-GHSA-gg9x-qcx2-xmrh-triage,data/round6/real_verified_triage.jsonl,CWE-326,HIGH,false,round6-real-ghsa-osv,https://github.com/authlib/joserfc,test,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-009
+r6-real-osv-GHSA-gmhf-gg8w-jw42-triage,data/round6/real_verified_triage.jsonl,CWE-208,MEDIUM,false,round6-real-ghsa-osv,https://github.com/XML-Security/signxml,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-013
+r6-real-osv-GHSA-jjjr-3jcw-f8v6-1-triage,data/round6/real_verified_triage.jsonl,CWE-208,MEDIUM,false,round6-real-ghsa-osv,https://github.com/wagtail/wagtail,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-013
+r6-real-osv-GHSA-m38j-pmg3-v5x5-triage,data/round6/real_verified_triage.jsonl,CWE-208,LOW,false,round6-real-ghsa-osv,https://github.com/tm-kn/django-basic-auth-ip-whitelist,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-013
+r6-real-osv-GHSA-prfw-69r3-wqxf-triage,data/round6/real_verified_triage.jsonl,CWE-327,LOW,false,round6-real-ghsa-osv,https://github.com/modelscope/ms-swift,train,model:kimi-k3,task=triage verdict=Reject
+r6-real-osv-GHSA-rjrp-m2jw-pv9c-1-triage,data/round6/real_verified_triage.jsonl,CWE-256,HIGH,false,round6-real-ghsa-osv,https://github.com/aws/sagemaker-python-sdk,train,human,task=triage verdict=Confirm rule=CRYPTO-011
+r6-real-osv-GHSA-vqwp-45wm-r9r5-triage,data/round6/real_verified_triage.jsonl,CWE-327,LOW,false,round6-real-ghsa-osv,https://github.com/streamlit/streamlit,train,human,task=triage verdict=Reject
+r6-real-osv-GHSA-w6q2-48ch-fj26-1-triage,data/round6/real_verified_triage.jsonl,CWE-295,LOW,false,round6-real-ghsa-osv,https://github.com/allegro/bigflow,train,model:kimi-k3,task=triage verdict=Reject
+r6-real-osv-GHSA-wvcv-832q-fjg7-triage,data/round6/real_verified_triage.jsonl,CWE-326,MEDIUM,false,round6-real-ghsa-osv,https://github.com/tlsfuzzer/tlslite-ng,train,model:kimi-k3,task=triage verdict=Reject
+r6-real-osv-GHSA-xg4x-w2j3-57h6-triage,data/round6/real_verified_triage.jsonl,CWE-208,MEDIUM,false,round6-real-ghsa-osv,https://github.com/OctoPrint/OctoPrint,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-013
+r6-real-osv-GHSA-xjhr-fm27-4hmx-triage,data/round6/real_verified_triage.jsonl,CWE-208,MEDIUM,false,round6-real-ghsa-osv,https://github.com/openfun/richie,train,model:kimi-k3,task=triage verdict=Confirm rule=CRYPTO-013

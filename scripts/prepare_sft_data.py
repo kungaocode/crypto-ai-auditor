@@ -38,8 +38,10 @@ LABEL_KEYS = {
 REQUIRED_KEYS = {"detect": ["vulnerable"], "triage": ["verdict"]}
 
 
-def build_messages(record: dict) -> List[Dict[str, str]]:
-    """Build chat-format messages from a single v2 dataset record."""
+def build_messages(record: dict, training: bool = False) -> List[Dict[str, str]]:
+    """Build chat-format messages from a single v2 dataset record.
+    When `training=True`, omits TRIAGE_PURPOSE_GUIDE from the user message
+    so the model learns to reason without relying on the guided prompt (R6 decision)."""
     task = record.get("task", "detect")
     if task not in LABEL_KEYS:
         raise ValueError(f"unknown task {task!r} in record {record.get('id')}")
@@ -55,7 +57,7 @@ def build_messages(record: dict) -> List[Dict[str, str]]:
         finding = record.get("finding")
         if not finding:
             raise ValueError(f"triage record {record.get('id')} missing 'finding'")
-        user_content = build_triage_user(code, finding, language)
+        user_content = build_triage_user(code, finding, language, training=training)
 
     keys = [k for k in LABEL_KEYS[task] if k in label]
     missing_core = [k for k in REQUIRED_KEYS[task] if k not in label]
@@ -76,13 +78,13 @@ def build_messages(record: dict) -> List[Dict[str, str]]:
     ]
 
 
-def convert(input_path: Path, output_path: Path) -> None:
+def convert(input_path: Path, output_path: Path, training: bool = False) -> None:
     records = [json.loads(line) for line in input_path.read_text().splitlines() if line.strip()]
     ok = skip = 0
     with open(output_path, "w", encoding="utf-8") as fh:
         for r in records:
             try:
-                msg = {"messages": build_messages(r)}
+                msg = {"messages": build_messages(r, training=training)}
             except (ValueError, KeyError) as e:
                 print(f"[!] skip {r.get('id', '?')}: {e}")
                 skip += 1
@@ -100,8 +102,10 @@ def main() -> int:
     )
     parser.add_argument("--input", "-i", type=Path, required=True)
     parser.add_argument("--output", "-o", type=Path, required=True)
+    parser.add_argument("--training", action="store_true",
+                        help="Strip TRIAGE_PURPOSE_GUIDE from training data (R6+)")
     args = parser.parse_args()
-    convert(args.input, args.output)
+    convert(args.input, args.output, training=args.training)
     return 0
 
 

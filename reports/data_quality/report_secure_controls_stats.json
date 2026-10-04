@@ -1,0 +1,249 @@
+{
+  "claim_validation": {
+    "confirmed": 2,
+    "context_dependent": 2,
+    "not_evaluable": 5,
+    "partial": 4,
+    "report_mismatch": 2
+  },
+  "decision": {
+    "context_dependent": 3,
+    "insufficient_evidence": 5,
+    "out_of_scope": 5,
+    "safe_control": 2
+  },
+  "extracted_nodes": {
+    "failed": 0,
+    "parseable": 15,
+    "total": 15
+  },
+  "r6_merge_status": {
+    "blocked_context_dependent": 1,
+    "blocked_missing_source": 4,
+    "blocked_non_target_cwe": 3,
+    "blocked_out_of_scope": 1,
+    "blocked_report_mismatch": 1,
+    "blocked_report_target_missing": 1,
+    "blocked_unsafe_primitive_compat": 2,
+    "blocked_weak_parameter_floor": 1,
+    "review_required_secure_reference": 1
+  },
+  "recommended_dataset_role": {
+    "exclude": 8,
+    "secure_reference": 7
+  },
+  "records": [
+    {
+      "candidate_id": "C-001",
+      "claim_validation": "report_mismatch",
+      "code_sha256": "e8c5eccc6ccd9b5eb344e50a8a498fa7f8e83b2da49785ba5397abe26865984c",
+      "decision": "context_dependent",
+      "extraction_errors": [],
+      "function_name": "_check_aes_key_length",
+      "package": "pyca/cryptography",
+      "r6_merge_status": "blocked_report_mismatch",
+      "recommended_dataset_role": "secure_reference",
+      "source_sha256": "6094178b83c9188219d6b81c85b307e3b11df988947144a32cf10eb95f2b8061",
+      "source_status": "verified_source"
+    },
+    {
+      "candidate_id": "C-002",
+      "claim_validation": "partial",
+      "code_sha256": "dd4aa3530eb34295cfdee103da600ee1da96dc8a8a8905751c6a00da02bf4b82",
+      "decision": "safe_control",
+      "extraction_errors": [],
+      "function_name": "XTS",
+      "package": "pyca/cryptography",
+      "r6_merge_status": "review_required_secure_reference",
+      "recommended_dataset_role": "secure_reference",
+      "source_sha256": "6094178b83c9188219d6b81c85b307e3b11df988947144a32cf10eb95f2b8061",
+      "source_status": "verified_source"
+    },
+    {
+      "candidate_id": "C-003",
+      "claim_validation": "report_mismatch",
+      "code_sha256": "fc7190d2610c1bce42d9178a1caf0c77c590b83cdde7d4268144516ae921c0a6",
+      "decision": "out_of_scope",
+      "extraction_errors": [],
+      "function_name": "GCM",
+      "package": "pyca/cryptography",
+      "r6_merge_status": "blocked_out_of_scope",
+      "recommended_dataset_role": "exclude",
+      "source_sha256": "6094178b83c9188219d6b81c85b307e3b11df988947144a32cf10eb95f2b8061",
+      "source_status": "verified_source"
+    },
+    {
+      "candidate_id": "C-004",
+      "claim_validation": "partial",
+      "code_sha256": "a7af25fea4cde58cc96fc31febec040d6e2762672e556431928e1dc9a5dac987",
+      "decision": "out_of_scope",
+      "extraction_errors": [],
+      "function_name": "TripleDES",
+      "package": "pyca/cryptography",
+      "r6_merge_status": "blocked_unsafe_primitive_compat",
+      "recommended_dataset_role": "exclude",
+      "source_sha256": "4820ec91773dc72ceccf4363343ead017f2dd7b8d84db501dacc30d6e6fd1ae6",
+      "source_status": "verified_source"
+    },
+    {
+      "candidate_id": "C-005",
+      "claim_validation": "partial",
+      "code_sha256": "e7372b8ec1c858f5649a1305d86dbbc38d953f8f8434fbaef843624275556200",
+      "decision": "out_of_scope",
+      "extraction_errors": [],
+      "function_name": "ARC4",
+      "package": "pyca/cryptography",
+      "r6_merge_status": "blocked_unsafe_primitive_compat",
+      "recommended_dataset_role": "exclude",
+      "source_sha256": "4820ec91773dc72ceccf4363343ead017f2dd7b8d84db501dacc30d6e6fd1ae6",
+      "source_status": "verified_source"
+    },
+    {
+      "candidate_id": "C-006",
+      "claim_validation": "partial",
+      "code_sha256": "ee180951c850a9a4cc6173f2d05eeb1fab7082292b7aaba1b8fecd1571160982",
+      "decision": "out_of_scope",
+      "extraction_errors": [],
+      "function_name": "BestAvailableEncryption",
+      "package": "pyca/cryptography",
+      "r6_merge_status": "blocked_non_target_cwe",
+      "recommended_dataset_role": "secure_reference",
+      "source_sha256": "5340d4d19cce2c9a69090b21f44247eaf198a07a2d06895f372472c77c2bd65d",
+      "source_status": "verified_source"
+    },
+    {
+      "candidate_id": "C-007",
+      "claim_validation": "context_dependent",
+      "code_sha256": "2bb9c5ca29990a4482ed1d635ccd7b6006c53b73a8b4937c99288005c7a7dd52",
+      "decision": "context_dependent",
+      "extraction_errors": [],
+      "function_name": "KeySerializationEncryptionBuilder.kdf_rounds",
+      "package": "pyca/cryptography",
+      "r6_merge_status": "blocked_context_dependent",
+      "recommended_dataset_role": "secure_reference",
+      "source_sha256": "5340d4d19cce2c9a69090b21f44247eaf198a07a2d06895f372472c77c2bd65d",
+      "source_status": "verified_source"
+    },
+    {
+      "candidate_id": "C-008",
+      "claim_validation": "context_dependent",
+      "code_sha256": "feaf50d1c5c8a9e9d108b4aba8e6c6e8d19329dadec14ddf7576e91e937dd1a8",
+      "decision": "context_dependent",
+      "extraction_errors": [],
+      "function_name": "Scrypt",
+      "package": "pyca/cryptography",
+      "r6_merge_status": "blocked_weak_parameter_floor",
+      "recommended_dataset_role": "secure_reference",
+      "source_sha256": "e1038d863c40fd9b6e42d43b415dc59db07c7edac59cce760781cf7d5ee1172b",
+      "source_status": "verified_source"
+    },
+    {
+      "candidate_id": "C-009",
+      "claim_validation": "not_evaluable",
+      "code_sha256": "",
+      "decision": "insufficient_evidence",
+      "extraction_errors": [],
+      "function_name": "dumps",
+      "package": "django/django",
+      "r6_merge_status": "blocked_missing_source",
+      "recommended_dataset_role": "exclude",
+      "source_sha256": "",
+      "source_status": "source_missing"
+    },
+    {
+      "candidate_id": "C-010",
+      "claim_validation": "not_evaluable",
+      "code_sha256": "",
+      "decision": "insufficient_evidence",
+      "extraction_errors": [],
+      "function_name": "loads",
+      "package": "django/django",
+      "r6_merge_status": "blocked_missing_source",
+      "recommended_dataset_role": "exclude",
+      "source_sha256": "",
+      "source_status": "source_missing"
+    },
+    {
+      "candidate_id": "C-011",
+      "claim_validation": "not_evaluable",
+      "code_sha256": "7f4a2f844badc0ee27d53b2af4bdd66b8f675806168ff543afd89e4a7f32cc4e",
+      "decision": "insufficient_evidence",
+      "extraction_errors": [],
+      "function_name": "PyJWT._merge_options",
+      "package": "jpadilla/pyjwt",
+      "r6_merge_status": "blocked_report_target_missing",
+      "recommended_dataset_role": "secure_reference",
+      "source_sha256": "28cff360870226934631b90a72b17c11d6ca95d09125e0dc1d549aaf8292e7cb",
+      "source_status": "report_target_missing"
+    },
+    {
+      "candidate_id": "C-012",
+      "claim_validation": "confirmed",
+      "code_sha256": "ba0b705c10ce8f7cb58d535e410596853fd32a24843a1da5b04d963d6d8fd053",
+      "decision": "out_of_scope",
+      "extraction_errors": [],
+      "function_name": "PyJWT._decode_payload",
+      "package": "jpadilla/pyjwt",
+      "r6_merge_status": "blocked_non_target_cwe",
+      "recommended_dataset_role": "exclude",
+      "source_sha256": "28cff360870226934631b90a72b17c11d6ca95d09125e0dc1d549aaf8292e7cb",
+      "source_status": "verified_source"
+    },
+    {
+      "candidate_id": "C-013",
+      "claim_validation": "confirmed",
+      "code_sha256": "9e5fb40dbdac879dc40c8f05f51b8df47cd6ade38b3b3df1b43792e08afc0f32",
+      "decision": "safe_control",
+      "extraction_errors": [],
+      "function_name": "PyJWS._load",
+      "package": "jpadilla/pyjwt",
+      "r6_merge_status": "blocked_non_target_cwe",
+      "recommended_dataset_role": "secure_reference",
+      "source_sha256": "a0c578d4e09c823afe019ed3e0b06fb184c665ff34cfe404c68229ae3272269d",
+      "source_status": "verified_source"
+    },
+    {
+      "candidate_id": "C-014",
+      "claim_validation": "not_evaluable",
+      "code_sha256": "",
+      "decision": "insufficient_evidence",
+      "extraction_errors": [],
+      "function_name": "get_random_secret_key",
+      "package": "django/django",
+      "r6_merge_status": "blocked_missing_source",
+      "recommended_dataset_role": "exclude",
+      "source_sha256": "",
+      "source_status": "source_missing"
+    },
+    {
+      "candidate_id": "C-015",
+      "claim_validation": "not_evaluable",
+      "code_sha256": "",
+      "decision": "insufficient_evidence",
+      "extraction_errors": [],
+      "function_name": "get_random_string",
+      "package": "django/django",
+      "r6_merge_status": "blocked_missing_source",
+      "recommended_dataset_role": "exclude",
+      "source_sha256": "",
+      "source_status": "source_missing"
+    }
+  ],
+  "report_items": 15,
+  "schema_version": 1,
+  "source_files": {
+    "cryptography/_serialization.py": 2,
+    "cryptography/algorithms.py": 3,
+    "cryptography/modes.py": 3,
+    "cryptography/scrypt.py": 1,
+    "pyjwt/api_jws_4adcd.py": 1,
+    "pyjwt/api_jwt_4adcd.py": 2
+  },
+  "source_status": {
+    "report_target_missing": 1,
+    "source_missing": 4,
+    "verified_source": 10
+  },
+  "training_eligible_count": 0,
+  "verified_true_count": 0
+}

@@ -37,13 +37,18 @@ TRIAGE_PURPOSE_GUIDE = (
 )
 
 
-def build_triage_user(code: str, finding: str, language: str = "python") -> str:
-    return (
+def build_triage_user(code: str, finding: str, language: str = "python",
+                      training: bool = False) -> str:
+    """Build triage user message. When training=True, omits TRIAGE_PURPOSE_GUIDE
+    so the model learns to reason without relying on the guided prompt at SFT time."""
+    msg = (
         f"Task: triage\nLanguage: {language}\n"
         f"Static Finding: {finding}\n"
         f"Code:\n{code}"
-        f"{TRIAGE_PURPOSE_GUIDE}"
     )
+    if not training:
+        msg += TRIAGE_PURPOSE_GUIDE
+    return msg
 
 
 def build_messages_detect(code: str) -> List[Dict[str, str]]:

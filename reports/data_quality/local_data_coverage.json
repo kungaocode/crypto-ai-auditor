@@ -1,0 +1,177 @@
+{
+  "generated_at": "2026-10-04T02:18:24.203340+00:00",
+  "harvestable_suffixes": [
+    ".csv",
+    ".json",
+    ".jsonl",
+    ".yaml",
+    ".yml"
+  ],
+  "sources": {
+    "data/external/advisory-database": {
+      "files": 380137,
+      "harvestable_files": 380132,
+      "unharvestable_files": 5,
+      "by_suffix": {
+        ".json": 380127,
+        ".yaml": 5,
+        ".md": 5
+      }
+    },
+    "data/external/bandit": {
+      "files": 298,
+      "harvestable_files": 13,
+      "unharvestable_files": 285,
+      "by_suffix": {
+        ".py": 196,
+        ".rst": 67,
+        ".yml": 9,
+        ".png": 6,
+        "<none>": 5,
+        ".md": 4,
+        ".yaml": 3,
+        ".txt": 3,
+        ".conf": 1,
+        ".json": 1,
+        ".svg": 1,
+        ".cfg": 1,
+        ".ini": 1
+      }
+    },
+    "data/external/osv-pypi": {
+      "files": 26041,
+      "harvestable_files": 26041,
+      "unharvestable_files": 0,
+      "by_suffix": {
+        ".json": 26041
+      }
+    },
+    "data/external/pypa-advisory-database": {
+      "files": 7730,
+      "harvestable_files": 7726,
+      "unharvestable_files": 4,
+      "by_suffix": {
+        ".yaml": 7725,
+        "<none>": 2,
+        ".yml": 1,
+        ".md": 1,
+        ".sh": 1
+      }
+    },
+    "data/external/semgrep-rules": {
+      "files": 4299,
+      "harvestable_files": 2203,
+      "unharvestable_files": 2096,
+      "by_suffix": {
+        ".yaml": 2158,
+        ".py": 430,
+        ".tf": 366,
+        ".go": 248,
+        ".js": 200,
+        ".java": 135,
+        ".rb": 94,
+        ".txt": 69,
+        ".php": 66,
+        ".sol": 50,
+        ".cs": 49,
+        ".dockerfile": 48,
+        ".yml": 35,
+        ".ts": 28,
+        ".html": 24,
+        ".ml": 24,
+        ".scala": 23,
+        ".tsx": 21,
+        ".md": 18,
+        ".cls": 18,
+        ".c": 18,
+        ".jsx": 18,
+        ".kt": 14,
+        ".exs": 14,
+        ".conf": 13,
+        ".json": 10,
+        ".erb": 10,
+        ".rs": 10,
+        "<none>": 9,
+        ".sh": 9,
+        ".swift": 6,
+        ".bash": 6,
+        ".clj": 5,
+        ".toml": 5,
+        ".xml": 5,
+        ".mustache": 4,
+        ".jsp": 4,
+        ".ejs": 4,
+        ".pug": 4,
+        ".config": 3,
+        ".generic": 3,
+        ".page": 3,
+        ".cshtml": 2,
+        ".npmrc": 2,
+        ".properties": 2,
+        ".lock": 1,
+        ".cursorrules": 1,
+        ".dart": 1,
+        ".bicep": 1,
+        ".gradle": 1,
+        ".xhtml": 1,
+        ".vue": 1,
+        ".kts": 1,
+        ".libsonnet": 1,
+        ".schm": 1,
+        ".notyaml": 1,
+        ".sbt": 1
+      }
+    },
+    "data/external/trailofbits-semgrep-rules": {
+      "files": 248,
+      "harvestable_files": 145,
+      "unharvestable_files": 103,
+      "by_suffix": {
+        ".yaml": 142,
+        ".py": 25,
+        ".go": 18,
+        ".sh": 17,
+        ".rb": 15,
+        ".job": 5,
+        ".js": 5,
+        "<none>": 4,
+        ".tf": 4,
+        ".yml": 3,
+        ".md": 2,
+        ".ts": 2,
+        ".java": 2,
+        ".kt": 2,
+        ".rs": 1,
+        ".swift": 1
+      }
+    },
+    "data/raw/cwe": {
+      "files": 1,
+      "harvestable_files": 1,
+      "unharvestable_files": 0,
+      "by_suffix": {
+        ".json": 1
+      }
+    },
+    "data/raw/pycode-vul": {
+      "files": 2,
+      "harvestable_files": 2,
+      "unharvestable_files": 0,
+      "by_suffix": {
+        ".csv": 2
+      }
+    }
+  },
+  "screen_pools": {
+    "data/round6/candidates/real_crypto_candidates.jsonl": 22,
+    "data/round6/candidates/real_crypto_candidates_ghsa.jsonl": 534,
+    "data/round6/candidates/real_crypto_candidates_osv_pypi.jsonl": 843,
+    "data/round6/candidates/real_crypto_candidates_pypa.jsonl": 706,
+    "data/round6/candidates/real_crypto_candidates_pycode_vul.jsonl": 389,
+    "data/round6/candidates/real_crypto_candidates_broad.jsonl": 140,
+    "data/round6/candidates/real_crypto_candidates_enriched.jsonl": 22,
+    "data/round6/candidates/real_crypto_candidates_functions.jsonl": 139
+  },
+  "screen_pool_total_rows": 2795,
+  "note": "harvestable_files counts JSON/JSONL/YAML/CSV files the local harvesters can parse. unharvestable_files are raw source/fixture files consumed by dedicated converters instead (semgrep .py fixtures, bandit tests, ...), not by this screen directly."
+}
