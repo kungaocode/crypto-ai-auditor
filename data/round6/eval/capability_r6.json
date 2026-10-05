@@ -1,0 +1,208 @@
+{
+  "model_id": "qwen3-4b-instruct-2507-5f8261ad123d",
+  "rule_matrix": {
+    "n_rules": 13,
+    "vuln_detected": 11,
+    "vuln_cwe_correct": 6,
+    "safe_not_flagged": 10,
+    "rows": [
+      {
+        "rule": "CRYPTO-001",
+        "expected_cwe": "CWE-327",
+        "vuln_pred": true,
+        "vuln_cwe": "CWE-327",
+        "vuln_ok": true,
+        "vuln_cwe_ok": true,
+        "safe_pred": false,
+        "safe_ok": true
+      },
+      {
+        "rule": "CRYPTO-002",
+        "expected_cwe": "CWE-327",
+        "vuln_pred": false,
+        "vuln_cwe": "",
+        "vuln_ok": false,
+        "vuln_cwe_ok": false,
+        "safe_pred": false,
+        "safe_ok": true
+      },
+      {
+        "rule": "CRYPTO-003",
+        "expected_cwe": "CWE-327",
+        "vuln_pred": true,
+        "vuln_cwe": "CWE-327",
+        "vuln_ok": true,
+        "vuln_cwe_ok": true,
+        "safe_pred": false,
+        "safe_ok": true
+      },
+      {
+        "rule": "CRYPTO-004",
+        "expected_cwe": "CWE-327",
+        "vuln_pred": true,
+        "vuln_cwe": "CWE-327",
+        "vuln_ok": true,
+        "vuln_cwe_ok": true,
+        "safe_pred": false,
+        "safe_ok": true
+      },
+      {
+        "rule": "CRYPTO-005",
+        "expected_cwe": "CWE-327",
+        "vuln_pred": true,
+        "vuln_cwe": "CWE-327",
+        "vuln_ok": true,
+        "vuln_cwe_ok": true,
+        "safe_pred": false,
+        "safe_ok": true
+      },
+      {
+        "rule": "CRYPTO-006",
+        "expected_cwe": "CWE-329",
+        "vuln_pred": true,
+        "vuln_cwe": "CWE-327",
+        "vuln_ok": true,
+        "vuln_cwe_ok": false,
+        "safe_pred": false,
+        "safe_ok": true
+      },
+      {
+        "rule": "CRYPTO-007",
+        "expected_cwe": "CWE-321",
+        "vuln_pred": true,
+        "vuln_cwe": "CWE-327",
+        "vuln_ok": true,
+        "vuln_cwe_ok": false,
+        "safe_pred": true,
+        "safe_ok": false
+      },
+      {
+        "rule": "CRYPTO-008",
+        "expected_cwe": "CWE-338",
+        "vuln_pred": false,
+        "vuln_cwe": "",
+        "vuln_ok": false,
+        "vuln_cwe_ok": false,
+        "safe_pred": false,
+        "safe_ok": true
+      },
+      {
+        "rule": "CRYPTO-009",
+        "expected_cwe": "CWE-326",
+        "vuln_pred": true,
+        "vuln_cwe": "CWE-326",
+        "vuln_ok": true,
+        "vuln_cwe_ok": true,
+        "safe_pred": false,
+        "safe_ok": true
+      },
+      {
+        "rule": "CRYPTO-010",
+        "expected_cwe": "CWE-326",
+        "vuln_pred": true,
+        "vuln_cwe": "CWE-326",
+        "vuln_ok": true,
+        "vuln_cwe_ok": true,
+        "safe_pred": false,
+        "safe_ok": true
+      },
+      {
+        "rule": "CRYPTO-011",
+        "expected_cwe": "CWE-256",
+        "vuln_pred": true,
+        "vuln_cwe": "CWE-259",
+        "vuln_ok": true,
+        "vuln_cwe_ok": false,
+        "safe_pred": true,
+        "safe_ok": false
+      },
+      {
+        "rule": "CRYPTO-012",
+        "expected_cwe": "CWE-916",
+        "vuln_pred": true,
+        "vuln_cwe": "CWE-798",
+        "vuln_ok": true,
+        "vuln_cwe_ok": false,
+        "safe_pred": true,
+        "safe_ok": false
+      },
+      {
+        "rule": "CRYPTO-013",
+        "expected_cwe": "CWE-208",
+        "vuln_pred": true,
+        "vuln_cwe": "CWE-259",
+        "vuln_ok": true,
+        "vuln_cwe_ok": false,
+        "safe_pred": false,
+        "safe_ok": true
+      }
+    ]
+  },
+  "secure_lib": {
+    "n": 10,
+    "not_flagged": 8,
+    "fpr": 0.2,
+    "rows": [
+      {
+        "name": "cryptography-AESGCM",
+        "pred": true,
+        "cwe": "CWE-327",
+        "ok": false
+      },
+      {
+        "name": "argon2",
+        "pred": false,
+        "cwe": "",
+        "ok": true
+      },
+      {
+        "name": "secrets-token",
+        "pred": false,
+        "cwe": "",
+        "ok": true
+      },
+      {
+        "name": "hmac-compare",
+        "pred": false,
+        "cwe": "",
+        "ok": true
+      },
+      {
+        "name": "ssl-default-context",
+        "pred": false,
+        "cwe": "",
+        "ok": true
+      },
+      {
+        "name": "os-urandom",
+        "pred": false,
+        "cwe": "",
+        "ok": true
+      },
+      {
+        "name": "nacl-secretbox",
+        "pred": true,
+        "cwe": "CWE-327",
+        "ok": false
+      },
+      {
+        "name": "ecdsa-sign",
+        "pred": false,
+        "cwe": "",
+        "ok": true
+      },
+      {
+        "name": "bcrypt",
+        "pred": false,
+        "cwe": "",
+        "ok": true
+      },
+      {
+        "name": "sha256-integrity",
+        "pred": false,
+        "cwe": "",
+        "ok": true
+      }
+    ]
+  }
+}

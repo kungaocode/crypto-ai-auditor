@@ -1,0 +1,692 @@
+{
+  "model_id": "qwen3-4b-instruct-2507-5f8261ad123d",
+  "deployment": {
+    "deployment_name": "第六轮密码微调结果",
+    "fine_tune_job": "ft-202610051556-cc87",
+    "fine_tune_output": "qwen3-4b-instruct-2507-ft-202610051556-cc87",
+    "base_model": "qwen3-4b-instruct-2507",
+    "workspace_id": "ws-avxkjb2tq5lq1gwm",
+    "status": "RUNNING",
+    "hyperparams": {
+      "lora_rank": 16,
+      "lora_alpha": 32,
+      "lora_dropout": 0.005,
+      "learning_rate": "1e-4",
+      "n_epochs": 3,
+      "batch_size": 128,
+      "max_length": 4096,
+      "lr_scheduler": "cosine"
+    }
+  },
+  "started": "2026-10-05 03:01:14",
+  "detect": {
+    "metrics": {
+      "n": 19,
+      "tp": 5,
+      "fp": 5,
+      "fn": 2,
+      "tn": 7,
+      "recall": 0.7143,
+      "precision": 0.5,
+      "f1": 0.5882,
+      "accuracy": 0.6316,
+      "cwe_acc": 0.4
+    },
+    "preds": [
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": "",
+        "confidence": "high",
+        "explanation": "hmac.compare_digest is used for signature verification. The vulnerable pattern is the use of a weak hash in HMAC; however, the call to hmac.compare_digest (constant-time comparison) corrects the timing side-channel. No vulnerability."
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": "",
+        "confidence": "high",
+        "explanation": "pbkdf2_hmac() uses a slow key derivation function (KDF) with a high iteration count. The finding is a false positive: the flagged call protects stored credentials, not an unauthenticated transport."
+      },
+      {
+        "vulnerable": false
+      },
+      {
+        "vulnerable": true,
+        "cwe": "CWE-327"
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": "",
+        "confidence": "high",
+        "explanation": "HMAC-SHA256 signs a message with a key. HMAC is a MAC, not a signature; the key must be kept secret and never exposed. No vulnerability."
+      },
+      {
+        "vulnerable": true,
+        "cwe": "CWE-327"
+      },
+      {
+        "vulnerable": true,
+        "cwe": "CWE-327"
+      },
+      {
+        "vulnerable": true,
+        "cwe": "CWE-259",
+        "severity": "WARNING",
+        "confidence": "high",
+        "explanation": "Profile password is stored in plaintext in the database."
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": "",
+        "confidence": "high",
+        "explanation": "PBKDF2-HMAC-SHA256 with 8000 iterations. SHA-2 is collision-resistant; the high iteration count prevents offline brute-forcing. Not a vulnerability."
+      },
+      {
+        "vulnerable": true,
+        "cwe": "CWE-208",
+        "severity": "WARNING",
+        "confidence": "high",
+        "explanation": "Use of SHA-1 which is not collision-resistant. SHA-1 must not be used for security-sensitive operations."
+      },
+      {
+        "vulnerable": true,
+        "cwe": "CWE-259",
+        "severity": "WARNING",
+        "confidence": "high",
+        "explanation": "PBKDF2 with <= 1000 iterations. The key derivation function is too weak or short for the password length."
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": "",
+        "confidence": "high",
+        "explanation": "PBKDF2 with SHA-256 and 600k iterations. The high iteration count prevents offline brute-forcing of the stored hash; no real vulnerability."
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": "",
+        "confidence": "high",
+        "explanation": "Use of a cryptographically secure random number generator (CSPRNG) to generate or seed a key. No vulnerability."
+      },
+      {
+        "vulnerable": true,
+        "cwe": "CWE-329",
+        "severity": "WARNING",
+        "confidence": "high",
+        "explanation": "AES-CBC with a fixed IV. The same IV is used for every encryption, so identical plaintexts produce identical ciphertexts. An attacker can detect repeated patterns and infer content."
+      },
+      {
+        "vulnerable": true,
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "confidence": "high",
+        "explanation": "AES-GCM with a fixed nonce. The same nonce is used for multiple messages, so an attacker can recover plaintexts from ciphertexts."
+      },
+      {
+        "vulnerable": true,
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "confidence": "high",
+        "explanation": "AES-GCM with a fixed database key. The same key encrypts all stored credit card numbers; an attacker who compromises the database can decrypt every card."
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": "",
+        "confidence": "high",
+        "explanation": "A session token is generated using a cryptographically secure random generator. No vulnerability."
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": "",
+        "confidence": "high",
+        "explanation": "ECDSA-SHA256 uses the correct curve and digest. No vulnerability."
+      },
+      {
+        "vulnerable": true,
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "confidence": "high",
+        "explanation": "ARC4 is a broken stream cipher. MS-CHAPv2 uses ARC4 with the NT-hash as key; the library must implement ARC4 to talk to legacy RADIUS servers. The protocol specification mandates this weak cipher."
+      }
+    ]
+  },
+  "domain": {
+    "metrics": {
+      "n": 36,
+      "gt_confirm": 4,
+      "gt_reject": 32,
+      "confirm_recall": 1.0,
+      "fpr": 0.125,
+      "accuracy": 0.8889
+    },
+    "preds": [
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call is used in a lazy import for the default hash algorithm in a library's configuration. The real security-sensitive operation (a credential or key) uses SHA-256, not this call. The flagged call only determines which hashing backend to use at runtime and does not protect any secret -> Reject."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call protects a cache key, not a credential or secret. The output is used to shard and deduplicate a large dataset across multiple nodes; the same value maps to the same file on every node. No security-sensitive data is protected."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call is inside a library that implements the *PBES1* format for storing private keys. The weak cipher protects the key material, which is a security purpose -> Confirm."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Confirm",
+        "explanation": "The flagged call protects a private key, which is the core credential for cryptographic operations. The key material must remain secret to prevent impersonation or data compromise -> Confirm.",
+        "patch": "def encrypt(data, passphrase, protection, prot_params=None, randfunc=None):\n    \"\"\"\n    Encrypt a piece of data using a passphrase and *PBES2*.\n\n    :Parameters:\n      data : byte string\n        The piece of data to encrypt.\n      passphrase : byte string\n        The passphrase to use for encrypting the data.\n      protection : string\n        The identifier of the encryption algorithm to use.\n        The default value is '``PBKDF2WithHMAC-SHA1AndDES-EDE3-CBC``'.\n      prot_params : dictionary\n        Parameters of the protection algorithm.\n\n          +------------------+-----------------------------------------------+\n          | Key              | Description                                   |\n          +==================+===============================================+\n          | iteration_count  | The KDF algorithm is repeated several times to|\n          |                  | slow down brute force attacks on passwords    |\n          |                  | (called *N* or CPU/memory cost in scrypt).    |\n          |                  |                                               |\n          |                  | The default value for PBKDF2 is 1 000.        |\n          |                  | The default value for scrypt is 16 384.       |\n          +------------------+-----------------------------------------------+\n          | salt_size        | Salt is used to thwart dictionary and rainbow |\n          |                  | attacks on passwords. The default value is 8  |\n          |                  | bytes.                                        |\n          +------------------+-----------------------------------------------+\n          | block_size       | *(scrypt only)* Memory-cost (r). The default  |\n          |                  | value is 8.                                   |\n          +------------------+-----------------------------------------------+\n          | parallelization  | *(scrypt only)* CPU-cost (p). The default     |\n          |                  | value is 1.                                   |\n          +------------------+-----------------------------------------------+\n\n      randfunc : callable\n        Random number generation function; it should accept\n        a single integer N and return a string of random data,\n        N bytes long. If not specified, a new RNG will be\n        instantiated from ``Crypto.Random``.\n\n    :Returns:\n      The encrypted data, as a binary string.\n    \"\"\"\n\n    if prot_params is None:\n        prot_params = {}\n\n    if randfunc is None:\n        randfunc = Random.new().read\n\n    pattern = re.compile(r'^(PBKDF2WithHMAC-([0-9A-Z-]+)|scrypt)And([0-9A-Z-]+)$')\n    res = pattern.match(protection)\n    if res is None:\n        raise ValueError(\"Unknown protection %s\" % protection)\n\n    if protection.startswith(\"PBKDF\"):\n        pbkdf = \"pbkdf2\"\n        pbkdf2_hmac_algo = res.group(2)\n        enc_algo = res.group(3)\n    else:\n        pbkdf = \"scrypt\"\n        enc_algo = res.group(3)\n\n    aead = False\n    if enc_algo == 'AES128-CBC':\n        key_size = 16\n        module = AES\n        cipher_mode = AES.MODE_CBC\n        enc_oid = _OID_AES128_CBC\n        enc_param = {'iv': randfunc(16)}\n    elif enc_algo == 'AES192-CBC':\n        key_size = 24\n        module = AES\n        cipher_mode = AES.MODE_CBC\n        enc_oid = _OID_AES192_CBC\n        enc_param = {'iv': randfunc(16)}\n    elif enc_algo == 'AES256-CBC':\n        key_size = 32\n        module = AES\n        cipher_mode = AES.MODE_CBC\n        enc_oid = _OID_AES256_CBC\n        enc_param = {'iv': randfunc(16)}\n    elif enc_algo == 'AES128-GCM':\n        key_size = 16\n        module = AES\n        cipher_mode = AES.MODE_GCM\n        enc_oid = _OID_AES128_GCM\n        enc_param = {'nonce': randfunc(12)}\n        aead = True\n    elif enc_algo == 'AES192-GCM':\n        key_size = 24\n        module = AES\n        cipher_mode = AES.MODE_GCM\n        enc_oid = _OID_AES192_GCM\n        enc_param = {'nonce': randfunc(12)}\n        aead = True\n    elif enc_algo == 'AES256-GCM':\n        key_size = 32\n        module = AES\n        cipher_mode = AES.MODE_GCM\n        enc_oid = _OID_AES256_GCM\n        enc_param = {'nonce': randfunc(12)}\n        aead = True\n    elif enc_algo == 'DES-EDE3-CBC':\n        key_size = 24\n        module = DES3\n        cipher_mode = DES3.MODE_CBC\n        enc_oid = _OID_DES_EDE3_CBC\n        enc_param = {'iv': randfunc(8)}\n    else:\n        raise ValueError(\"Unknown encryption mode '%s'\" % enc_algo)\n\n    iv_nonce = list(enc_param.values())[0]\n    salt = randfunc(prot_params.get(\"salt_size\", 8))\n\n    # Derive key from password\n    if pbkdf == 'pbkdf2':\n\n        count = prot_params.get(\"iteration_count\", 1000)\n        digestmod = Hash.new(pbkdf2_hmac_algo)\n\n        key = PBKDF2(passphrase,\n                     salt,\n                     key_size,\n                     count,\n                     hmac_hash_module=digestmod)\n\n        pbkdf2_params = DerSequence([\n                        DerOctetString(salt),\n                        DerInteger(count)\n                    ])\n\n        if pbkdf2_hmac_algo != 'SHA1':\n            try:\n                hmac_oid = Hash.HMAC.new(b'', digestmod=digestmod).oid\n            except KeyError:\n                raise ValueError(\"No OID for HMAC hash algorithm\")\n            pbkdf2_params.append(DerSequence([DerObjectId(hmac_oid)]))\n\n        kdf_info = DerSequence([\n                DerObjectId(_OID_PBKDF2),   # PBKDF2\n                pbkdf2_params\n        ])\n\n    elif pbkdf == 'scrypt':\n\n        count = prot_params.get(\"iteration_count\", 16384)\n        scrypt_r = prot_params.get('block_size', 8)\n        scrypt_p = prot_params.get('parallelization', 1)\n        key = scrypt(passphrase, salt, key_size,\n                     count, scrypt_r, scrypt_p)\n        kdf_info = DerSequence([\n                DerObjectId(_OID_SCRYPT),  # scrypt\n                DerSequence([\n                    DerOctetString(salt),\n                    DerInteger(count),\n                    DerInteger(scrypt_r),\n                    DerInteger(scrypt_p)\n                ])\n        ])\n\n    else:\n        raise ValueError(\"Unknown KDF \" + res.group(1))\n\n    # Create cipher and use it\n    cipher = module.new(key, cipher_mode, **enc_param)\n    if aead:\n        ct, tag = cipher.encrypt_and_digest(data)\n        encrypted_data = ct + tag\n    else:\n        encrypted_data = cipher.encrypt(pad(data, cipher.block_size))\n    enc_info = DerSequence([\n            DerObjectId(enc_oid),\n            DerOctetString(iv_nonce)\n    ])\n\n    # Result\n    enc_private_key_info = DerSequence([\n            # encryptionAlgorithm\n            DerSequence([\n                DerObjectId(_OID_PBES2),\n                DerSequence([\n                    kdf_info,\n                    enc_info\n                ]),\n            ]),\n            DerOctetString(encrypted_data)\n    ])\n    return enc_private_key_info.encode()"
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call is in a library that parses ASN.1-encoded PKCS#8 private keys and PBES2-encrypted data, not the credential storage or transport layer. The vulnerable DES/3DES cipher protects an RSA private key (a cryptographic material), which is a security purpose -> Confirm."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call produces a test vector digest for a self-test suite. The output is not a credential, key, signature, or real secret -> Reject.",
+        "patch": ""
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call generates a test fixture key/IV for self-tests, not a real secret. The test suite verifies the cipher implementation against known vectors; no credential or token is protected. Rule false positive -> Reject."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call generates a test vector tag for self-test integrity, not a security credential or secret -> Reject.",
+        "patch": ""
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call generates a test fixture key/nonce for cryptographic self-tests. The keys are never used to protect real secrets, tokens, or credentials; they only seed deterministic test vectors. No security-sensitive data is encrypted or authenticated with the output -> Reject."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call is in a self-test suite for DES, not protecting any real secret. The test data is deliberately weak and known; the finding is a false positive."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call is in a test suite for the DES3 cipher implementation. The test data contains known plaintext/ciphertext pairs used to validate the cipher's correctness, not real secrets. No security-sensitive material is protected -> Reject."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call generates a test vector tag for cryptographic self-tests, not a real secret. The finding is a false positive for this snippet."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call generates a test vector tag for cryptographic self-tests. The tag is used only to seed deterministic test input, not to protect credentials, tokens, keys, or real secrets. It serves test scaffolding -> Reject."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call generates a per-test random tag for OpenPGP CBC test vectors. It is not protecting any credential, key, signature, or real secret; it's only used to identify test cases in a self-test suite. The finding is a false positive."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call protects a test vector digest, not a credential or secret. The finding is a false positive for this snippet."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call is in a test suite that verifies the Poly1305 constructor raises an error when given a key of length 31 or a cipher not matching the expected block size. The test validates the library's defensive constraint enforcement, not real secret protection -> Reject."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call is in a test harness that loads and verifies cryptographic test vectors. The weak hash/PRF is used to validate reference outputs, not protect any real secret or credential. No security-sensitive data is ever hashed or compared; the test only checks if the library produces the expected output for a known input. Rule false positive -> Reject."
+      },
+      {
+        "cwe": "CWE-326",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call generates a test RSA key for fixture setup, not real credential protection -> Reject.",
+        "patch": ""
+      },
+      {
+        "cwe": "CWE-326",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call generates a test RSA key for signing/verification unit tests. The private key is never used to protect credentials, tokens, or real secrets; it only verifies the signature algorithm works in isolation. This is test scaffolding -> Reject.",
+        "patch": ""
+      },
+      {
+        "cwe": "CWE-326",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call signs a test fixture for deterministic test output. The signed data is not a credential, token, key, signature, nonce, or real secret -> Reject.",
+        "patch": ""
+      },
+      {
+        "cwe": "CWE-326",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call generates a test RSA key for unit testing, not for protecting credentials or secrets. The test verifies that the PSS signature scheme cannot sign with a weak modulus -> Reject.",
+        "patch": ""
+      },
+      {
+        "cwe": "CWE-326",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call generates a test RSA key for signing/verifying a test fixture. The key is never used in production, and the test only validates that the signing API works — no real credential or secret is protected. This is a test scaffolding call -> Reject.",
+        "patch": ""
+      },
+      {
+        "cwe": "CWE-326",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call signs a test fixture, not a credential or secret. The signature is used only for test scaffolding to verify that the verifier rejects corrupted inputs — it does not protect any real security-sensitive value."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call is in a test harness that generates random seeds for deterministic test fixture replay. The output is not a credential, token, key, signature, nonce, or real secret -> Reject."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Confirm",
+        "explanation": "The flagged call computes a digest of the user's password and appends it to the stored hash. The output is used by verify() to authenticate users, so it protects a credential -> Confirm."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call computes a checksum for a cache key, not a credential or secret. The output is used to index cached responses and never protects a real secret -> Reject."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call computes a checksum for a database password hash, not the password itself. The real secret is protected by PBKDF2-SHA256; this is only a fingerprint used in a credential store lookup -> Reject.",
+        "patch": ""
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call produces a checksum for the user's secret and username, which is used to shard a cache of precomputed password hashes. The output is never stored or transmitted; it only determines which cached hash to retrieve. No credential, token, key, signature, nonce, or real secret is protected by this digest -> Reject."
+      },
+      {
+        "cwe": "CWE-327",
+        "severity": "WARNING",
+        "verdict": "Confirm",
+        "explanation": "Use of MD5 which is not collision-resistant. The flagged call produces a hash used to protect a credential, token, key, signature, nonce, or real secret (a security purpose -> Confirm), so the finding is real."
+      },
+      {
+        "cwe": "CWE-256",
+        "severity": "WARNING",
+        "verdict": "Confirm",
+        "explanation": "The flagged call produces a digest of the registration password, which is stored in the database as the account's credential. The real secret (the user's password) is never protected by a slow KDF; it is hashed with MD5 and persisted directly. This is a real vulnerability -> Confirm.",
+        "patch": "def create_account(db, registration):\n    acc = db.Account()\n    acc.email = registration[\"email\"]\n    # Use PBKDF2 to protect the real secret\n    salt = os.urandom(32)\n    kdf = pbkdf2.pbkdf2(registration[\"password\"], salt, 100_000, 32, \"SHA256\")\n    acc.passwd = base64.urlsafe_b64encode(salt + kdf).decode(\"ascii\")\n    db.add(acc)"
+      },
+      {
+        "cwe": "CWE-916",
+        "severity": "WARNING",
+        "verdict": "Confirm",
+        "explanation": "The flagged call protects a credential, token, key, signature, nonce, or real secret (a security purpose -> Confirm), or is only change detection, caching, sharding, dedup, ETag, tracing, load distribution, or test scaffolding (a non-security purpose -> Reject)? The flagged call protects a credential, token, key, signature, nonce, or real secret (a security purpose -> Confirm)."
+      },
+      {
+        "cwe": "CWE-208",
+        "severity": "WARNING",
+        "verdict": "Confirm",
+        "explanation": "The flagged call compares a user's stored password hash against the provided attempt. A real credential is compared with a non-constant-time operator -> Confirm.",
+        "patch": "def authorize_user(user, attempt):\n    if not hmac.compare_digest(user.passwd_hash, attempt):\n        return \"denied\"\n    return issue_session(user)"
+      },
+      {
+        "cwe": "CWE-256",
+        "severity": "WARNING",
+        "verdict": "Confirm",
+        "explanation": "The flagged call protects a user password, which is a real secret. The digest is stored in the database and used for authentication -> Confirm.",
+        "patch": "import hashlib\n\ndef sync_account_digest(user, raw):\n    # Protect the account password with PBKDF2 + salt.\n    user.password = hashlib.pbkdf2_hmac(\"sha256\", raw.encode(), user.salt, 600000)\n    db.save(user)"
+      },
+      {
+        "cwe": "CWE-916",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The flagged call is inside a performance benchmark, not protecting any credential or secret. The finding is a false positive for this snippet."
+      },
+      {
+        "cwe": "CWE-208",
+        "severity": "WARNING",
+        "verdict": "Reject",
+        "explanation": "The digest is a cache key, not a credential or secret. The flagged call compares two cache keys to determine whether the cached response matches the request's digest; it does not protect any real secret. This is change detection for caching, not credential validation -> Reject."
+      },
+      {
+        "cwe": "CWE-326",
+        "severity": "WARNING",
+        "verdict": "Confirm",
+        "explanation": "Insecure SSL/TLS protocol version 'PROTOCOL_SSLv3' is used. The flagged call sets up a production listener for an HTTPS server, so the transport protects real secrets (user credentials, session tokens, private keys). Real security -> Confirm.",
+        "patch": "import ssl\n\ndef setup_production_listener():\n    ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)\n    ctx.load_cert_chain(\"/etc/ssl/certs/server.crt\",\n                        \"/etc/ssl/private/server.key\")\n    return ctx"
+      }
+    ]
+  },
+  "static_detect": {
+    "metrics": {
+      "n": 19,
+      "tp": 0,
+      "fp": 2,
+      "fn": 7,
+      "tn": 10,
+      "recall": 0.0,
+      "precision": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.5263,
+      "cwe_acc": null
+    },
+    "preds": [
+      {
+        "vulnerable": true,
+        "cwe": "CWE-256",
+        "severity": "WARNING"
+      },
+      {
+        "vulnerable": true,
+        "cwe": "CWE-327",
+        "severity": "WARNING"
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      },
+      {
+        "vulnerable": false,
+        "cwe": "",
+        "severity": ""
+      }
+    ]
+  },
+  "probes": {
+    "summary": {
+      "n": 18,
+      "n_confirm_gt": 12,
+      "n_reject_gt": 6,
+      "confirm_recall": 0.5,
+      "fpr": 0.0,
+      "accuracy": 0.6667,
+      "mismatches": [
+        {
+          "idx": 2,
+          "gt": "Confirm",
+          "pred": "Reject",
+          "name": "def login(user, pw):",
+          "explanation": "The flagged call computes a digest of the user's password for login comparison. The stored hash is used to authenticate the user, so this protects a credential -> Confirm."
+        },
+        {
+          "idx": 4,
+          "gt": "Confirm",
+          "pred": "Reject",
+          "name": "from Crypto.Cipher import AES",
+          "explanation": "The flagged call encrypts a cache key, not a credential or secret. The IV is predictable but the data is never sensitive; it's only used to determine which cached response to serve. No real security purpose -> Reject."
+        },
+        {
+          "idx": 8,
+          "gt": "Confirm",
+          "pred": "Reject",
+          "name": "import random, string",
+          "explanation": "The flagged call produces a 24-character reset token used to protect a user password. The token is short, predictable, and derived from /dev/urandom -> real secret -> Confirm."
+        },
+        {
+          "idx": 9,
+          "gt": "Confirm",
+          "pred": "Reject",
+          "name": "from Crypto.Cipher import DES",
+          "explanation": "The flagged call protects a cache key, not a credential or secret. The finding is a false positive for this snippet."
+        },
+        {
+          "idx": 10,
+          "gt": "Confirm",
+          "pred": "Reject",
+          "name": "from Crypto.Cipher import ARC4",
+          "explanation": "The flagged call is in a test fixture that generates an ETag for cache coherence. The RC4 output is never used to protect credentials, tokens, keys, or signatures; it's only a cache key. No real secret is protected -> Reject."
+        },
+        {
+          "idx": 11,
+          "gt": "Confirm",
+          "pred": "Reject",
+          "name": "def make_api_signature(secret, body):",
+          "explanation": "The flagged call produces an API signature for request integrity, not a credential or secret. The signature is used to verify the request origin and prevent replay attacks — a security purpose -> Confirm."
+        }
+      ]
+    },
+    "rows": [
+      {
+        "idx": 0,
+        "gt": "Confirm",
+        "pred": "Confirm",
+        "name": "def register(username, password):",
+        "explanation": "Use of MD5 which is not collision-resistant. The flagged call protects a user password, which is a credential -> Confirm."
+      },
+      {
+        "idx": 1,
+        "gt": "Confirm",
+        "pred": "Confirm",
+        "name": "def set_password(user, raw):",
+        "explanation": "Use of SHA-1 which is not collision-resistant. The flagged call protects a user password, so the finding is real -> Confirm."
+      },
+      {
+        "idx": 2,
+        "gt": "Confirm",
+        "pred": "Reject",
+        "name": "def login(user, pw):",
+        "explanation": "The flagged call computes a digest of the user's password for login comparison. The stored hash is used to authenticate the user, so this protects a credential -> Confirm."
+      },
+      {
+        "idx": 3,
+        "gt": "Confirm",
+        "pred": "Confirm",
+        "name": "from Crypto.Cipher import AES",
+        "explanation": "AES-ECB encrypts a user password in the database. ECB mode leaks identical plaintext patterns (e.g., repeated passwords) as identical ciphertext blocks, so attackers can detect which users share the same password. Real secret -> Confirm."
+      },
+      {
+        "idx": 4,
+        "gt": "Confirm",
+        "pred": "Reject",
+        "name": "from Crypto.Cipher import AES",
+        "explanation": "The flagged call encrypts a cache key, not a credential or secret. The IV is predictable but the data is never sensitive; it's only used to determine which cached response to serve. No real security purpose -> Reject."
+      },
+      {
+        "idx": 5,
+        "gt": "Confirm",
+        "pred": "Confirm",
+        "name": "from Crypto.Cipher import AES",
+        "explanation": "The flagged call hard-codes a 16-byte API key in the source. The key is used directly with AES-GCM to encrypt/decrypt an API payload, which protects the real API secret -> Confirm."
+      },
+      {
+        "idx": 6,
+        "gt": "Confirm",
+        "pred": "Confirm",
+        "name": "import requests",
+        "explanation": "The flagged call disables certificate validation for a real payment API. The intercepted card token is a live financial credential -> Confirm."
+      },
+      {
+        "idx": 7,
+        "gt": "Confirm",
+        "pred": "Confirm",
+        "name": "from Crypto.PublicKey import RSA",
+        "explanation": "The flagged call generates a 1024-bit RSA key for TLS certificate signing. Certificate keys protect long-lived transport credentials -> Confirm."
+      },
+      {
+        "idx": 8,
+        "gt": "Confirm",
+        "pred": "Reject",
+        "name": "import random, string",
+        "explanation": "The flagged call produces a 24-character reset token used to protect a user password. The token is short, predictable, and derived from /dev/urandom -> real secret -> Confirm."
+      },
+      {
+        "idx": 9,
+        "gt": "Confirm",
+        "pred": "Reject",
+        "name": "from Crypto.Cipher import DES",
+        "explanation": "The flagged call protects a cache key, not a credential or secret. The finding is a false positive for this snippet."
+      },
+      {
+        "idx": 10,
+        "gt": "Confirm",
+        "pred": "Reject",
+        "name": "from Crypto.Cipher import ARC4",
+        "explanation": "The flagged call is in a test fixture that generates an ETag for cache coherence. The RC4 output is never used to protect credentials, tokens, keys, or signatures; it's only a cache key. No real secret is protected -> Reject."
+      },
+      {
+        "idx": 11,
+        "gt": "Confirm",
+        "pred": "Reject",
+        "name": "def make_api_signature(secret, body):",
+        "explanation": "The flagged call produces an API signature for request integrity, not a credential or secret. The signature is used to verify the request origin and prevent replay attacks — a security purpose -> Confirm."
+      },
+      {
+        "idx": 12,
+        "gt": "Reject",
+        "pred": "Reject",
+        "name": "def test_known_digest():",
+        "explanation": "The flagged call computes a test digest for known inputs in an assertion, not to protect a credential or secret. It's part of a unit test scaffold -> Reject."
+      },
+      {
+        "idx": 13,
+        "gt": "Reject",
+        "pred": "Reject",
+        "name": "def file_changed(path, old_digest):",
+        "explanation": "The flagged call computes a file digest to detect changes in configuration or build artifacts. The output is not a credential, key, signature, token, nonce, or real secret; it's only used for change detection and caching. No security-sensitive value is protected -> Reject."
+      },
+      {
+        "idx": 14,
+        "gt": "Reject",
+        "pred": "Reject",
+        "name": "def cache_key(rows):",
+        "explanation": "The MD5 call produces a cache key for deduplication, not a credential or secret -> Reject."
+      },
+      {
+        "idx": 15,
+        "gt": "Reject",
+        "pred": "Reject",
+        "name": "def shard(bucket):",
+        "explanation": "The flagged call computes a shard key for load distribution across 64 buckets. The output is never used to protect credentials, tokens, keys, signatures, or secrets; it only maps requests to one of 64 backend instances. No security-sensitive material is protected -> Reject."
+      },
+      {
+        "idx": 16,
+        "gt": "Reject",
+        "pred": "Reject",
+        "name": "def test_token_smoke():",
+        "explanation": "The flagged call computes a test fixture digest for a known demo input. The output is only used in an assertion to verify the test harness works correctly, not to protect any credential, token, key, signature, nonce, or real secret. This is a non-security purpose -> Reject."
+      },
+      {
+        "idx": 17,
+        "gt": "Reject",
+        "pred": "Reject",
+        "name": "def jitter_delay(retries):",
+        "explanation": "The flagged call is jitter_delay, which randomizes retry backoff for load distribution. No credential, key, or signature is protected -> Reject."
+      }
+    ]
+  }
+}

@@ -19,8 +19,18 @@ checkpoints/
 
 # secrets
 api.txt
+apitxt
 
 # large/redistributable data (record source, do not commit)
 data/raw/
 data/external/
 data/round4/real_projects/
+nvidia-rpms/
+result.txt
+
+# generated/local candidate pools
+data/round6/candidates/*_a_functions.jsonl
+data/round6/candidates/*_local.jsonl
+data/round6/candidates/*_pycode_vul.jsonl
+data/round6/candidates/*_screened.jsonl
+data/round6/candidates/*_volume.jsonl

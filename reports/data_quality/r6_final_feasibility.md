@@ -2,6 +2,12 @@
 
 Date: 2026-10-04
 
+> **Post-training update (2026-10-05).** R6 has now been retrained from a fresh
+> base and evaluated. This document remains the pre-training feasibility
+> analysis; it is not the final model result. R6 did not pass the documented
+> acceptance gates and is closed as a temporary research baseline. Measured
+> results and evidence are in `data/round6/eval/RESULTS.md`.
+
 Built from the frozen artifacts in `data/round6/final/upload/full/` and the
 source exports `data/round6/real_verified_{detect,triage}.jsonl`. This report
 supersedes `reports/data_quality/r6_dataset_evaluation.md`, which was written

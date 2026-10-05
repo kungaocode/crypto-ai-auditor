@@ -1,0 +1,128 @@
+[
+  {
+    "idx": 0,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def register(username, password):",
+    "explanation": "Use of MD5 which is not collision-resistant. The flagged call protects a user password, which is a credential -> Confirm."
+  },
+  {
+    "idx": 1,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "def set_password(user, raw):",
+    "explanation": "Use of SHA-1 which is not collision-resistant. The flagged call protects a user password, so the finding is real -> Confirm."
+  },
+  {
+    "idx": 2,
+    "gt": "Confirm",
+    "pred": "Reject",
+    "name": "def login(user, pw):",
+    "explanation": "The flagged call computes a digest of the user's password for login comparison. The stored hash is used to authenticate the user, so this protects a credential -> Confirm."
+  },
+  {
+    "idx": 3,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "AES-ECB encrypts a user password in the database. ECB mode leaks identical plaintext patterns (e.g., repeated passwords) as identical ciphertext blocks, so attackers can detect which users share the same password. Real secret -> Confirm."
+  },
+  {
+    "idx": 4,
+    "gt": "Confirm",
+    "pred": "Reject",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "The flagged call encrypts a cache key, not a credential or secret. The IV is predictable but the data is never sensitive; it's only used to determine which cached response to serve. No real security purpose -> Reject."
+  },
+  {
+    "idx": 5,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.Cipher import AES",
+    "explanation": "The flagged call hard-codes a 16-byte API key in the source. The key is used directly with AES-GCM to encrypt/decrypt an API payload, which protects the real API secret -> Confirm."
+  },
+  {
+    "idx": 6,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "import requests",
+    "explanation": "The flagged call disables certificate validation for a real payment API. The intercepted card token is a live financial credential -> Confirm."
+  },
+  {
+    "idx": 7,
+    "gt": "Confirm",
+    "pred": "Confirm",
+    "name": "from Crypto.PublicKey import RSA",
+    "explanation": "The flagged call generates a 1024-bit RSA key for TLS certificate signing. Certificate keys protect long-lived transport credentials -> Confirm."
+  },
+  {
+    "idx": 8,
+    "gt": "Confirm",
+    "pred": "Reject",
+    "name": "import random, string",
+    "explanation": "The flagged call produces a 24-character reset token used to protect a user password. The token is short, predictable, and derived from /dev/urandom -> real secret -> Confirm."
+  },
+  {
+    "idx": 9,
+    "gt": "Confirm",
+    "pred": "Reject",
+    "name": "from Crypto.Cipher import DES",
+    "explanation": "The flagged call protects a cache key, not a credential or secret. The finding is a false positive for this snippet."
+  },
+  {
+    "idx": 10,
+    "gt": "Confirm",
+    "pred": "Reject",
+    "name": "from Crypto.Cipher import ARC4",
+    "explanation": "The flagged call is in a test fixture that generates an ETag for cache coherence. The RC4 output is never used to protect credentials, tokens, keys, or signatures; it's only a cache key. No real secret is protected -> Reject."
+  },
+  {
+    "idx": 11,
+    "gt": "Confirm",
+    "pred": "Reject",
+    "name": "def make_api_signature(secret, body):",
+    "explanation": "The flagged call produces an API signature for request integrity, not a credential or secret. The signature is used to verify the request origin and prevent replay attacks — a security purpose -> Confirm."
+  },
+  {
+    "idx": 12,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def test_known_digest():",
+    "explanation": "The flagged call computes a test digest for known inputs in an assertion, not to protect a credential or secret. It's part of a unit test scaffold -> Reject."
+  },
+  {
+    "idx": 13,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def file_changed(path, old_digest):",
+    "explanation": "The flagged call computes a file digest to detect changes in configuration or build artifacts. The output is not a credential, key, signature, token, nonce, or real secret; it's only used for change detection and caching. No security-sensitive value is protected -> Reject."
+  },
+  {
+    "idx": 14,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def cache_key(rows):",
+    "explanation": "The MD5 call produces a cache key for deduplication, not a credential or secret -> Reject."
+  },
+  {
+    "idx": 15,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def shard(bucket):",
+    "explanation": "The flagged call computes a shard key for load distribution across 64 buckets. The output is never used to protect credentials, tokens, keys, signatures, or secrets; it only maps requests to one of 64 backend instances. No security-sensitive material is protected -> Reject."
+  },
+  {
+    "idx": 16,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def test_token_smoke():",
+    "explanation": "The flagged call computes a test fixture digest for a known demo input. The output is only used in an assertion to verify the test harness works correctly, not to protect any credential, token, key, signature, nonce, or real secret. This is a non-security purpose -> Reject."
+  },
+  {
+    "idx": 17,
+    "gt": "Reject",
+    "pred": "Reject",
+    "name": "def jitter_delay(retries):",
+    "explanation": "The flagged call is jitter_delay, which randomizes retry backoff for load distribution. No credential, key, or signature is protected -> Reject."
+  }
+]

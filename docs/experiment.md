@@ -90,28 +90,64 @@ as a validated release. A same-config rerun of this cloud endpoint produced
 `0/1/3/9` on detect and FPR `0.289` on triage, so individual R5 point estimates
 varied across runs; the regression is nevertheless unambiguous.
 
-### Round 6 (finalized, awaiting train)
+### Round 6 (trained and evaluated; temporary closure)
 
 Round 6 rebuilt the data (322 curated/rule-fixture additions plus 79
 advisory-backed verified-real records = 401 additions, all 13 rule families
 covered) and froze a de-leaked eval set. There is no separate Round 7: verified
 records were merged directly into R6. The emitted
 `data/round6/final/r6_manifest.json` freezes source and artifact hashes.
-**The Round-6 retrain has not been run**, so no Round-6 metrics are reported. Run
-`configs/benchmark_round6.yaml` after training. Feasibility summary:
-`reports/data_quality/r6_final_feasibility.md`.
+
+The final dataset is `train=3115 / val=347 / test=660` (4,122 total), with 79
+verified real records and 30 unique verified crypto positives. The model was
+retrained from a fresh base with QLoRA rank 16 / alpha 32 for three epochs.
+
+| item | value |
+|---|---|
+| deployment model ID | `qwen3-4b-instruct-2507-5f8261ad123d` |
+| fine-tune job | `ft-202610051556-cc87` |
+| fine-tune output | `qwen3-4b-instruct-2507-ft-202610051556-cc87` |
+| base model | `qwen3-4b-instruct-2507` |
+| workspace | `ws-avxkjb2tq5lq1gwm` |
+
+#### Round-6 result summary
+
+| slice | metric | value |
+|---|---|---|
+| frozen detect (n=19) | recall / precision / F1 / CWE acc | `0.714 / 0.500 / 0.588 / 0.400` |
+| frozen triage (n=36, Confirm=4) | confirm recall / FPR / accuracy | `1.000 / 0.125 / 0.889` |
+| real triage probes (n=18) | confirm recall / FPR / accuracy | `0.500 / 0.000 / 0.667` |
+| R6 test-split detect (n=602) | recall / precision / F1 / CWE acc | `0.859 / 0.550 / 0.671 / 0.724` |
+| R6 test-split triage (n=58) | confirm recall / FPR / accuracy | `0.571 / 0.200 / 0.690` |
+| 13-rule capability matrix | detected / CWE correct / safe not flagged | `11/13 / 6/13 / 10/13` |
+| secure-library anti-FP | not flagged / FPR | `8/10 / 0.20` |
+
+The six misses in the 18-probe suite are all `Confirm -> Reject`. Three
+responses contain a correct Confirm explanation but emit `verdict=Reject`;
+three hallucinate cache, ETag, or test-fixture context that is absent from the
+input. R6 also reports false positives on `AESGCM` and `nacl.SecretBox`.
+
+Conclusion: R6 recovered detection from the R5 collapse and is usable as a
+temporary research closure, but it is not a production-ready crypto-specific
+model. The verified positive pool (30) is below the 50-100 gate, the frozen
+Confirm slice has only four rows, and the measured FPR/accuracy gates fail.
+Full evidence: `data/round6/eval/RESULTS.md`.
 
 ## 4. Acceptance criteria
 
-For a Round-6 candidate:
+For the Round-6 candidate:
 
-| gate | criterion | status |
+| gate | criterion | R6 status |
 |---|---|---|
-| detect precision | > 0.54 (R3/R4 baseline) | required |
-| domain fpr | ≤ 0.06 | required |
-| confirm_recall | report-only | not a gate: frozen slice has 4 Confirm |
-| 18-probe | ≥ 0.95 | required |
-| real-repository fpr | no worse than R3/R4 | required |
+| detect precision | > 0.54 (R3/R4 baseline) | FAIL on frozen slice (`0.500`); borderline on test split (`0.550`) |
+| domain fpr | <= 0.06 | FAIL (`0.125` frozen / `0.200` test / `0.20` secure library) |
+| confirm_recall | report-only | only 4 frozen Confirm rows; not an acceptance gate |
+| 18-probe | >= 0.95 | FAIL (`0.667`) |
+| real-repository FPR | no worse than R3/R4 | FAIL / unresolved |
+
+Round-6 closure decision: keep the model and artifacts as a reproducible
+research baseline, stop the current optimization cycle, and resume only after
+the verified-real data and evaluation slices are strengthened.
 
 ## 5. Reproducibility checklist
 
@@ -130,9 +166,11 @@ For a Round-6 candidate:
 6. `python3 scripts/build_dataset_metadata.py`
 7. Train from a **fresh base** on `data/round6/final/upload/full/` (no incremental
    continuation).
-8. `python main.py --benchmark --config configs/benchmark_round6.yaml`
-9. Record the model id and artifact hashes alongside the resulting
-   `reports/benchmark/benchmark.json`.
+8. Evaluate with `python3 scripts/run_round6_eval.py`,
+   `python3 scripts/run_round6_test_split.py`, and
+   `python3 scripts/run_round6_capability.py`.
+9. Record the deployment model ID and artifact hashes alongside the resulting
+   `data/round6/eval/RESULTS.md`.
 
 ## 6. Reporting rules
 
@@ -143,3 +181,9 @@ For a Round-6 candidate:
   and 19 manual) separately with counts by advisory, repository, rule, and split,
   keeping `review_mode` provenance intact.
 - Distinguish PyCode-Vul (generic web vulnerabilities) from crypto-rule metrics.
+- Do not claim zero leakage: inherited R4/R5 rows still contain exact and
+  AST-identical cross-split pairs. The frozen R6 eval avoids optimization-visible
+  train/val overlap, but the merged training artifact is not duplicate-free.
+- Keep the temporary-closure conclusion attached to R6: passing one borderline
+  test-split precision value does not offset the frozen-slice, FPR, probe, and
+  secure-library failures.

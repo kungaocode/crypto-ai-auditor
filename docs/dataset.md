@@ -187,5 +187,12 @@ The highest-value next data investment is not more same-family synthetic variant
 is harvesting real crypto-misuse fixes (CWE-321/326/327/329/338/916/208) from security
 advisories and fix commits, with repository-level and time-based splits.
 
+The R6 model was subsequently trained and evaluated on these artifacts. It did
+not pass the documented acceptance gates, so the project is temporarily closed
+as a research baseline; see
+[`data/round6/eval/RESULTS.md`](../data/round6/eval/RESULTS.md) for measured
+results and [`README.md`](../README.md) for the closure scope and future-work
+plan.
+
 For the source-by-source assessment, evidence rules, and the R6 finalization
 collection gate, see [`dataset_source_strategy.md`](dataset_source_strategy.md).
