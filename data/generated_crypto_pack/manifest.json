@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-11T15:41:51.782099+00:00",
+  "source": "generated-crypto-training-pack-v1",
+  "verified": false,
+  "counts": {
+    "total": 33,
+    "detect": 23,
+    "detect_vulnerable": 13,
+    "detect_negative": 10,
+    "triage": 10,
+    "triage_confirm": 5,
+    "triage_reject": 5,
+    "by_split": {
+      "train": 20,
+      "val": 7,
+      "test": 6
+    }
+  },
+  "paths": {
+    "python": "python/",
+    "source": "source/all.jsonl",
+    "upload": "upload/",
+    "zip": "generated_crypto_pack.zip"
+  }
+}

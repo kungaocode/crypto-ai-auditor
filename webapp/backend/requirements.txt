@@ -1,0 +1,10 @@
+Flask>=3.0,<4
+PyYAML>=6.0,<7
+requests>=2.31,<3
+
+# Optional: the repository's cloud model backend uses these environment
+# variables. Fine-tuning / local inference dependencies stay in the root
+# requirements.txt and are not needed to run the web application.
+#
+#   LLM_API_KEY   / LLM_MODEL_ID / LLM_BASE_URL
+#   LLM_WORKSPACE (Bailian workspace keys)

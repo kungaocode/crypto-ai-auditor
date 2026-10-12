@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0b0f14">
+  <title>CryptoAudit · 密码代码安全审计平台</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1117'/%3E%3Cpath d='M16 6l8 3.4v6.1c0 5-3.3 8.6-8 10.5-4.7-1.9-8-5.5-8-10.5V9.4L16 6z' fill='none' stroke='%232dd4bf' stroke-width='2'/%3E%3Cpath d='M12 15.6l2.8 2.8 5.2-5.6' fill='none' stroke='%232dd4bf' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" data-icon="shield" aria-hidden="true"></span>
+        <span class="brand-text">
+          <strong>CryptoAudit</strong>
+          <small>密码代码安全审计平台</small>
+        </span>
+      </div>
+
+      <nav class="topnav" id="topnav" aria-label="主导航">
+        <button class="nav-item is-active" data-view="audit" type="button">
+          <span data-icon="terminal" aria-hidden="true"></span><span>审计工作台</span>
+        </button>
+        <button class="nav-item" data-view="results" type="button">
+          <span data-icon="chart" aria-hidden="true"></span><span>审计结果</span>
+          <em class="nav-count" id="nav-result-count" hidden>0</em>
+        </button>
+        <button class="nav-item" data-view="rules" type="button">
+          <span data-icon="book" aria-hidden="true"></span><span>规则库</span>
+        </button>
+        <button class="nav-item" data-view="history" type="button">
+          <span data-icon="history" aria-hidden="true"></span><span>历史记录</span>
+        </button>
+      </nav>
+
+      <div class="topbar-status" id="topbar-status">
+        <span class="status-chip" id="engine-chip" title="静态分析引擎状态">
+          <span class="dot dot-idle"></span><span>引擎检测中</span>
+        </span>
+        <span class="status-chip" id="model-chip" title="模型后端状态">
+          <span class="dot dot-idle"></span><span>模型检测中</span>
+        </span>
+        <span class="status-chip" id="feedback-chip" title="训练数据回流状态">
+          <span class="dot dot-idle"></span><span>回流检测中</span>
+        </span>
+      </div>
+    </header>
+
+    <main class="workspace" id="workspace">
+
+      <!-- ==================== 审计工作台 ==================== -->
+      <section class="view is-active" id="view-audit" data-view-panel="audit">
+        <div class="view-head">
+          <div>
+            <h1>Python 审计工作台</h1>
+            <p>上传或粘贴 Python 源码，由静态规则引擎与微调模型协同发现密码学漏洞，并给出可直接参考的修复代码。</p>
+          </div>
+          <div class="view-head-actions">
+            <button class="btn btn-ghost" id="btn-load-sample" type="button">
+              <span data-icon="sparkles" aria-hidden="true"></span><span>载入示例</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="workbench">
+          <div class="panel panel-input">
+            <div class="panel-head">
+              <div class="segmented" id="input-mode" role="tablist" aria-label="输入方式">
+                <button class="seg is-active" data-mode="paste" type="button" role="tab">粘贴代码</button>
+                <button class="seg" data-mode="upload" type="button" role="tab">上传文件</button>
+              </div>
+              <span class="muted" id="input-meta"></span>
+            </div>
+
+            <div class="panel-body">
+              <!-- 粘贴代码 -->
+              <div class="input-pane is-active" data-pane="paste">
+                <label class="field">
+                  <span class="field-label">文件名</span>
+                  <input type="text" id="paste-filename" value="snippet.py" spellcheck="false" autocomplete="off">
+                </label>
+                <div class="editor-wrap">
+                  <textarea id="code-input" class="code-editor" spellcheck="false" wrap="off"
+                    placeholder="在此粘贴 Python 代码，或点击右上角「载入示例」查看演示。"></textarea>
+                </div>
+              </div>
+
+              <!-- 上传文件 -->
+              <div class="input-pane" data-pane="upload">
+                <label class="dropzone" id="dropzone">
+                  <input type="file" id="file-input" multiple
+                    accept=".py,.pyw,.c,.cpp,.cc,.cxx,.h,.hpp,.hh,.zip">
+                  <span class="dropzone-icon" data-icon="upload" aria-hidden="true"></span>
+                  <strong>点击选择或拖拽文件到此处</strong>
+                  <span class="muted">当前审计以 .py / .pyw 为主，也可上传代码压缩包；其他语言仅做有限扫描</span>
+                </label>
+                <ul class="file-list" id="file-list"></ul>
+                <p class="muted hint" id="upload-hint">
+                  单文件上限由服务端配置决定；压缩包会自动解压并过滤不受支持的扩展名。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="panel panel-config">
+            <div class="panel-head">
+              <h2>扫描配置</h2>
+            </div>
+            <div class="panel-body">
+              <div class="field">
+                <span class="field-label">模型模式</span>
+                <div class="segmented segmented-stack" id="model-mode" role="radiogroup" aria-label="模型模式">
+                  <button class="seg is-active" data-mode="auto" type="button" role="radio" aria-checked="true">
+                    <strong>自动</strong><small>有环境密钥时用微调模型，否则离线引擎</small>
+                  </button>
+                  <button class="seg" data-mode="cloud" type="button" role="radio" aria-checked="false">
+                    <strong>微调模型</strong><small>调用云端密码安全模型进行研判与生成补丁</small>
+                  </button>
+                  <button class="seg" data-mode="mock" type="button" role="radio" aria-checked="false">
+                    <strong>离线引擎</strong><small>仅静态规则 + 确定性研判，无需网络</small>
+                  </button>
+                </div>
+              </div>
+
+              <div class="field">
+                <span class="field-label">选项</span>
+                <label class="toggle">
+                  <input type="checkbox" id="opt-extended">
+                  <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                  <span class="toggle-text">
+                    <strong>扩展 AST 扫描</strong>
+                    <small>启用更深入的数据流与上下文检查</small>
+                  </span>
+                </label>
+                <label class="toggle">
+                  <input type="checkbox" id="opt-patches" checked>
+                  <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                  <span class="toggle-text">
+                    <strong>生成修复代码</strong>
+                    <small>输出优化后的代码与 unified diff</small>
+                  </span>
+                </label>
+              </div>
+
+              <div class="model-card" id="model-card">
+                <div class="model-card-head">
+                  <span class="dot dot-idle" id="model-card-dot"></span>
+                  <strong>微调模型</strong>
+                </div>
+                <dl class="kv">
+                  <dt>模型</dt><dd id="model-id">—</dd>
+                  <dt>接口</dt><dd id="model-url">—</dd>
+                  <dt>密钥</dt><dd id="model-key">—</dd>
+                </dl>
+              </div>
+
+              <button class="btn btn-primary btn-block" id="btn-run" type="button">
+                <span data-icon="play" aria-hidden="true"></span><span>开始审计</span>
+              </button>
+              <p class="form-error" id="run-error" hidden></p>
+            </div>
+          </aside>
+        </div>
+
+        <div class="panel recent-panel">
+          <div class="panel-head">
+            <h2>最近审计</h2>
+            <button class="btn btn-ghost btn-sm" id="btn-refresh-recent" type="button">
+              <span data-icon="refresh" aria-hidden="true"></span><span>刷新</span>
+            </button>
+          </div>
+          <div class="panel-body recent-strip" id="recent-strip">
+            <p class="muted empty-inline">暂无记录。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 审计结果 ==================== -->
+      <section class="view" id="view-results" data-view-panel="results">
+        <div id="results-empty" class="empty-state">
+          <span class="empty-icon" data-icon="search" aria-hidden="true"></span>
+          <h2>还没有审计结果</h2>
+          <p>前往工作台粘贴或上传代码，开始第一次安全审计。</p>
+          <button class="btn btn-primary" data-goto="audit" type="button">去审计代码</button>
+        </div>
+        <div id="results-content" hidden></div>
+      </section>
+
+      <!-- ==================== 规则库 ==================== -->
+      <section class="view" id="view-rules" data-view-panel="rules">
+        <div class="view-head">
+          <div>
+            <h1>规则库</h1>
+            <p>平台内置的 Python 密码学安全规则，覆盖弱算法、密钥管理、随机性、传输安全与凭据保护等类别。</p>
+          </div>
+        </div>
+        <div id="rules-stats" class="stat-strip"></div>
+        <div class="panel">
+          <div class="panel-head">
+            <div class="filter-row">
+              <label class="search-box">
+                <span data-icon="search" aria-hidden="true"></span>
+                <input type="search" id="rules-search" placeholder="搜索规则 ID / 标题 / CWE">
+              </label>
+              <div class="chip-group" id="rules-category-filter"></div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div id="rules-list" class="rules-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 历史记录 ==================== -->
+      <section class="view" id="view-history" data-view-panel="history">
+        <div class="view-head">
+          <div>
+            <h1>历史记录</h1>
+            <p>服务端保留的最近审计任务。点击任意记录可载入完整结果与修复建议。</p>
+          </div>
+          <div class="view-head-actions">
+            <button class="btn btn-ghost" id="btn-refresh-history" type="button">
+              <span data-icon="refresh" aria-hidden="true"></span><span>刷新</span>
+            </button>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-body">
+            <div id="history-list" class="history-list"></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- 详情抽屉 -->
+  <div class="drawer-scrim" id="drawer-scrim" hidden></div>
+  <aside class="drawer" id="drawer" hidden aria-label="漏洞详情">
+    <div class="drawer-head">
+      <h2 id="drawer-title">漏洞详情</h2>
+      <button class="icon-btn" id="drawer-close" type="button" aria-label="关闭">
+        <span data-icon="close" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="drawer-body" id="drawer-body"></div>
+  </aside>
+
+  <!-- 运行遮罩 -->
+  <div class="overlay" id="run-overlay" hidden>
+    <div class="overlay-card">
+      <div class="spinner" aria-hidden="true"></div>
+      <strong id="overlay-title">正在审计…</strong>
+      <p class="muted" id="overlay-stage">正在准备文件</p>
+      <ul class="stage-list" id="overlay-stages"></ul>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
